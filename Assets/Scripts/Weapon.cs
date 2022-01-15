@@ -22,6 +22,8 @@ public class Weapon : Collidable
 
         base.Start();
         anim = GetComponent<Animator>();
+
+        //DontDestroyOnLoad(gameObject);
     }
 
     protected override void Update(){
