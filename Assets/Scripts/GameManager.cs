@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+		
 
         if (GameManager.instance != null){
             Destroy(gameObject);
