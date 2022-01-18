@@ -132,15 +132,15 @@ public class GameManager : MonoBehaviour
         public void SaveState()
         {
 
-        string s = " ";
+            string s = " ";
 
-        s += "0" + "|";
-        s += money.ToString() + "|";
-        s += experience.ToString() + '|';
-        s += weapon.weaponLevel.ToString();
+            s += "0" + "|";
+            s += money.ToString() + "|";
+            s += experience.ToString() + '|';
+            s += weapon.weaponLevel.ToString();
 
-        PlayerPrefs.SetString("SaveState", s);
-        Debug.Log("SaveState");
+            PlayerPrefs.SetString("SaveState", s);
+            Debug.Log("SaveState");
 
         }
 
