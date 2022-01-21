@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Chest : Collectable
@@ -21,7 +20,7 @@ public class Chest : Collectable
         GameManager.instance.money += moneyAmount;
 
         //show text
-        GameManager.instance.ShowText("+" + moneyAmount + " money!", 25, Color.yellow,transform.position,Vector3.up * 25, 1.5f);
+        GameManager.instance.ShowText("+" + moneyAmount + " coins", 24, Color.yellow,transform.position,Vector3.up * 25, 1.5f);
 
         }
 

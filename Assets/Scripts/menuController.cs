@@ -50,13 +50,11 @@ public class menuController : MonoBehaviour
     public void LoadGame()
     {
         PlayerData data = SaveSystem.loadgameState(currentSlot);
-        string s = "0|";
-        s += data.money.ToString() + "|";
-        s += 0 + '|';//XP
-        s += data.weapon.ToString();
+        string s = data.money.ToString() + "|";
+        // s += data.weapon.ToString();
 
         PlayerPrefs.SetString("SaveState", s);
-        SceneManager.LoadScene("main");
+        SceneManager.LoadScene("Start");
         // SceneManager.LoadScene("stage" + data.stageNumber + "-" + data.sceneNumber); TO BE USED WHEN STAGES ARE NAME CORRECTLY
     }
 

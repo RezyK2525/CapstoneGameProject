@@ -6,15 +6,17 @@ public abstract class Mover : Fighter
 {
 
 
-    protected BoxCollider2D boxCollider;
+    public BoxCollider2D boxCollider;
 
-    protected Vector3 moveDelta;
+    public Vector3 moveDelta;
 
-    protected RaycastHit2D hit;
+    private RaycastHit2D hit;
 
-    protected float ySpeed = 0.75f;
-    protected float xSpeed = 1.0f;
+    public float ySpeed = 4.75f;
+    public float xSpeed = 5f;
 
+   
+    
 
 
     protected virtual void Start()
@@ -27,22 +29,12 @@ public abstract class Mover : Fighter
             //Reset moveDelta
             moveDelta = new Vector3(input.x * xSpeed, input.y * ySpeed, 0);
 
-            //Swap sprite direction based on movement left or right
-            if (moveDelta.x > 0)
-            {
-            transform.localScale = Vector3.one;
-            }else if(moveDelta.x < 0){
-            transform.localScale = new Vector3(-1,1,1);
-            }
-
+          
             //add pushforce vector if any
             moveDelta += pushDirection;
 
             //reduce push force everyframe based off recovery speed
             pushDirection = Vector3.Lerp(pushDirection,Vector3.zero,pushRecoverySpeed);
-
-
-
 
             //Make sure we can move in the direction by casting a box there first if the box is null we are clear to move.
             hit = Physics2D.BoxCast(transform.position,boxCollider.size, 0, new Vector2(0,moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
@@ -58,8 +50,6 @@ public abstract class Mover : Fighter
             transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
 
             }
-
-
     }
     
 

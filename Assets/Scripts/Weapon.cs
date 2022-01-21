@@ -5,55 +5,36 @@ using UnityEngine;
 public class Weapon : Collidable
 {
     //Damage struct
-    public int[] damagePoint = {1, 2, 3, 4, 5, 6, 7};
-    public float[] pushForce = {2f, 15f, 15f, 15f, 15f, 15f, 10f};
+    public int[] damagePoint = { 1, 2, 3 };
+    public float[] pushForce = { 25, 24, 25 };
 
     //Upgrade
     public int weaponLevel = 0;
     public SpriteRenderer spriteRenderer;
 
-    //Swing
-    private float cooldown = 0.5f;
-    private float lastSwing;
+ 
     private Animator anim;
 
 
     protected override void Start(){
 
         base.Start();
-        anim = GetComponent<Animator>();
-
-        //DontDestroyOnLoad(gameObject);
     }
-
-    protected override void Update(){
-
-    base.Update();
-    if(Input.GetKeyDown(KeyCode.Space))
-    {
-        if(Time.time - lastSwing > cooldown){
-            lastSwing = Time.time;
-            Swing();
-
-        }
-    }
-
-    }
-
 
     protected override void OnCollide(Collider2D coll){
+
 
         if(coll.tag == "Fighter"){
             if(coll.name == "Player"){
                 return;
             }
+
             //create a new damage object then send it to fighter weve hit
             Damage dmg = new Damage
             {
                 damageAmount = damagePoint[weaponLevel],
                 origin = transform.position,
                 pushForce = pushForce[weaponLevel]
-
             };
 
             coll.SendMessage("ReceiveDamage", dmg);
@@ -61,12 +42,13 @@ public class Weapon : Collidable
         }
     }
 
-    private void Swing(){
+
+    
+    public void Swing(){
 
         anim.SetTrigger("Swing");
-
-
     }
+    
 
     public void UpgradeWeapon()
     {
@@ -77,6 +59,7 @@ public class Weapon : Collidable
 
     }
 
+    // Might not need this
     public void SetWeaponLevel(int level)
     {
         weaponLevel = level;

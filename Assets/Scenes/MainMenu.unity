@@ -4970,7 +4970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac74c81e3d40f04a97539fa7507dd69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _newGameLevel: main
+  _newGameLevel: Start
   slotSprite: {fileID: 21300000, guid: bff2ef68b56562749833bf202faa1cfa, type: 3}
   emptySlotSprite: {fileID: 21300000, guid: fac454c03d2aa1c43b7b87c2d9ceb87a, type: 3}
   numSaveSlots: 3

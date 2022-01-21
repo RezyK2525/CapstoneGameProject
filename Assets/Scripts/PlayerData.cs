@@ -18,8 +18,6 @@ public class PlayerData
 
         // character sprite tempSave[0]
         money = int.Parse(tempSave[1]);
-        // experience depricated tempSave[2]
-        weapon = int.Parse(tempSave[3]);
         health = 10; // int.Parse(tempSave[4]);
         stageNumber = 1; // int.Parse(tempSave[5]);
         sceneNumber = 1; // int.Parse(tempSave[6]);

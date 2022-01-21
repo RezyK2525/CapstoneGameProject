@@ -47,14 +47,6 @@ public class CharacterMenu : MonoBehaviour
         GameManager.instance.player.SwapSprite(currentCharacterSelection);
     }
 
-    //weapon Upgrade
-    public void OnUpgradeClick()
-    {
-        if(GameManager.instance.TryUpgradeWeapon())
-        {
-            UpdateMenu();
-        }
-    }
 
     //Update the Character Info
     public void UpdateMenu()
@@ -74,30 +66,6 @@ public class CharacterMenu : MonoBehaviour
         //Meta
         hitpointText.text = GameManager.instance.player.hitPoint.ToString();
         moneyText.text = GameManager.instance.money.ToString();
-        levelText.text = GameManager.instance.GetCurrentLevel().ToString();
-
-        //xp xpBar
-        int currLevel = GameManager.instance.GetCurrentLevel();
-
-        if(currLevel == GameManager.instance.xpTable.Count)
-        {
-            xpText.text = GameManager.instance.experience.ToString() + " total exp points!"; //display total xp if max
-            xpBar.localScale = Vector3.one;
-        }
-        else
-        {
-            int prevLevelXp = GameManager.instance.GetXpToLevel(currLevel - 1);
-            int currLevelXp = GameManager.instance.GetXpToLevel(currLevel);
-
-            int diff = currLevelXp - prevLevelXp;
-            int currXpIntoLevel = GameManager.instance.experience - prevLevelXp;
-            float completionRatio = (float)currXpIntoLevel / (float)diff;
-            xpBar.localScale = new Vector3(completionRatio, 1, 1);
-            xpText.text = currXpIntoLevel.ToString() + " / " + diff;
-
-        }
-
-
 
     }
 
