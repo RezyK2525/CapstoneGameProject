@@ -565,3 +565,11 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 314.659556 seconds.
+  path: Assets/Scenes/Dungeon1.unity
+  artifactKey: Guid(8761148f56c1f8f4aa9a800e61e547e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Dungeon1.unity using Guid(8761148f56c1f8f4aa9a800e61e547e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e72b0bc785403b2157309d2cf22e2935') in 0.021509 seconds 
+  Import took 0.029271 seconds .
+
