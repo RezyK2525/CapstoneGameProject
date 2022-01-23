@@ -16,8 +16,8 @@ public class PlayerData
     {
         string[] tempSave = saveString.Split('|'); //  PlayerPrefs.GetString("SaveState").Split('|');
 
-        // character sprite tempSave[0]
-        money = int.Parse(tempSave[1]);
+        money = int.Parse(tempSave[0]);
+        // inventory = Inventory.Parse(tempSave[0]);
         health = 10; // int.Parse(tempSave[4]);
         stageNumber = 1; // int.Parse(tempSave[5]);
         sceneNumber = 1; // int.Parse(tempSave[6]);

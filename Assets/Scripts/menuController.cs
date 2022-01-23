@@ -8,21 +8,42 @@ using UnityEngine.SceneManagement;
 
 public class menuController : MonoBehaviour
 {
-    [Header("Levels To Load")]
-    public string _newGameLevel;
+    [Header("Volume Settings")]
+    [SerializeField] private float defaultVolume = 1.0f;
+    [SerializeField] private TMP_Text volumeTextValue = null;
+    [SerializeField] private Slider volumeSlider = null;
+    private float tempVolume = 1.0f;
+
+    [Header("Gameplay Settings")]
+    [SerializeField] private float defaultSensitivity = 1.0f;
+    [SerializeField] private TMP_Text sensitivityTextValue = null;
+    [SerializeField] private Slider sensitivitySlider = null;
+    private float tempSensitivity = 1.0f;
+    public float mainSensitivity = 0.2f;
+    
+    [Header("Confirmation")]
+    [SerializeField] private GameObject confirmationPrompt = null;
+
+
+    [Header("Sprites and Buttons")]
     public Sprite slotSprite;
     public Sprite emptySlotSprite;
-    public int numSaveSlots = 3;
     public GameObject newGameBtn;
     public GameObject loadGameBtn;
     public GameObject copyBtn;
     public GameObject deleteBtn;
 
+    [Header("Save Slots")]
+    public int numSaveSlots = 3;
     private int currentSlot = 0;
+
+    [Header("Levels To Load")]
+    public string _newGameLevel;
     private string levelToLoad;
     // [SerializeField] private GameObject noSavedGameDialog = null;
 
 
+    // game save
     public void setSlots()
     {
         for (int i = 1; i <= numSaveSlots; i++)
@@ -54,7 +75,7 @@ public class menuController : MonoBehaviour
         // s += data.weapon.ToString();
 
         PlayerPrefs.SetString("SaveState", s);
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene("Map" + data.stageNumber + "_" + data.stageNumber);
         // SceneManager.LoadScene("stage" + data.stageNumber + "-" + data.sceneNumber); TO BE USED WHEN STAGES ARE NAME CORRECTLY
     }
 
@@ -116,9 +137,81 @@ public class menuController : MonoBehaviour
 
     }
 
+
+    // main menu menu
     public void ExitButton()
     {
         Application.Quit();
+    }
+
+    // graphics menu
+
+
+    // volume menu
+    public void SetVolume(float volume)
+    {
+        tempVolume = volume;
+        volumeTextValue.text = volume.ToString("0.0");
+    }
+    public void volumeApply()
+    {
+        AudioListener.volume = tempVolume;
+        PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
+        // show prompt
+        StartCoroutine(ConfirmationBox());
+    }
+    public void SetVolumeSliderToCurrentVal()
+    {
+        volumeSlider.value = AudioListener.volume;
+    }
+
+
+    // gameplay menu
+    public void SetSensitivity(float sensitivity)
+    {
+        tempSensitivity = sensitivity;
+        sensitivityTextValue.text = sensitivity.ToString("0.00");
+    }
+    public void GameplayApply()
+    {
+        mainSensitivity = tempSensitivity;
+        PlayerPrefs.SetFloat("masterSensitivity", mainSensitivity);
+        // show prompt
+        StartCoroutine(ConfirmationBox());
+    }
+    public void SetSensitivitySliderToCurrentVal()
+    {
+        sensitivitySlider.value = mainSensitivity;
+    }
+
+
+
+    public void ResetButton(string MenuType)
+    {
+        if (MenuType == "Sound")
+        {
+            volumeSlider.value = defaultVolume;
+            SetVolume(defaultVolume);
+            volumeApply();
+        }
+        else if (MenuType == "Gameplay")
+        {
+            sensitivityTextValue.text = defaultSensitivity.ToString("0.00");
+            sensitivitySlider.value = defaultSensitivity;
+            mainSensitivity = defaultSensitivity;
+            GameplayApply();
+        }
+        else if (MenuType == "Graphics")
+        {
+
+        }
+
+    }
+    public IEnumerator ConfirmationBox()
+    {
+        confirmationPrompt.SetActive(true);
+        yield return new WaitForSeconds(1);
+        confirmationPrompt.SetActive(false);
     }
 
 }
