@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Portal : Collidable
@@ -18,11 +16,5 @@ public class Portal : Collidable
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
         
         }
-
-
-
     }
-
-
-
 }

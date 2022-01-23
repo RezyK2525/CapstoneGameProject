@@ -6,7 +6,7 @@ public class CameraMotor : MonoBehaviour
 {
 
     private Transform lookAt;
-    public float boundX = 0.15f;
+    public float boundX = 0.125f;
     public float boundY = 0.05f;
 
 

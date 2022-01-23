@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -18,8 +16,9 @@ public class JettDashAbility : Ability {
     public override void BeginCooldown(GameObject parent)
     {
         Mover movement = parent.GetComponent<Mover>();
-        movement.xSpeed = 0.75f;
-        movement.ySpeed = 1.0f;
+        movement.ySpeed = 4.75f;
+        movement.xSpeed = 5f;
+
     }
 
 

@@ -1,0 +1,2172 @@
+fileFormatVersion: 2
+guid: de0994ae94c1908439d5ab84dc2f8c9c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3354710751393029115
+    second: just weapons_0
+  - first:
+      213: -2984482780919495426
+    second: just weapons_1
+  - first:
+      213: -3715224750696090265
+    second: just weapons_2
+  - first:
+      213: -3330125517730521142
+    second: just weapons_3
+  - first:
+      213: 1876231060996296565
+    second: just weapons_4
+  - first:
+      213: 9104119289070163688
+    second: just weapons_5
+  - first:
+      213: -5106997580252157313
+    second: just weapons_6
+  - first:
+      213: 3915070542162483617
+    second: just weapons_7
+  - first:
+      213: 6407152597687186026
+    second: just weapons_8
+  - first:
+      213: 8833552495694321858
+    second: just weapons_9
+  - first:
+      213: 6432998566158692333
+    second: just weapons_10
+  - first:
+      213: 1389391578028154050
+    second: just weapons_11
+  - first:
+      213: -2203928259382705719
+    second: just weapons_12
+  - first:
+      213: -2358827515127995999
+    second: just weapons_13
+  - first:
+      213: -3859175298835058087
+    second: just weapons_14
+  - first:
+      213: -7940048669593583697
+    second: just weapons_15
+  - first:
+      213: 218557122651782937
+    second: just weapons_16
+  - first:
+      213: -1886696205026216295
+    second: just weapons_17
+  - first:
+      213: -3917930000561785339
+    second: just weapons_18
+  - first:
+      213: -8819352996890890875
+    second: just weapons_19
+  - first:
+      213: -2778124590567991668
+    second: just weapons_20
+  - first:
+      213: 2977221308639896932
+    second: just weapons_21
+  - first:
+      213: 1145126091228210696
+    second: just weapons_22
+  - first:
+      213: -897426912858854460
+    second: just weapons_23
+  - first:
+      213: -8715493119207923898
+    second: just weapons_24
+  - first:
+      213: -479127374544700952
+    second: just weapons_25
+  - first:
+      213: -8100159253898188075
+    second: just weapons_26
+  - first:
+      213: -3015799579002091149
+    second: just weapons_27
+  - first:
+      213: 2672043313180715960
+    second: just weapons_28
+  - first:
+      213: 5894092952218888020
+    second: just weapons_29
+  - first:
+      213: -1792186164841494370
+    second: just weapons_30
+  - first:
+      213: -2785796142955052644
+    second: just weapons_31
+  - first:
+      213: -6979807146160300145
+    second: just weapons_32
+  - first:
+      213: -4751970926690265868
+    second: just weapons_33
+  - first:
+      213: -4187607343379885310
+    second: just weapons_34
+  - first:
+      213: 9001932171130782662
+    second: just weapons_35
+  - first:
+      213: 2086428610992897433
+    second: just weapons_36
+  - first:
+      213: 8212960901893958141
+    second: just weapons_37
+  - first:
+      213: -1155395966737965231
+    second: just weapons_38
+  - first:
+      213: -8166266282259677360
+    second: just weapons_39
+  - first:
+      213: 1678747109324115168
+    second: just weapons_40
+  - first:
+      213: 6183481044508644670
+    second: just weapons_41
+  - first:
+      213: -7755572006293530479
+    second: just weapons_42
+  - first:
+      213: -7141435823109709187
+    second: just weapons_43
+  - first:
+      213: 5857976391185582206
+    second: just weapons_44
+  - first:
+      213: -7425641627806416090
+    second: just weapons_45
+  - first:
+      213: -2631334519899119449
+    second: just weapons_46
+  - first:
+      213: 6854000613779406033
+    second: just weapons_47
+  - first:
+      213: 8895795041122698522
+    second: just weapons_48
+  - first:
+      213: -7048509819264101954
+    second: just weapons_49
+  - first:
+      213: 1000871705417580941
+    second: just weapons_50
+  - first:
+      213: 4738904866085369198
+    second: just weapons_51
+  - first:
+      213: 1605195413712940971
+    second: just weapons_52
+  - first:
+      213: 9076002699772237555
+    second: just weapons_53
+  - first:
+      213: -4387312254120273823
+    second: just weapons_54
+  - first:
+      213: -559658278008529532
+    second: just weapons_55
+  - first:
+      213: -7034946154772017188
+    second: just weapons_56
+  - first:
+      213: 5623002518067777213
+    second: just weapons_57
+  - first:
+      213: -6407237418489689007
+    second: just weapons_58
+  - first:
+      213: -9019372516760898896
+    second: just weapons_59
+  - first:
+      213: 6024555977322268976
+    second: just weapons_60
+  - first:
+      213: 4778560692479652567
+    second: just weapons_61
+  - first:
+      213: 773578601703776854
+    second: just weapons_62
+  - first:
+      213: 426314620663633014
+    second: just weapons_63
+  - first:
+      213: 5930998747618866609
+    second: just weapons_64
+  - first:
+      213: -6422925990691085734
+    second: just weapons_65
+  - first:
+      213: 4252933254154917673
+    second: just weapons_66
+  - first:
+      213: -6475025053064783827
+    second: just weapons_67
+  - first:
+      213: 2232220849678148996
+    second: just weapons_68
+  - first:
+      213: -9077344779239410328
+    second: just weapons_69
+  - first:
+      213: 6110625399018339729
+    second: just weapons_70
+  - first:
+      213: 8388143823080357905
+    second: just weapons_71
+  - first:
+      213: 6924771249594081986
+    second: just weapons_72
+  - first:
+      213: -8668392260667483329
+    second: just weapons_73
+  - first:
+      213: -7539359636131436145
+    second: just weapons_74
+  - first:
+      213: -6335653359586201500
+    second: just weapons_75
+  - first:
+      213: 801228015982966867
+    second: just weapons_76
+  - first:
+      213: 7519038623287062676
+    second: just weapons_77
+  - first:
+      213: -3072023906268893780
+    second: just weapons_78
+  - first:
+      213: 1522974647130516104
+    second: just weapons_79
+  - first:
+      213: -8049452967556734515
+    second: just weapons_80
+  - first:
+      213: 5167440072488111627
+    second: just weapons_81
+  - first:
+      213: 1431138022763415964
+    second: just weapons_82
+  - first:
+      213: 2483078812280800251
+    second: just weapons_83
+  - first:
+      213: 7152595729719024434
+    second: just weapons_84
+  - first:
+      213: 9064219569895876676
+    second: just weapons_85
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: just weapons_0
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 406
+        width: 13
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb17f487a35e8e20800000000000000
+      internalID: 3354710751393029115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_1
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 383
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4060529bcf496d0800000000000000
+      internalID: -2984482780919495426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_2
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 363
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765350af5ced07cc0800000000000000
+      internalID: -3715224750696090265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_3
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 343
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf55324c7409c1d0800000000000000
+      internalID: -3330125517730521142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 367
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f0d339536b90a10800000000000000
+      internalID: 1876231060996296565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 343
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e61fc9f144585e70800000000000000
+      internalID: 9104119289070163688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_6
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 367
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a6a4042cc4029b0800000000000000
+      internalID: -5106997580252157313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_7
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 338
+        width: 8
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9d0384aef155630800000000000000
+      internalID: 3915070542162483617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_8
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 315
+        width: 12
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a62bdde4757cae850800000000000000
+      internalID: 6407152597687186026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_9
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 346
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c810a25135179a70800000000000000
+      internalID: 8833552495694321858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_10
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 323
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def6c78cc1a964950800000000000000
+      internalID: 6432998566158692333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_11
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 320
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc9946674c184310800000000000000
+      internalID: 1389391578028154050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_12
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 314
+        width: 8
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c18c0dcce21a61e0800000000000000
+      internalID: -2203928259382705719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_13
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 294
+        width: 5
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a1e0626fd2c34fd0800000000000000
+      internalID: -2358827515127995999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_14
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 294
+        width: 9
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95279f23384717ac0800000000000000
+      internalID: -3859175298835058087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_15
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 324
+        width: 31
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fafbf8d9dc74fc190800000000000000
+      internalID: -7940048669593583697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_16
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 298
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f7aca8b88780300800000000000000
+      internalID: 218557122651782937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_17
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 295
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996b5543ccb11d5e0800000000000000
+      internalID: -1886696205026216295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_18
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 274
+        width: 10
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5063bad2c67b0a9c0800000000000000
+      internalID: -3917930000561785339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 270
+        width: 8
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58daa8f1d2d5b9580800000000000000
+      internalID: -8819352996890890875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_20
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 271
+        width: 13
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c86da6d676e1279d0800000000000000
+      internalID: -2778124590567991668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_21
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 302
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46564379107315920800000000000000
+      internalID: 2977221308639896932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_22
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 275
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80660b2ec1e44ef00800000000000000
+      internalID: 1145126091228210696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_23
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 298
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb2c2f3af2bb83f0800000000000000
+      internalID: -897426912858854460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_24
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 276
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f104b4f295c0780800000000000000
+      internalID: -8715493119207923898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_25
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 270
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9f81ef03cc959f0800000000000000
+      internalID: -479127374544700952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_26
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 251
+        width: 13
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da2e473314769f80800000000000000
+      internalID: -8100159253898188075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_27
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 247
+        width: 9
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379cec3e24ab526d0800000000000000
+      internalID: -3015799579002091149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_28
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 248
+        width: 16
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb289a7c31051520800000000000000
+      internalID: 2672043313180715960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_29
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 277
+        width: 36
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 457e322df460cc150800000000000000
+      internalID: 5894092952218888020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_30
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 255
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e98c041bd20e027e0800000000000000
+      internalID: -1792186164841494370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_31
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 249
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91c282fa2dd659d0800000000000000
+      internalID: -2785796142955052644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_32
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 245
+        width: 13
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8fd164916eb22f90800000000000000
+      internalID: -6979807146160300145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_33
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 227
+        width: 9
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f494a38e9b9d0eb0800000000000000
+      internalID: -4751970926690265868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_34
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 225
+        width: 5
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203560fde41a2e5c0800000000000000
+      internalID: -4187607343379885310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_35
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 225
+        width: 10
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c349688d994dec70800000000000000
+      internalID: 9001932171130782662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_36
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 253
+        width: 34
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d717f64cb74fc10800000000000000
+      internalID: 2086428610992897433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_37
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 230
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df9af871d6c4af170800000000000000
+      internalID: 8212960901893958141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_38
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 228
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f1aa36d7537ffe0800000000000000
+      internalID: -1155395966737965231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_39
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 205
+        width: 11
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f79a045189bae80800000000000000
+      internalID: -8166266282259677360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_40
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 201
+        width: 7
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec4afef99b1c4710800000000000000
+      internalID: 1678747109324115168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_41
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 202
+        width: 15
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e359c4d9f3320d550800000000000000
+      internalID: 6183481044508644670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_42
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 231
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19819eed95cae5490800000000000000
+      internalID: -7755572006293530479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_43
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 205
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d72eb41b4f584ec90800000000000000
+      internalID: -7141435823109709187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_44
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 209
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78cd3bad76bb4150800000000000000
+      internalID: 5857976391185582206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_45
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 201
+        width: 17
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 623ce314842d2f890800000000000000
+      internalID: -7425641627806416090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_46
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 183
+        width: 10
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0a030123f9b7bd0800000000000000
+      internalID: -2631334519899119449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_47
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 178
+        width: 13
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc71a28e3d4e1f50800000000000000
+      internalID: 6854000613779406033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_48
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 179
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a15cccc3576347b70800000000000000
+      internalID: 8895795041122698522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_49
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 210
+        width: 34
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb119eaf9a9ae2e90800000000000000
+      internalID: -7048509819264101954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_50
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 159
+        width: 11
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d818723638fc3ed00800000000000000
+      internalID: 1000871705417580941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_51
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 156
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65736f2ed8f3c140800000000000000
+      internalID: 4738904866085369198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_52
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 157
+        width: 15
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baf227d59bcc64610800000000000000
+      internalID: 1605195413712940971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_53
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 186
+        width: 36
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f619646e5074fd70800000000000000
+      internalID: 9076002699772237555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_54
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 186
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1685176ffb22d13c0800000000000000
+      internalID: -4387312254120273823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_55
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 165
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48dd1b7e2c1bb38f0800000000000000
+      internalID: -559658278008529532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_56
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 183
+        width: 9
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf40d6beb9de5e90800000000000000
+      internalID: -7034946154772017188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_57
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 153
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe8e8c8ffae80e40800000000000000
+      internalID: 5623002518067777213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_58
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 136
+        width: 11
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15cc45fc38be417a0800000000000000
+      internalID: -6407237418489689007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_59
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 133
+        width: 14
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b2bb819b70c4d280800000000000000
+      internalID: -9019372516760898896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_60
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 134
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03900cdedb58b9350800000000000000
+      internalID: 6024555977322268976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_61
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 161
+        width: 36
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d2f4e4c1abd05240800000000000000
+      internalID: 4778560692479652567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_62
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 140
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 652a560c3ad4cba00800000000000000
+      internalID: 773578601703776854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_63
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 133
+        width: 9
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 674163783e29ae500800000000000000
+      internalID: 426314620663633014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_64
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 111
+        width: 11
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5fb1befe32f4250800000000000000
+      internalID: 5930998747618866609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_65
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 111
+        width: 13
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a52eb3277de2dd6a0800000000000000
+      internalID: -6422925990691085734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_66
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 110
+        width: 17
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927995bf244750b30800000000000000
+      internalID: 4252933254154917673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_67
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 139
+        width: 35
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d28915835071426a0800000000000000
+      internalID: -6475025053064783827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_68
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 117
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 485694539017afe10800000000000000
+      internalID: 2232220849678148996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_69
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 91
+        width: 9
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86530b1640bc60280800000000000000
+      internalID: -9077344779239410328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_70
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 88
+        width: 8
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19db7f7cc6d4dc450800000000000000
+      internalID: 6110625399018339729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_71
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 87
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11087936d5ca86470800000000000000
+      internalID: 8388143823080357905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_72
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 118
+        width: 35
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c2a4e233cab91060800000000000000
+      internalID: 6924771249594081986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_73
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 119
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b5b218a2fa3b780800000000000000
+      internalID: -8668392260667483329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_74
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 67
+        width: 7
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89a77e2b50de5790800000000000000
+      internalID: -7539359636131436145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_75
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 14
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460bad156dc3318a0800000000000000
+      internalID: -6335653359586201500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_76
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 65
+        width: 17
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35871cca2a88e1b00800000000000000
+      internalID: 801228015982966867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_77
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 91
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490b7715acdf85860800000000000000
+      internalID: 7519038623287062676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_78
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 95
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cada555988afd55d0800000000000000
+      internalID: -3072023906268893780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_79
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 44
+        width: 8
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ae32c5f51b22510800000000000000
+      internalID: 1522974647130516104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_80
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 41
+        width: 16
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc121908c299a4090800000000000000
+      internalID: -8049452967556734515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_81
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 41
+        width: 9
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ec5ce1e5f66b740800000000000000
+      internalID: 5167440072488111627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_82
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 73
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c994e5ff27c6cd310800000000000000
+      internalID: 1431138022763415964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_83
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 20
+        width: 10
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3cb4b160ba57220800000000000000
+      internalID: 2483078812280800251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_84
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 6
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23bd0eb8bef134360800000000000000
+      internalID: 7152595729719024434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: just weapons_85
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 18
+        width: 12
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448a9cdaca39acd70800000000000000
+      internalID: 9064219569895876676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

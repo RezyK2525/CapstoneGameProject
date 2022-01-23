@@ -5,17 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fighter
+  - Weapon
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Blocking
   - Water
   - UI
   - 
   - 
-  - Blocking
-  - Actor
   - 
   - 
   - 
@@ -28,7 +27,9 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Layer 1
+  - Layer 2
+  - Layer 3
   - 
   - 
   - 
@@ -43,14 +44,17 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Floor
-    uniqueID: 3093913905
+    uniqueID: 4189426099
     locked: 0
   - name: Actor
-    uniqueID: 2351570433
+    uniqueID: 2425651459
+    locked: 0
+  - name: Layer 2
+    uniqueID: 4250941897
     locked: 0
   - name: Interactable
-    uniqueID: 344206807
+    uniqueID: 2320653315
     locked: 0
   - name: Weapon
-    uniqueID: 164965157
+    uniqueID: 1005368883
     locked: 0
