@@ -8,11 +8,24 @@ using UnityEngine.SceneManagement;
 
 public class menuController : MonoBehaviour
 {
+    [Header("Gameplay Settings")]
+    [SerializeField] private float defaultBrightness = 1.0f;
+    [SerializeField] private bool defaultFullscreen = true;
+    [SerializeField] private TMP_Text brightnessTextValue = null;
+    [SerializeField] private Slider brightnessSlider = null;
+    [SerializeField] private Toggle fullscreenToggle = null;
+    private float tempBrightness = 1.0f;
+    public float mainBrightness = 0.2f;
+
     [Header("Volume Settings")]
     [SerializeField] private float defaultVolume = 1.0f;
-    [SerializeField] private TMP_Text volumeTextValue = null;
-    [SerializeField] private Slider volumeSlider = null;
-    private float tempVolume = 1.0f;
+    [SerializeField] private TMP_Text masterVolumeTextValue = null;
+    [SerializeField] private Slider masterVolumeSlider = null;
+    [SerializeField] private TMP_Text musicVolumeTextValue = null;
+    [SerializeField] private Slider musicVolumeSlider = null;
+    [SerializeField] private TMP_Text effectsVolumeTextValue = null;
+    [SerializeField] private Slider effectsVolumeSlider = null; 
+    private float[] tempVolume = new float[]{ 1.0f, 1.0f, 1.0f };
 
     [Header("Gameplay Settings")]
     [SerializeField] private float defaultSensitivity = 1.0f;
@@ -20,6 +33,9 @@ public class menuController : MonoBehaviour
     [SerializeField] private Slider sensitivitySlider = null;
     private float tempSensitivity = 1.0f;
     public float mainSensitivity = 0.2f;
+
+    [Header("Control Scheme")]
+
     
     [Header("Confirmation")]
     [SerializeField] private GameObject confirmationPrompt = null;
@@ -57,9 +73,7 @@ public class menuController : MonoBehaviour
             {
                 Debug.Log("No save state found for slot " + i);
                 GameObject.Find("Slot " + i + " Image").GetComponent<Image>().sprite = emptySlotSprite;
-
             }
-
         }
     }
 
@@ -145,24 +159,66 @@ public class menuController : MonoBehaviour
     }
 
     // graphics menu
+    public void SetBrightness(float brightness)
+    {
+        tempBrightness = brightness;
+        brightnessTextValue.text = brightness.ToString("0.00");
+    }
+    public void GraphicsApply()
+    {
+        if (fullscreenToggle.isOn)
+        {
+            PlayerPrefs.SetInt("masterInvertY", 1);
+            // set fullscreen on
 
+        }
+        else
+        {
+            PlayerPrefs.SetInt("masterInvertY", 0);
+            // set fullscreen false
+        }
+        mainBrightness = tempBrightness;
+        PlayerPrefs.SetFloat("brightness", tempBrightness);
+        // show prompt
+        StartCoroutine(ConfirmationBox());
+    }
+    public void SetGraphicsSettingsToCurrentVal()
+    {
+        brightnessSlider.value = mainBrightness;
+        fullscreenToggle.isOn = false;
+    }
 
     // volume menu
-    public void SetVolume(float volume)
+    public void SetMasterVolume(float volume)
     {
-        tempVolume = volume;
-        volumeTextValue.text = volume.ToString("0.0");
+        tempVolume[0] = volume;
+        masterVolumeTextValue.text = volume.ToString("0.0");
+    }
+    public void SetMusicVolume(float volume)
+    {
+        tempVolume[1] = volume;
+        musicVolumeTextValue.text = volume.ToString("0.0");
+    }
+    public void SetEffectsVolume(float volume)
+    {
+        tempVolume[2] = volume;
+        effectsVolumeTextValue.text = volume.ToString("0.0");
     }
     public void volumeApply()
     {
-        AudioListener.volume = tempVolume;
-        PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
+
+        AudioListener.volume = tempVolume[0];
+        PlayerPrefs.SetFloat("masterVolume", tempVolume[0]);
+        PlayerPrefs.SetFloat("musicVolume", tempVolume[1]);
+        PlayerPrefs.SetFloat("effectsVolume", tempVolume[2]);
         // show prompt
         StartCoroutine(ConfirmationBox());
     }
     public void SetVolumeSliderToCurrentVal()
     {
-        volumeSlider.value = AudioListener.volume;
+        masterVolumeSlider.value = AudioListener.volume;
+        //musicVolumeSlider.value = AudioListener.volume;
+        //effectsVolumeSlider.value = AudioListener.volume;
     }
 
 
@@ -184,14 +240,33 @@ public class menuController : MonoBehaviour
         sensitivitySlider.value = mainSensitivity;
     }
 
+    // control menu
+    public void ControlsApply()
+    {
+        string controlScheme = "wsad il";   // up down left right attack inventory ability 
+        mainSensitivity = tempSensitivity;
+        PlayerPrefs.SetString("controlScheme", controlScheme);
+        // show prompt
+        StartCoroutine(ConfirmationBox());
+    }
+    public void SetControlsToCurrentVal()
+    {
+        
+        //sensitivitySlider.value = mainSensitivity;
+    }
+
 
 
     public void ResetButton(string MenuType)
     {
         if (MenuType == "Sound")
         {
-            volumeSlider.value = defaultVolume;
-            SetVolume(defaultVolume);
+            masterVolumeSlider.value = defaultVolume;
+            musicVolumeSlider.value = defaultVolume;
+            effectsVolumeSlider.value = defaultVolume;
+            SetMasterVolume(defaultVolume);
+            SetMusicVolume(defaultVolume);
+            SetEffectsVolume(defaultVolume);
             volumeApply();
         }
         else if (MenuType == "Gameplay")
@@ -203,7 +278,15 @@ public class menuController : MonoBehaviour
         }
         else if (MenuType == "Graphics")
         {
-
+            brightnessTextValue.text = defaultBrightness.ToString("0.00");
+            brightnessSlider.value = defaultBrightness;
+            mainBrightness = defaultBrightness;
+            fullscreenToggle.isOn = defaultFullscreen;
+            GraphicsApply();
+        }
+        else if (MenuType == "Controls")
+        {
+            
         }
 
     }
