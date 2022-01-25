@@ -7,8 +7,6 @@ public class Weapon : Collidable
     //Damage struct
     public int damagePoint = 1;
     public float pushForce = 25;
-
-    // 
     public SpriteRenderer spriteRenderer;
 
 
@@ -41,6 +39,13 @@ public class Weapon : Collidable
         damagePoint = item.damage;
         pushForce = item.pushForce;
         spriteRenderer.sprite = item.sprite;
+    }
+
+    public void SwapHand()
+    {
+        damagePoint = 1;
+        pushForce = 10;
+        spriteRenderer.sprite = null;
     }
 
 

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Weapon weapon;
     public FloatingTextManager floatingTextManager;
     public InventoryUI inventoryUI;
+    public PotionController potionController;
 
     //resources
     public List<Sprite> playerSprites;
