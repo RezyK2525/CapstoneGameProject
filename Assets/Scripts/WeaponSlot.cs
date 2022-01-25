@@ -4,39 +4,29 @@ using UnityEngine.UI;
 public class WeaponSlot : MonoBehaviour
 {
     public Image icon;
-    public Button removeButton;
+    public Button unEquipButton;
 
-    Item item;
-
-    public void AddItem(WeaponItem newItem)
+    Equipment item;
+    
+    public void AddItem(Equipment newItem)
     {
         item = newItem;
-
         icon.sprite = item.icon;
         icon.enabled = true;
-        removeButton.interactable = true;
-      
-        Debug.Log("Equiping: " + item.name + " on weapon slot.");
+        unEquipButton.interactable = true;
     }
 
     public void ClearSlot()
     {
-
         item = null;
         icon.sprite = null;
         icon.enabled = false;
-        removeButton.interactable = false;
+        unEquipButton.interactable = false;
     }
 
     public void OnRemoveButton()
     {
-        Inventory.instance.Remove(item);
+        EquipmentManager.instance.UnEquip(0);
+        ClearSlot();
     }
-
-    public void UseItem()
-    {
-        
-
-    }
-
 }
