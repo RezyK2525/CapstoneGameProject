@@ -35,6 +35,7 @@ public class menuController : MonoBehaviour
     public float mainSensitivity = 0.2f;
 
     [Header("Control Scheme")]
+    [SerializeField] private char c_moveup = 'w';
 
     
     [Header("Confirmation")]
@@ -52,6 +53,7 @@ public class menuController : MonoBehaviour
     [Header("Save Slots")]
     public int numSaveSlots = 3;
     private int currentSlot = 0;
+    [SerializeField] private TMP_Text deleteSlotText = null;
 
     [Header("Levels To Load")]
     public string _newGameLevel;
@@ -109,6 +111,9 @@ public class menuController : MonoBehaviour
         currentSlot = slotNumber;
         // text
         GameObject.Find("Save Slot Text").GetComponent<TextMeshProUGUI>().text = "Slot " + slotNumber;
+        
+        // delete confirmation
+        deleteSlotText.text = "Are you sure you want to delete the Save data for Slot " + slotNumber+"?";
 
         // load vs new game
         if (SaveSystem.saveExists(slotNumber))
@@ -163,21 +168,22 @@ public class menuController : MonoBehaviour
     {
         tempBrightness = brightness;
         brightnessTextValue.text = brightness.ToString("0.00");
+        // RenderSettings.ambientLight = new Color(brightness, brightness, brightness, 1);
     }
     public void GraphicsApply()
     {
         if (fullscreenToggle.isOn)
         {
-            PlayerPrefs.SetInt("masterInvertY", 1);
-            // set fullscreen on
-
+            PlayerPrefs.SetInt("fullscreen", 1);
+            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
         }
         else
         {
-            PlayerPrefs.SetInt("masterInvertY", 0);
-            // set fullscreen false
+            PlayerPrefs.SetInt("fullscreen", 0);
+            Screen.fullScreenMode = FullScreenMode.Windowed; 
         }
         mainBrightness = tempBrightness;
+        RenderSettings.ambientLight = new Color(mainBrightness, mainBrightness, mainBrightness, 1);
         PlayerPrefs.SetFloat("brightness", tempBrightness);
         // show prompt
         StartCoroutine(ConfirmationBox());
@@ -185,7 +191,7 @@ public class menuController : MonoBehaviour
     public void SetGraphicsSettingsToCurrentVal()
     {
         brightnessSlider.value = mainBrightness;
-        fullscreenToggle.isOn = false;
+        fullscreenToggle.isOn = Screen.fullScreenMode == FullScreenMode.ExclusiveFullScreen;
     }
 
     // volume menu
