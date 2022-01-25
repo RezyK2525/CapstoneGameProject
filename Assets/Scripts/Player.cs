@@ -82,22 +82,4 @@ public class Player : Mover
 
     }
 
-    public void Heal(int healingAmount)
-    {
-
-
-        if (hitPoint == maxHitPoint)
-        {
-            return;
-        }
-        hitPoint += healingAmount;
-        if (hitPoint > maxHitPoint)
-        {
-            hitPoint = maxHitPoint;
-        }
-
-        GameManager.instance.ShowText("+" + healingAmount.ToString() + "hp", 25, Color.green, transform.position, Vector3.up * 30, 1.0f);
-
-    }
-
 }

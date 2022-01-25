@@ -18,7 +18,7 @@ public class Equipment : Item
 
         // Equip the item
         EquipmentManager.instance.Equip(this);
-        GameManager.instance.inventoryUI.EquipWeapon(this);
+        // Remove from inventory
         RemoveFromInventory();
     }
 }

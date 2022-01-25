@@ -20,7 +20,6 @@ public class EquipmentManager : MonoBehaviour
     public OnEquipmentChanged onEquipmentChanged;
 
     Inventory inventory;
-    public Equipment hand;
 
     void Start()
     {
@@ -61,6 +60,7 @@ public class EquipmentManager : MonoBehaviour
         {
             GameManager.instance.weapon.SwapWeapon(newItem);
 
+            // Show in Equipment Slot
 
         }
        
@@ -79,8 +79,6 @@ public class EquipmentManager : MonoBehaviour
             {
                 onEquipmentChanged.Invoke(null, oldItem);
             }
-
-            GameManager.instance.weapon.SwapHand();
         }
     }
 

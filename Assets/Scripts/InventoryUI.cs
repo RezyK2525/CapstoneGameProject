@@ -8,13 +8,8 @@ public class InventoryUI : MonoBehaviour
     
     // To cache inventory to run faster
     Inventory inventory;
+
     InventorySlot[] slots;
-
-
-    // Equipment
-    public WeaponSlot weaponSlot;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +20,7 @@ public class InventoryUI : MonoBehaviour
         inventory.OnItemChangedCallback += UpdateUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
-        //weaponSlot = GetComponent<WeaponSlot>();
+
     }
 
     // Update is called once per frame
@@ -42,7 +37,7 @@ public class InventoryUI : MonoBehaviour
     {
         Debug.Log("UPDATING UI");
 
-        for (int i = 0; i < slots.Length; i++)
+        for(int i = 0; i < slots.Length; i++)
         {
             if (i < inventory.items.Count)
             {
@@ -54,12 +49,7 @@ public class InventoryUI : MonoBehaviour
                 slots[i].ClearSlot();
             }
         }
-    }
 
-
-    public void EquipWeapon(Equipment equipment)
-    {
-        weaponSlot.AddItem(equipment);
     }
 
 }
