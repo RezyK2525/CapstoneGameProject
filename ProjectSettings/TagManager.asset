@@ -4,17 +4,24 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Fighter
-  - Weapon
+  - FireBall
+  - Enemy
+  - Terrain
+  - Chest
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Blocking
+  - 
   - Water
   - UI
   - 
   - 
+  - WhatIsChest
+  - WhatIsGround
+  - WhatIsEnemy
+  - WhatIsPlayer
+  - WhatIsFireball
   - 
   - 
   - 
@@ -25,11 +32,6 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - Layer 1
-  - Layer 2
-  - Layer 3
   - 
   - 
   - 
@@ -43,18 +45,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Floor
-    uniqueID: 4189426099
-    locked: 0
-  - name: Actor
-    uniqueID: 2425651459
-    locked: 0
-  - name: Layer 2
-    uniqueID: 4250941897
-    locked: 0
-  - name: Interactable
-    uniqueID: 2320653315
-    locked: 0
-  - name: Weapon
-    uniqueID: 1005368883
+  - name: New Layer
+    uniqueID: 1171074561
     locked: 0
