@@ -35,9 +35,24 @@ public class menuController : MonoBehaviour
     public float mainSensitivity = 0.2f;
 
     [Header("Control Scheme")]
-    [SerializeField] private char c_moveup = 'w';
+    private Dictionary<string, KeyCode> controlScheme = null;
+    private Dictionary<string, KeyCode> tempControlScheme = null;
+    private Dictionary<string, KeyCode> defaultControlScheme = new Dictionary<string, KeyCode>() {
+        { "forward",     KeyCode.W },
+        { "back",   KeyCode.S },
+        { "left",   KeyCode.A },
+        { "right",  KeyCode.D },
+        { "attack",     KeyCode.Space },
+        { "inventory",  KeyCode.I },
+        { "ability",    KeyCode.L }
+    };
+    // private bool changingControl = false;
+    private string controlToChange = null;
+    private GameObject currentKey;
+    private Color keyBg = new Color(0.6784f, 0.6549f, 0.3882f, 1);
+    [SerializeField] private Color selectedKey = new Color(0.8f, 0.5f, 0.5f, 1);
 
-    
+
     [Header("Confirmation")]
     [SerializeField] private GameObject confirmationPrompt = null;
 
@@ -94,7 +109,6 @@ public class menuController : MonoBehaviour
         SceneManager.LoadScene("Map" + data.stageNumber + "_" + data.stageNumber);
         // SceneManager.LoadScene("stage" + data.stageNumber + "-" + data.sceneNumber); TO BE USED WHEN STAGES ARE NAME CORRECTLY
     }
-
     public void DeleteGame()
     {
         SaveSystem.DeleteSave(currentSlot);
@@ -133,7 +147,6 @@ public class menuController : MonoBehaviour
             deleteBtn.SetActive(false);
         }
     }
-
     public void setCopySaveSlots()
     {
 
@@ -155,7 +168,6 @@ public class menuController : MonoBehaviour
         }
 
     }
-
 
     // main menu menu
     public void ExitButton()
@@ -227,7 +239,6 @@ public class menuController : MonoBehaviour
         //effectsVolumeSlider.value = AudioListener.volume;
     }
 
-
     // gameplay menu
     public void SetSensitivity(float sensitivity)
     {
@@ -247,19 +258,71 @@ public class menuController : MonoBehaviour
     }
 
     // control menu
+    public void controlChange(string control)
+    {
+        controlToChange = control;
+       //  changingControl = true;
+    }
+    void OnGUI()
+    {
+
+        
+        if (currentKey != null)
+        {
+            // Debug.Log(currentKey.name);
+            Event e = Event.current;
+            if (e.isKey)
+            {
+                tempControlScheme[currentKey.name] = e.keyCode;
+                currentKey.GetComponent<TextMeshProUGUI>().text = e.keyCode.ToString();
+                currentKey.GetComponent<TextMeshProUGUI>().color = keyBg;
+                currentKey = null;
+            }
+        }
+    }
+    public void ChangeKey(GameObject clicked)
+    {
+        if (currentKey != null)
+        {
+            currentKey.GetComponent<TextMeshProUGUI>().color = keyBg;
+            currentKey = null;
+        }
+        currentKey = clicked;
+        currentKey.GetComponent<TextMeshProUGUI>().color = selectedKey;
+    }
+
     public void ControlsApply()
     {
-        string controlScheme = "wsad il";   // up down left right attack inventory ability 
-        mainSensitivity = tempSensitivity;
-        PlayerPrefs.SetString("controlScheme", controlScheme);
+        controlScheme = new Dictionary<string, KeyCode>(tempControlScheme);
+        string controlString = "";// front back left right attack ability inventory
+        foreach (KeyValuePair<string, KeyCode> control in controlScheme)
+        {
+            controlString += control.Value.ToString();
+        }
+        PlayerPrefs.SetString("controlScheme", controlString);
         // show prompt
         StartCoroutine(ConfirmationBox());
     }
     public void SetControlsToCurrentVal()
     {
+        if (controlScheme == null)
+        {
+            controlScheme = new Dictionary<string, KeyCode>(defaultControlScheme);
+        }
+        if (tempControlScheme == null)
+        {
+            tempControlScheme = new Dictionary<string, KeyCode>(controlScheme);
+        }
+        currentKey = null;
+        // Debug.Log(GameObject.Find("forward"));
+        foreach (KeyValuePair<string, KeyCode> control in controlScheme)
+        {
+            GameObject.Find(control.Key).GetComponent<TextMeshProUGUI>().text = control.Value.ToString();
+            GameObject.Find(control.Key).GetComponent<TextMeshProUGUI>().color = keyBg;
+        }
         
-        //sensitivitySlider.value = mainSensitivity;
     }
+
 
 
 
@@ -292,7 +355,8 @@ public class menuController : MonoBehaviour
         }
         else if (MenuType == "Controls")
         {
-            
+            tempControlScheme = defaultControlScheme;
+            ControlsApply();
         }
 
     }
