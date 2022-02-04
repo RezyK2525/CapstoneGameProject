@@ -5,6 +5,7 @@ using UnityEngine.UI;
 //using UnityEngine.UIElements;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class menuController : MonoBehaviour
 {
@@ -46,8 +47,8 @@ public class menuController : MonoBehaviour
         { "inventory",  KeyCode.I },
         { "ability",    KeyCode.L }
     };
-    // private bool changingControl = false;
     private string controlToChange = null;
+    private InputActionRebindingExtensions.RebindingOperation rebindingOperation;
     private GameObject currentKey;
     private Color keyBg = new Color(0.6784f, 0.6549f, 0.3882f, 1);
     [SerializeField] private Color selectedKey = new Color(0.8f, 0.5f, 0.5f, 1);
@@ -300,8 +301,16 @@ public class menuController : MonoBehaviour
             controlString += control.Value.ToString();
         }
         PlayerPrefs.SetString("controlScheme", controlString);
+
+        rebindingOperation = jumpAction.action.PerformInteractiveRebinding().WithControlsExcluding("Mouse").OnMatchWaitForAnother(0.1f).OnComplete(operation => RebindComplete()).Start();
         // show prompt
         StartCoroutine(ConfirmationBox());
+    }
+    private void RebindComplete()
+    {
+        int bindingIndex = jumpaction.action.GetBindingIndexForControl(jumptaction.controls[0]);
+
+        rebindingOperation.Dispose();
     }
     public void SetControlsToCurrentVal()
     {
@@ -355,7 +364,12 @@ public class menuController : MonoBehaviour
         }
         else if (MenuType == "Controls")
         {
-            tempControlScheme = defaultControlScheme;
+            tempControlScheme = new Dictionary<string, KeyCode>(defaultControlScheme);
+            foreach (KeyValuePair<string, KeyCode> control in tempControlScheme)
+            {
+                GameObject.Find(control.Key).GetComponent<TextMeshProUGUI>().text = control.Value.ToString();
+                GameObject.Find(control.Key).GetComponent<TextMeshProUGUI>().color = keyBg;
+            }
             ControlsApply();
         }
 
