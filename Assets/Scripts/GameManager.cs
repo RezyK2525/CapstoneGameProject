@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
+
 public class GameManager : MonoBehaviour
 {
     // Instance
@@ -9,17 +11,20 @@ public class GameManager : MonoBehaviour
 
     // references
     public Player player;
-    public Weapon weapon;
-    public FloatingTextManager floatingTextManager;
-    public InventoryUI inventoryUI;
-    public PotionController potionController;
+
+    public EnemyAiMovement enemyAiMovement;
+    //public Weapon weapon;
+    //public FloatingTextManager floatingTextManager;
+    //public InventoryUI inventoryUI;
+    //public PotionController potionController;
+    //public Equipment equipment;
 
     //resources
-    public List<Sprite> playerSprites;
-    public List<Sprite> weaponSprites;
+    //public List<Sprite> playerSprites;
+    //public List<Sprite> weaponSprites;
 
-    //logic
-    public int money;
+    //logic Moved Into Player??? 
+    //public int money;
 
     private void Awake()
     {
@@ -29,9 +34,9 @@ public class GameManager : MonoBehaviour
         {
 
             Destroy(gameObject);
-            Destroy(inventoryUI.gameObject);
+            //Destroy(inventoryUI.gameObject);
             Destroy(player.gameObject);
-            Destroy(floatingTextManager.gameObject);
+            //Destroy(floatingTextManager.gameObject);
      
             return;
         }
@@ -46,7 +51,7 @@ public class GameManager : MonoBehaviour
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
 
-        floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
+        //floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
 
     }
 
@@ -58,15 +63,15 @@ public class GameManager : MonoBehaviour
     public void SaveState()
     {
 
-        string s = money.ToString() + "|";
+        //string s = money.ToString() + "|";
         // s += inventory.ToString();
 
-        PlayerPrefs.SetString("SaveState", s);
+        //PlayerPrefs.SetString("SaveState", s);
         Debug.Log("SaveState");
 
         int slotNumber = int.Parse(PlayerPrefs.GetString("SaveSlotNumber"));
-        PlayerData pd = new PlayerData(s);
-        SaveSystem.SavePlayer(slotNumber, pd);
+        //PlayerData pd = new PlayerData(s);
+        //SaveSystem.SavePlayer(slotNumber, pd);
 
     }
 
@@ -82,7 +87,7 @@ public class GameManager : MonoBehaviour
         
         
         //Change Character
-        money = int.Parse(data[0]);
+        //money = int.Parse(data[0]);
 
        
         //change inventory
