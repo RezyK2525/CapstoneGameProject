@@ -17,7 +17,7 @@ public class Fireball : MonoBehaviour {
 
     public LayerMask whatIsEnemies, whatIsPlayer;
 
-    public int fireballDamage;
+    public float fireballDamage;
     public float explosionRange;
     public float maxLifetime;
     public bool explodeOnTouch = true;
@@ -94,12 +94,12 @@ public class Fireball : MonoBehaviour {
         if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
 
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsEnemies);
-        for (int i = 0; i < enemies.Length; i++)
+        for (int p = 0; p < enemies.Length; p++)
         {
             //get component of enemy and call take damage
             
             //example
-            enemies[i].GetComponent<Fighter>().ReceiveMagicDamage(fireballDamage);
+            enemies[p].GetComponent<Fighter>().ReceiveMagicDamage(fireballDamage);
 
 
         }

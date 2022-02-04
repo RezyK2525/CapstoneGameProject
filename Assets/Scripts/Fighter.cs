@@ -5,8 +5,9 @@ using UnityEngine;
 public class Fighter : MonoBehaviour
 {
 
-    public double hitPoint = 10;
-    public int maxHitPoint = 10;
+    public EnemyAiMovement enemyAiMovement;
+    public float hitPoint = 100f;
+    public float maxHitPoint = 100f;
     public float pushRecoverySpeed = 0.2f;
 
     //immunity
@@ -42,16 +43,22 @@ public class Fighter : MonoBehaviour
     
     
     
-    public void ReceiveMagicDamage(int dmg){
+    public void ReceiveMagicDamage(float dmg){
 
         if(Time.time - lastImmune > immuneTime){
             lastImmune = Time.time;
+
+            GameManager.instance.enemyAiMovement.enemyHp -= dmg;
             hitPoint -= dmg;// + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength);
             //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
             //GameManager.instance.ShowText((dmg.damageAmount + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength)).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
 
-
+            GameManager.instance.enemyAiMovement.healthBar.healthBarUI.SetActive(true);
+            GameManager.instance.enemyAiMovement.healthBar.SetHealth(GameManager.instance.enemyAiMovement.enemyHp);
+            //enemyAiMovement.healthBar.healthBarUI.SetActive(true);
+            //enemyAiMovement.healthBar.SetHealth(hitPoint);
+            
             if(hitPoint <= 0){
                 hitPoint = 0;
                 Death();
@@ -61,7 +68,7 @@ public class Fighter : MonoBehaviour
     }
 
     
-    public void PlayerReceiveMagicDamage(int dmg)
+    public void PlayerReceiveMagicDamage(float dmg)
     {
         //double dmgReduction = 0.2 * GameManager.instance.player.defense;
         
@@ -74,13 +81,13 @@ public class Fighter : MonoBehaviour
             //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
             //GameManager.instance.ShowText((dmg.damageAmount - dmgReduction).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
+            GameManager.instance.player.healthBar.SetHealth(GameManager.instance.player.hp);
 
+            //if(hitPoint <= 0){
+                //hitPoint = 0;
+                //Death();
 
-            if(hitPoint <= 0){
-                hitPoint = 0;
-                Death();
-
-            }
+            //}
         }
     }
     

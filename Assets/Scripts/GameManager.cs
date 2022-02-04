@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     // references
     public Player player;
+
+    public EnemyAiMovement enemyAiMovement;
     //public Weapon weapon;
     //public FloatingTextManager floatingTextManager;
     //public InventoryUI inventoryUI;

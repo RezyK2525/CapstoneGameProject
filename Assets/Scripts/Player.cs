@@ -8,15 +8,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class Player : Fighter
     {
         //Players Stats
-        public double hp = 100;
-        public double maxHP = 100;
-        public double mana = 100;
+        public float hp = 100;
+        public float maxHP = 100;
+        public float mana = 100;
+        public float maxMana = 100;
+        public float manaRegenRate = 2f;
     
         public double strength = 25;
         public double defense = 25;
         public double spellPower = 25;
         
         public int money;
+        
+        public HealthBar healthBar;
+        public HealthBar manaBar;
         
         
         //Players important things
@@ -32,6 +37,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
             mouseLook.Init (transform, cam.transform);
+            
+            healthBar.SetMaxHealth(maxHP);
+            manaBar.SetMaxHealth(maxMana);
             
             
             DontDestroyOnLoad(gameObject);
@@ -123,7 +131,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             hp += healingAmount;
-            if (hp > maxHitPoint)
+            if (hp > maxHP)
             {
                 hp = maxHP;
             }

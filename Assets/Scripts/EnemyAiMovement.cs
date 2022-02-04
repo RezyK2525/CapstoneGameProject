@@ -9,9 +9,10 @@ public class EnemyAiMovement : Fighter
 {
     
     //Enemies stats
-    //public float enemyHP;
-    
-    
+    public float enemyHp = 100f;
+    public float enemyMaxHp = 100f;
+
+    public HealthBar healthBar;
 
     public float projectileSpeed;
     public float projectileUpwardDirection;
@@ -44,6 +45,13 @@ public class EnemyAiMovement : Fighter
     {
         //player = GameObject.Find("PlayerObj").transform;
         agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Start()
+    {
+        //enemyHp = enemyMaxHp;
+        healthBar.SetMaxHealth(enemyMaxHp);
+        healthBar.healthBarUI.SetActive(false);
     }
 
     private void Update()
