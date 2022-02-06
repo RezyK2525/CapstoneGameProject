@@ -11,18 +11,17 @@ public class GameManager : MonoBehaviour
 
     // references
     public Player player;
-
+    //public InventoryUI inventoryUI;
     public EnemyAiMovement enemyAiMovement;
+
+
     //public Weapon weapon;
     //public FloatingTextManager floatingTextManager;
-    //public InventoryUI inventoryUI;
     //public PotionController potionController;
-    //public Equipment equipment;
-
+    //public Equipment equipment
     //resources
     //public List<Sprite> playerSprites;
     //public List<Sprite> weaponSprites;
-
     //logic Moved Into Player??? 
     //public int money;
 
@@ -30,7 +29,7 @@ public class GameManager : MonoBehaviour
     {
 
 
-        if (GameManager.instance != null)
+        if (instance != null)
         {
 
             Destroy(gameObject);
@@ -42,8 +41,10 @@ public class GameManager : MonoBehaviour
         }
 
         instance = this;
+        player = FindObjectOfType<Player>();
         SceneManager.sceneLoaded += LoadState;
         DontDestroyOnLoad(gameObject);
+        
 
     }
 

@@ -14,9 +14,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public float maxMana = 100;
         public float manaRegenRate = 2f;
     
-        public double strength = 25;
-        public double defense = 25;
-        public double spellPower = 25;
+        public float strength = 25;
+        public float defense = 25;
+        public float spellPower = 25;
         
         public int money;
         
