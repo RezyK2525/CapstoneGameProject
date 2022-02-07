@@ -55,7 +55,7 @@ public class Spell : MonoBehaviour
     private void RestoreMana()
     {
         GameManager.instance.player.mana += GameManager.instance.player.manaRegenRate;
-        GameManager.instance.player.manaBar.SetHealth(GameManager.instance.player.mana);
+        ////////GameManager.instance.player.manaBar.SetHealth(GameManager.instance.player.mana);
         notFull = true;
     }
 
@@ -68,7 +68,7 @@ public class Spell : MonoBehaviour
             if (GameManager.instance.player.mana >= manaCost)
             {
                 GameManager.instance.player.mana -= manaCost;
-                GameManager.instance.player.manaBar.SetHealth(GameManager.instance.player.mana);
+                ////////GameManager.instance.player.manaBar.SetHealth(GameManager.instance.player.mana);
                 Cast(); 
             }
             else

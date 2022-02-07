@@ -5,37 +5,24 @@ using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
 {
-	public GameObject healthBarUI;
-	public Slider slider;
-	public Gradient gradient;
-	public Image fill;
+	// public GameObject healthBarUI;
+	public StatusBar healthBar;
+	public StatusBar manaBar;
 
-	public void SetMaxHealth(float health)
-	{
-		slider.maxValue = health;
-		slider.value = health;
-
-		fill.color = gradient.Evaluate(1f);
-	}
-
-	public void SetHealth(float health)
-	{
-		slider.value = health;
-
-		//fill.color = gradient.Evaluate(slider.normalizedValue);
-	}
     
-	/*// Start is called before the first frame update
+	// Start is called before the first frame update
     void Start()
     {
-        
-    }
+		healthBar.SetMax(GameManager.instance.player.maxHP);
+		manaBar.SetMax(GameManager.instance.player.maxMana);
+	}
 
     // Update is called once per frame
     void Update()
     {
-        
-    }*/
+		healthBar.SetValue(GameManager.instance.player.hp);
+		manaBar.SetValue(GameManager.instance.player.mana);
+	}
 
 
 }

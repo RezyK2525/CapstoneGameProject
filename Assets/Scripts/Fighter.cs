@@ -54,8 +54,12 @@ public class Fighter : MonoBehaviour
 
             //GameManager.instance.ShowText((dmg.damageAmount + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength)).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
 
+
+
             GameManager.instance.enemyAiMovement.healthBar.healthBarUI.SetActive(true);
-            GameManager.instance.enemyAiMovement.healthBar.SetHealth(GameManager.instance.enemyAiMovement.enemyHp);
+            GameManager.instance.enemyAiMovement.healthBar.SetValue(GameManager.instance.enemyAiMovement.enemyHp);
+            
+            
             //enemyAiMovement.healthBar.healthBarUI.SetActive(true);
             //enemyAiMovement.healthBar.SetHealth(hitPoint);
             
@@ -81,7 +85,7 @@ public class Fighter : MonoBehaviour
             //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
             //GameManager.instance.ShowText((dmg.damageAmount - dmgReduction).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
-            GameManager.instance.player.healthBar.SetHealth(GameManager.instance.player.hp);
+            ////////GameManager.instance.player.healthBar.SetHealth(GameManager.instance.player.hp);
 
             //if(hitPoint <= 0){
                 //hitPoint = 0;

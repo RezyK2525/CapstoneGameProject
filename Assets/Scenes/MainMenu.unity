@@ -1674,7 +1674,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fac454c03d2aa1c43b7b87c2d9ceb87a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64907086e259f154cbd1374112e01771, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2179,7 +2179,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1105976354}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6658,7 +6658,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1105976354}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9510,8 +9510,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 957111828}
   - {fileID: 211641220}
+  - {fileID: 957111828}
   m_Father: {fileID: 1666661504}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12240,7 +12240,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 189c051a4ee125b4a967f85ecf21ddec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dadee62eb781fdc4ea88759efcf5120d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14466,7 +14466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultBrightness: 1
   defaultFullscreen: 1
-  brightnessTextValue: {fileID: 1947516924}
+  brightnessTextValue: {fileID: 0}
   brightnessSlider: {fileID: 1442576132}
   fullscreenToggle: {fileID: 1666661505}
   mainBrightness: 0.2
@@ -14480,18 +14480,18 @@ MonoBehaviour:
   defaultSensitivity: 1
   sensitivityTextValue: {fileID: 727288416}
   sensitivitySlider: {fileID: 1705598035}
-  mainSensitivity: 4
-  selectedKey: {r: 0.9433962, g: 0.21057934, b: 0.11124954, a: 1}
+  mainSensitivity: 0.2
+  selectedKey: {r: 0.8, g: 0.5, b: 0.5, a: 1}
   confirmationPrompt: {fileID: 513990209}
-  slotSprite: {fileID: 21300000, guid: bff2ef68b56562749833bf202faa1cfa, type: 3}
-  emptySlotSprite: {fileID: 21300000, guid: fac454c03d2aa1c43b7b87c2d9ceb87a, type: 3}
+  slotSprite: {fileID: 21300000, guid: 5207a562d7631f54e81b2d9ba1280c05, type: 3}
+  emptySlotSprite: {fileID: 21300000, guid: 64907086e259f154cbd1374112e01771, type: 3}
   newGameBtn: {fileID: 2058209508}
   loadGameBtn: {fileID: 1090182896}
   copyBtn: {fileID: 1834735763}
   deleteBtn: {fileID: 1693589683}
   numSaveSlots: 3
   deleteSlotText: {fileID: 1893353417}
-  _newGameLevel: Start
+  _newGameLevel: Micah_scene
 --- !u!4 &1780838119
 Transform:
   m_ObjectHideFlags: 0
@@ -16496,7 +16496,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fac454c03d2aa1c43b7b87c2d9ceb87a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64907086e259f154cbd1374112e01771, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17555,7 +17555,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fac454c03d2aa1c43b7b87c2d9ceb87a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64907086e259f154cbd1374112e01771, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

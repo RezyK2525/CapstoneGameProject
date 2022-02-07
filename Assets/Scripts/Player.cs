@@ -20,8 +20,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         
         public int money;
         
-        public HealthBar healthBar;
-        public HealthBar manaBar;
+  /*      public HealthBar healthBar;
+        public HealthBar manaBar;*/
         
         
         //Players important things
@@ -38,8 +38,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Capsule = GetComponent<CapsuleCollider>();
             mouseLook.Init (transform, cam.transform);
             
-            healthBar.SetMaxHealth(maxHP);
-            manaBar.SetMaxHealth(maxMana);
+            /*healthBar.SetMaxHealth(maxHP);
+            manaBar.SetMaxHealth(maxMana);*/
             
             
             DontDestroyOnLoad(gameObject);
