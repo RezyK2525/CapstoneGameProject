@@ -19,10 +19,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public float spellPower = 25;
         
         public int money;
-        
-  /*      public HealthBar healthBar;
-        public HealthBar manaBar;*/
-        
+
         
         //Players important things
         //private SpriteRenderer spriteRenderer;
