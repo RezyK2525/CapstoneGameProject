@@ -38,13 +38,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Capsule = GetComponent<CapsuleCollider>();
             mouseLook.Init (transform, cam.transform);
             
-<<<<<<< HEAD
+
             healthBar.SetMax(maxHP);
             manaBar.SetMax(maxMana);
-=======
-            /*healthBar.SetMaxHealth(maxHP);
-            manaBar.SetMaxHealth(maxMana);*/
->>>>>>> d884476ade1b6a72278daa933d6592ba3c3840bc
+
             
             
             DontDestroyOnLoad(gameObject);

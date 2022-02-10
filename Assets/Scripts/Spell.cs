@@ -66,11 +66,11 @@ public class Spell : MonoBehaviour
     private void RestoreMana()
     {
         GameManager.instance.player.mana += GameManager.instance.player.manaRegenRate;
-<<<<<<< HEAD
+
         GameManager.instance.player.manaBar.SetValue(GameManager.instance.player.mana);
-=======
+
         ////////GameManager.instance.player.manaBar.SetHealth(GameManager.instance.player.mana);
->>>>>>> d884476ade1b6a72278daa933d6592ba3c3840bc
+
         notFull = true;
     }
 
@@ -82,15 +82,14 @@ public class Spell : MonoBehaviour
         {
             if (GameManager.instance.player.mana >= fireBallSettings.manaCostFireball)
             {
-<<<<<<< HEAD
+
                 GameManager.instance.player.mana -= fireBallSettings.manaCostFireball;
                 GameManager.instance.player.manaBar.SetValue(GameManager.instance.player.mana);
                 CastFireball(); 
-=======
-                GameManager.instance.player.mana -= manaCost;
+
+
                 ////////GameManager.instance.player.manaBar.SetHealth(GameManager.instance.player.mana);
-                Cast(); 
->>>>>>> d884476ade1b6a72278daa933d6592ba3c3840bc
+
             }
             else
             {

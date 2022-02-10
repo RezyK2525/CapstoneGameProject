@@ -21,11 +21,11 @@ public class StatusBar : MonoBehaviour
 	public void SetValue(float health)
 	{
 		slider.value = health;
-<<<<<<< HEAD:Assets/Scripts/StatusBar.cs
+
 		fill.color = gradient.Evaluate(slider.normalizedValue);
-=======
+
 		//fill.color = gradient.Evaluate(slider.normalizedValue);
->>>>>>> d884476ade1b6a72278daa933d6592ba3c3840bc:Assets/Scripts/HealthBar.cs
+
 	}
 
 }

@@ -85,11 +85,11 @@ public class Fighter : MonoBehaviour
             //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
             //GameManager.instance.ShowText((dmg.damageAmount - dmgReduction).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
-<<<<<<< HEAD
+
             GameManager.instance.player.healthBar.SetValue(GameManager.instance.player.hp);
-=======
+
             ////////GameManager.instance.player.healthBar.SetHealth(GameManager.instance.player.hp);
->>>>>>> d884476ade1b6a72278daa933d6592ba3c3840bc
+
 
             //if(hitPoint <= 0){
                 //hitPoint = 0;

@@ -1993,7 +1993,6 @@ CapsuleCollider:
   m_Height: 6.8550262
   m_Direction: 1
   m_Center: {x: 0.01479339, y: 3.2410731, z: -0.4488194}
-<<<<<<< HEAD
 --- !u!114 &951833663 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 37394412, guid: a967089208f523246bbb4911dd5cde5c, type: 3}
@@ -2005,8 +2004,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9afc881dee2594ebf857f6d9562728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
->>>>>>> d884476ade1b6a72278daa933d6592ba3c3840bc
 --- !u!1 &974032351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2457,7 +2454,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpCam: {fileID: 1949826455}
-<<<<<<< HEAD
   spellPrefab:
   - {fileID: 179432, guid: 965716b1b5cefa948bbf456c7b433186, type: 3}
   fireBallSettings:
@@ -2467,15 +2463,6 @@ MonoBehaviour:
     manaCostFireball: 20
     timeBetweenCastsFireball: 1
   timeBetweenManaRegen: 2
-=======
-  attackPoint: {fileID: 577471186}
-  fireBall: {fileID: 179432, guid: 965716b1b5cefa948bbf456c7b433186, type: 3}
-  fireForce: 30
-  upwardForce: 2
-  timeBetweenCasts: 1
-  timeBetweenManaRegen: 2
-  manaCost: 20
->>>>>>> d884476ade1b6a72278daa933d6592ba3c3840bc
   allowInvoke: 1
 --- !u!114 &1436861880
 MonoBehaviour:
@@ -2489,18 +2476,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a909a3c5c7aeb479ca5262b8ec3879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   hitPoint: 100
   maxHitPoint: 100
   pushRecoverySpeed: 0.2
   healthBar: {fileID: 1086590492}
   manaBar: {fileID: 822798173}
-=======
-  enemyAiMovement: {fileID: 0}
-  hitPoint: 100
-  maxHitPoint: 100
-  pushRecoverySpeed: 0.2
->>>>>>> d884476ade1b6a72278daa933d6592ba3c3840bc
   hp: 100
   maxHP: 100
   mana: 100
@@ -3495,11 +3475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1436861880}
-<<<<<<< HEAD
   enemyAiMovement: {fileID: 951833663}
-=======
-  enemyAiMovement: {fileID: 0}
->>>>>>> d884476ade1b6a72278daa933d6592ba3c3840bc
 --- !u!4 &2003055349
 Transform:
   m_ObjectHideFlags: 0
@@ -3559,11 +3535,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-<<<<<<< HEAD
   m_NavMeshData: {fileID: 23800000, guid: b5d5ad3e542933a438fcd95adc5d5373, type: 2}
-=======
-  m_NavMeshData: {fileID: 23800000, guid: 4e5dc51f8c79c214b83f3f339fca744c, type: 2}
->>>>>>> d884476ade1b6a72278daa933d6592ba3c3840bc
 --- !u!4 &2063941451
 Transform:
   m_ObjectHideFlags: 0
@@ -3790,11 +3762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8090455383919653091, guid: 193f2572e092c594b871cc2e927da8b5, type: 3}
       propertyPath: m_Direction
-<<<<<<< HEAD
       value: 1
-=======
-      value: 0
->>>>>>> d884476ade1b6a72278daa933d6592ba3c3840bc
       objectReference: {fileID: 0}
     - target: {fileID: 8090455383919653092, guid: 193f2572e092c594b871cc2e927da8b5, type: 3}
       propertyPath: fill
