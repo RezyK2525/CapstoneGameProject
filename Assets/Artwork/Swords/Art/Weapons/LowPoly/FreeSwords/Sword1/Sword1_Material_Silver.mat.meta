@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: fa5baed6be3065a459482872af5d2796
+=======
+<<<<<<< HEAD:Assets/Artwork/Swords/Art/Weapons/LowPoly/FreeSwords/Sword1/Sword1_Material_Gold.mat.meta
+guid: 76ec0f7c7d6c188409b0ddd47bd763d8
+=======
+guid: fa5baed6be3065a459482872af5d2796
+>>>>>>> d884476ade1b6a72278daa933d6592ba3c3840bc:Assets/Artwork/Swords/Art/Weapons/LowPoly/FreeSwords/Sword1/Sword1_Material_Silver.mat.meta
+>>>>>>> d884476ade1b6a72278daa933d6592ba3c3840bc
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
