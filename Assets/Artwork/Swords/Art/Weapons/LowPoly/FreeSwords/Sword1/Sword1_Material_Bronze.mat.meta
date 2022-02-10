@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 603aa49c288eb5a499ecadfa9d63e3c6
+=======
+<<<<<<< HEAD:Assets/Scenes/micah_scene/NavMesh-NavMesh.asset.meta
+guid: b5d5ad3e542933a438fcd95adc5d5373
+=======
+guid: 603aa49c288eb5a499ecadfa9d63e3c6
+>>>>>>> d884476ade1b6a72278daa933d6592ba3c3840bc:Assets/Artwork/Swords/Art/Weapons/LowPoly/FreeSwords/Sword1/Sword1_Material_Bronze.mat.meta
+>>>>>>> d884476ade1b6a72278daa933d6592ba3c3840bc
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
