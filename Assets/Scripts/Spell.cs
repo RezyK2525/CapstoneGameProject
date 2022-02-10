@@ -8,21 +8,34 @@ public class Spell : MonoBehaviour
     
     //ref to cam
     public Camera fpCam;
-    public Transform attackPoint;
+    //public Transform attackPoint;
 
-    public GameObject fireBall;
+    //public GameObject fireBall;
+    
+    //Spell array
+    [SerializeField] private GameObject[] spellPrefab;
 
-    public float fireForce, upwardForce;
+    [Serializable]
+    public class FireBallSettings
+    {
+        public float fireForce, upwardForce;
+        
+        public Transform attackPointFireball;
+        
+        public float manaCostFireball = 20;
+        
+        public float timeBetweenCastsFireball;
+        
+    }
 
-    public float timeBetweenCasts;
+    public FireBallSettings fireBallSettings = new FireBallSettings();
+    
 
     public float timeBetweenManaRegen;
 
     bool readyToCast, cast;
 
     private bool notFull = true;
-
-    public float manaCost = 20;
 
     public bool allowInvoke = true;
 
@@ -40,7 +53,6 @@ public class Spell : MonoBehaviour
             notFullMana();
         }
     }
-
     private void notFullMana()
     {
         if (notFull)
@@ -51,11 +63,10 @@ public class Spell : MonoBehaviour
         }
         
     }
-
     private void RestoreMana()
     {
         GameManager.instance.player.mana += GameManager.instance.player.manaRegenRate;
-        GameManager.instance.player.manaBar.SetHealth(GameManager.instance.player.mana);
+        GameManager.instance.player.manaBar.SetValue(GameManager.instance.player.mana);
         notFull = true;
     }
 
@@ -65,11 +76,11 @@ public class Spell : MonoBehaviour
 
         if (cast && readyToCast)
         {
-            if (GameManager.instance.player.mana >= manaCost)
+            if (GameManager.instance.player.mana >= fireBallSettings.manaCostFireball)
             {
-                GameManager.instance.player.mana -= manaCost;
-                GameManager.instance.player.manaBar.SetHealth(GameManager.instance.player.mana);
-                Cast(); 
+                GameManager.instance.player.mana -= fireBallSettings.manaCostFireball;
+                GameManager.instance.player.manaBar.SetValue(GameManager.instance.player.mana);
+                CastFireball(); 
             }
             else
             {
@@ -81,7 +92,7 @@ public class Spell : MonoBehaviour
 
     }
 
-    private void Cast()
+    private void CastFireball()
     {
         readyToCast = false;
 
@@ -99,18 +110,18 @@ public class Spell : MonoBehaviour
         }
         
         //calculate direction
-        Vector3 direction = targetPoint - attackPoint.position;
+        Vector3 direction = targetPoint - fireBallSettings.attackPointFireball.position;
         
-        Rigidbody rb = Instantiate(fireBall, attackPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
+        Rigidbody rb = Instantiate(spellPrefab[0], fireBallSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
         rb.transform.forward = direction.normalized;
         
-        rb.AddForce(direction.normalized * fireForce, ForceMode.Impulse);
-        rb.AddForce(fpCam.transform.up * upwardForce, ForceMode.Impulse);
+        rb.AddForce(direction.normalized * fireBallSettings.fireForce, ForceMode.Impulse);
+        rb.AddForce(fpCam.transform.up * fireBallSettings.upwardForce, ForceMode.Impulse);
 
         //invoke resetCast
         if (allowInvoke)
         {
-            Invoke("ResetCast",timeBetweenCasts);
+            Invoke("ResetCast",fireBallSettings.timeBetweenCastsFireball);
             allowInvoke = false;
         }
 
@@ -124,3 +135,4 @@ public class Spell : MonoBehaviour
     
     
 }
+

@@ -26,6 +26,8 @@
     <setting file="file://$PROJECT_DIR$/../DarkKnightHeroCapstone/Assets/Scripts/Fighter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../DarkKnightHeroCapstone/Assets/Scripts/Collectable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../DarkKnightHeroCapstone/Assets/Scripts/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Desktop/CapstoneBackup/Assets/Scripts/Spell.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Desktop/CapstoneBackup/Assets/Scripts/HealthBar.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -76,6 +78,7 @@
       <workItem from="1643405818733" duration="20489000" />
       <workItem from="1643538531040" duration="10900000" />
       <workItem from="1643960959477" duration="12594000" />
+      <workItem from="1644463283958" duration="1673000" />
     </task>
     <servers />
   </component>

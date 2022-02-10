@@ -7,6 +7,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (CapsuleCollider))]
     public class Player : Fighter
     {
+        
+        public StatusBar healthBar;
+        public StatusBar manaBar;
         //Players Stats
         public float hp = 100;
         public float maxHP = 100;
@@ -14,15 +17,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public float maxMana = 100;
         public float manaRegenRate = 2f;
     
-        public double strength = 25;
-        public double defense = 25;
-        public double spellPower = 25;
+        public float strength = 25;
+        public float defense = 25;
+        public float spellPower = 25;
         
         public int money;
-        
-        public HealthBar healthBar;
-        public HealthBar manaBar;
-        
+
         
         //Players important things
         //private SpriteRenderer spriteRenderer;
@@ -38,8 +38,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Capsule = GetComponent<CapsuleCollider>();
             mouseLook.Init (transform, cam.transform);
             
-            healthBar.SetMaxHealth(maxHP);
-            manaBar.SetMaxHealth(maxMana);
+            healthBar.SetMax(maxHP);
+            manaBar.SetMax(maxMana);
             
             
             DontDestroyOnLoad(gameObject);

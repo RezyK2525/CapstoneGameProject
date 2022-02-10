@@ -12,7 +12,7 @@ public class EnemyAiMovement : Fighter
     public float enemyHp = 100f;
     public float enemyMaxHp = 100f;
 
-    public HealthBar healthBar;
+    public StatusBar healthBar;
 
     public float projectileSpeed;
     public float projectileUpwardDirection;
@@ -50,7 +50,7 @@ public class EnemyAiMovement : Fighter
     private void Start()
     {
         //enemyHp = enemyMaxHp;
-        healthBar.SetMaxHealth(enemyMaxHp);
+        healthBar.SetMax(enemyMaxHp);
         healthBar.healthBarUI.SetActive(false);
     }
 
