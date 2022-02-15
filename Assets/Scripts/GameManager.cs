@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Player player;
     //public InventoryUI inventoryUI;
     public EnemyAiMovement enemyAiMovement;
+    public bool isPaused;
 
 
     //public Weapon weapon;
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
         instance = this;
         player = FindObjectOfType<Player>();
         SceneManager.sceneLoaded += LoadState;
+        isPaused = false;
         DontDestroyOnLoad(gameObject);
         
 
@@ -99,8 +101,22 @@ public class GameManager : MonoBehaviour
         Debug.Log("LoadState");
     }
 
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        isPaused = true;
+        GameManager.instance.player.mouseLook.SetCursorLock(false);
+    }
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        isPaused = false;
+        GameManager.instance.player.mouseLook.SetCursorLock(true);
+    }
+    public void ExitGame()
+    {
+         SceneManager.LoadScene("MainMenu");
 
-
-
+    }
 }
 
