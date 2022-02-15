@@ -9,7 +9,7 @@ public class InventoryUI : MonoBehaviour
     // To cache inventory to run faster
     Inventory inventory;
     InventorySlot[] slots;
-
+    bool toggle = false;
 
     // Equipment
     //public WeaponSlot weaponSlot;
@@ -28,13 +28,17 @@ public class InventoryUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         if (Input.GetButtonDown("Inventory"))
         {
+        
+                
+
+
             UpdateUI();
             inventoryUI.SetActive(!inventoryUI.activeSelf);
-
-            
-  
+           
         }
     }
 

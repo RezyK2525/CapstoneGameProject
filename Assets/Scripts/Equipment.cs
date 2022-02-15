@@ -5,8 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Equipment", menuName = "Inventory/Equipment")]
 public class Equipment : Item
 {
-    // Inventory UI
-    public Sprite icon;
+   
     
     // Equipment Stat Modifiers
     //public float defenseModifier;

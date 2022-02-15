@@ -51,21 +51,36 @@ public class Shop : MonoBehaviour
         setCoinsUI();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            CloseShop();
+        }
+    }
+
     public void OnBuyItemClick(int itemIndex)
     {
+        Debug.Log(itemIndex);
 
+     
         if (GameManager.instance.player.money >= ShopItemsList[itemIndex].value)
         {
             // Purchase Item
             GameManager.instance.player.money -= ShopItemsList[itemIndex].value;
-            ShopItemsList[itemIndex].isPurchased = true;
+            //ShopItemsList[itemIndex].isPurchased = true;      // Chech if purchased
 
-            // disable the buy button
+            // disable the buy button  -- DONT DELETE THIS ---- //
             buyBtn = ShopScrollView.GetChild(itemIndex).GetChild(2).GetComponent<Button>();
             disableBtn();
 
+            // Destroy the whole card object
+            //Destroy(ShopScrollView.GetChild(itemIndex).gameObject);
+
             // Change UI Text for coins
             setCoinsUI();
+            Inventory.instance.Add(ShopItemsList[itemIndex]);
+            Debug.Log("Item successfully purchased");
         }
         else
         {
@@ -91,7 +106,6 @@ public class Shop : MonoBehaviour
 
         // Bring cursor back
         GameManager.instance.player.mouseLook.SetCursorLock(false);
-        //Cursor.lockState = CursorLockMode.None;
     }
 
     public void CloseShop()

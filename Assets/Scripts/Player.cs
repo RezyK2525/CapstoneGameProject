@@ -7,7 +7,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (CapsuleCollider))]
     public class Player : Fighter
     {
-        
+        public Animator anim;
         public StatusBar healthBar;
         public StatusBar manaBar;
         //Players Stats
@@ -50,6 +50,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         
         private void Update()
         {
+            anim.SetFloat("vertical", Input.GetAxis("Vertical"));
+            anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
 
             if (Input.GetKeyDown (KeyCode.Escape)) {
                 Debug.Break ();
@@ -61,8 +63,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_Jump = true;
             }
-            
-            
+
+            if (Input.GetMouseButton(0))
+            {
+                // user attack
+                anim.SetTrigger("attack");
+            }
+
             /*
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -75,7 +82,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             
             */
-            
+
         }
         
         
