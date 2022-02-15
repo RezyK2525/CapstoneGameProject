@@ -131,32 +131,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         */
         
         
-        public void Heal(int healingAmount)
-        {
-
-
-            if (hp == maxHP)
-            {
-                return;
-            }
-            hp += healingAmount;
-            if (hp > maxHP)
-            {
-                hp = maxHP;
-            }
-
-            //GameManager.instance.ShowText("+" + healingAmount.ToString() + "hp", 25, Color.green, transform.position, Vector3.up * 30, 1.0f);
-
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         [Serializable]
         public class MovementSettings
