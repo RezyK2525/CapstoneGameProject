@@ -26,6 +26,10 @@ public class InventorySlot : MonoBehaviour {
         icon.enabled = false;
         removeButton.interactable = false;
     }
+    public bool isEmpty()
+    {
+        return item == null;
+    }
 
     public void OnRemoveButton()
     {

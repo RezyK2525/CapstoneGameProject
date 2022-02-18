@@ -15,6 +15,11 @@ public class Item : ScriptableObject
         // Something might happen
 
         Debug.Log("Using " + name);
+
+        GameManager.instance.hotbar.AddItem(this);
+        //Debug.Log(GameManager.instance.hotbar);
+        //Debug.Log(this);
+
     }
 
     public void RemoveFromInventory()

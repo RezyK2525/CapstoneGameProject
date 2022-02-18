@@ -45,9 +45,10 @@ public class HUDController : MonoBehaviour
             }
 
 		}
+	
 
-			// update values
-			healthBar.SetValue(GameManager.instance.player.hp);
+		// update values
+		healthBar.SetValue(GameManager.instance.player.hp);
 		manaBar.SetValue(GameManager.instance.player.mana);
 
 		healthValue.text = ""+GameManager.instance.player.hp;

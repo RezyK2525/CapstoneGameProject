@@ -32,10 +32,17 @@ public class InventoryUI : MonoBehaviour
 
         if (Input.GetButtonDown("Inventory"))
         {
-        
-                
+            if (toggle)
+            {
+                GameManager.instance.player.mouseLook.SetCursorLock(true);
+                toggle = false;
 
-
+            }
+            else
+            {
+                GameManager.instance.player.mouseLook.SetCursorLock(false);
+                toggle = true;
+            }
             UpdateUI();
             inventoryUI.SetActive(!inventoryUI.activeSelf);
            

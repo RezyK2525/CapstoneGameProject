@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     //public InventoryUI inventoryUI;
     public EnemyAiMovement enemyAiMovement;
     public bool isPaused;
-
+    public PotionController potionController;
+    public Hotbar hotbar;
 
     //public Weapon weapon;
     //public FloatingTextManager floatingTextManager;
@@ -36,13 +37,15 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             //Destroy(inventoryUI.gameObject);
             Destroy(player.gameObject);
+            // Destroy(hotbar.gameObject);
             //Destroy(floatingTextManager.gameObject);
-     
+
             return;
         }
 
         instance = this;
         player = FindObjectOfType<Player>();
+        // hotbar = FindObjectOfType<Hotbar>();
         SceneManager.sceneLoaded += LoadState;
         isPaused = false;
         DontDestroyOnLoad(gameObject);
