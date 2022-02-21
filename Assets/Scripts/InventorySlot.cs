@@ -43,4 +43,14 @@ public class InventorySlot : MonoBehaviour {
             item.Use();
         }
     }
+
+    public void moveToInventory()
+    {
+        if (item != null)
+        {
+            Debug.Log("moving item to inventory");
+            Inventory.instance.Add(item);
+            ClearSlot();
+        }
+    }
 }

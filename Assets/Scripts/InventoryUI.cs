@@ -9,7 +9,7 @@ public class InventoryUI : MonoBehaviour
     // To cache inventory to run faster
     Inventory inventory;
     InventorySlot[] slots;
-    bool toggle = false;
+    public bool isOpen = false;
 
     // Equipment
     //public WeaponSlot weaponSlot;
@@ -32,20 +32,21 @@ public class InventoryUI : MonoBehaviour
 
         if (Input.GetButtonDown("Inventory"))
         {
-            if (toggle)
+            if (isOpen)
             {
                 GameManager.instance.player.mouseLook.SetCursorLock(true);
-                toggle = false;
+                isOpen = false;
 
             }
             else
             {
                 GameManager.instance.player.mouseLook.SetCursorLock(false);
-                toggle = true;
+                isOpen = true;
             }
             UpdateUI();
-            inventoryUI.SetActive(!inventoryUI.activeSelf);
-           
+            inventoryUI.SetActive(isOpen);
+            // inventoryUI.SetActive(!inventoryUI.activeSelf);
+
         }
     }
 

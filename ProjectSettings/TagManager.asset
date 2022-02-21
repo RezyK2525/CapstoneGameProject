@@ -17,7 +17,7 @@ TagManager:
   - Water
   - UI
   - Inventory
-  - HUD
+  - HideFromCamera
   - WhatIsChest
   - WhatIsGround
   - WhatIsEnemy
