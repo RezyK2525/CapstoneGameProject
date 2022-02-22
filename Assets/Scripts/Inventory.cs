@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour
     public int space = 12;
     
 
-    public bool Add (Item item)
+    public bool Add(Item item)
     {
         if (!item.isDefaultItem)
         {
@@ -45,9 +45,10 @@ public class Inventory : MonoBehaviour
                 OnItemChangedCallback.Invoke();
         }
         return true;
+        
     }
 
-    public void Remove (Item item)
+    public void Remove(Item item)
     {
         items.Remove(item);
 

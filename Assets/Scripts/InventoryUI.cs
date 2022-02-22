@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
 
     public Transform itemsParent;
     public GameObject inventoryUI;
+    public GameObject crossHair;
     
     // To cache inventory to run faster
     Inventory inventory;
@@ -34,19 +36,20 @@ public class InventoryUI : MonoBehaviour
         {
             if (isOpen)
             {
+                GameManager.instance.player.allowAttack = true;
                 GameManager.instance.player.mouseLook.SetCursorLock(true);
                 isOpen = false;
-
+                
             }
             else
             {
+                GameManager.instance.player.allowAttack = false;
                 GameManager.instance.player.mouseLook.SetCursorLock(false);
                 isOpen = true;
             }
             UpdateUI();
-            inventoryUI.SetActive(isOpen);
-            // inventoryUI.SetActive(!inventoryUI.activeSelf);
-
+            inventoryUI.SetActive(!inventoryUI.activeSelf);
+            crossHair.SetActive(!crossHair.activeSelf);
         }
     }
 

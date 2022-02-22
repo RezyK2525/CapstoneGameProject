@@ -21,16 +21,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public float defense = 25;
         public float spellPower = 25;
         
+
         public int money;
 
         
         //Players important things
-        //private SpriteRenderer spriteRenderer;
-        //public Animator animator;
         public bool isMoving;
         private float cooldown = 0.5f;
         private float lastSwing;
-        
+        public bool allowAttack = true;
         
         private void Start()
         {
@@ -66,30 +65,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if (Input.GetMouseButton(0))
             {
-                // user attack
-                anim.SetTrigger("attack");
-            }
-
-            /*
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (Time.time - lastSwing > cooldown)
+                if (allowAttack)
                 {
-                    lastSwing = Time.time;
-                    Swing();
-
+                    // user attack
+                    anim.SetTrigger("attack");
                 }
             }
-            
-            */
 
         }
         
-        
-        private void Swing()
-        {
-            //animator.SetTrigger("Swing");
-        }
+      
         
         
         /*

@@ -22,11 +22,11 @@ public class Fighter : MonoBehaviour
     
     /*
     //all fighters can receivedamage/die
-    protected virtual void ReceiveDamage(Damage dmg){
+    protected virtual void ReceiveDamage(float dmg){
 
         if(Time.time - lastImmune > immuneTime){
             lastImmune = Time.time;
-            //hitPoint -= dmg + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength);
+            hitPoint -= dmg + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength);
             pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
             //GameManager.instance.ShowText((dmg.damageAmount + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength)).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
@@ -34,7 +34,7 @@ public class Fighter : MonoBehaviour
 
             if(hitPoint <= 0){
                 hitPoint = 0;
-                Death();
+                //Death();
 
             }
         }

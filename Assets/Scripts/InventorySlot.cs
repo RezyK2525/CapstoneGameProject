@@ -7,7 +7,7 @@ public class InventorySlot : MonoBehaviour {
     public Image icon;
     public Button removeButton;
 
-    Item item;
+    public Item item;
 
     public void AddItem (Item newItem)
     {
@@ -36,21 +36,37 @@ public class InventorySlot : MonoBehaviour {
         Inventory.instance.Remove(item);
     }
 
-    public void UseItem ()
+    public void AddToHotBar()
     {
         if (item != null)
         {
-            item.Use();
+            Debug.Log("Added: " + item.name + " to hotbar.");
+            bool added = GameManager.instance.hotbar.AddItem(item);
+            if(added)
+                item.RemoveFromInventory();
         }
     }
 
-    public void moveToInventory()
+    public void AddToInventory()
     {
         if (item != null)
         {
-            Debug.Log("moving item to inventory");
-            Inventory.instance.Add(item);
-            ClearSlot();
+            Debug.Log("Added: " + item.name + " to Inventory.");
+            bool added = Inventory.instance.Add(item);
+            if (added)
+               GameManager.instance.hotbar.RemoveItem(item);
+           
+        }
+    }
+
+    public void UseItem ()
+    {
+        // Click an item in the inventory
+
+        if (item != null)
+        {
+            // Use Item
+            item.Use();
         }
     }
 }

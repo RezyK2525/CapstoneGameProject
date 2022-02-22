@@ -26,6 +26,8 @@ public class Shop : MonoBehaviour
     GameObject ItemTemplate;
     GameObject g;
     Button buyBtn;
+    public GameObject mainHUD;
+    
 
     void Start()
     {
@@ -46,6 +48,7 @@ public class Shop : MonoBehaviour
             buyBtn.interactable = !ShopItemsList[i].isPurchased;
             buyBtn.AddEventListener(i, OnBuyItemClick);
         }
+
 
         Destroy(ItemTemplate);
         setCoinsUI();
@@ -106,6 +109,12 @@ public class Shop : MonoBehaviour
 
         // Bring cursor back
         GameManager.instance.player.mouseLook.SetCursorLock(false);
+
+        // Pause game
+        Time.timeScale = 0;
+
+        mainHUD.SetActive(!mainHUD.activeSelf);
+        
     }
 
     public void CloseShop()
@@ -114,6 +123,11 @@ public class Shop : MonoBehaviour
 
         // Bring cursor back
         GameManager.instance.player.mouseLook.lockCursor = true;
+
+        // Resume game
+        Time.timeScale = 1;
+
+        mainHUD.SetActive(!mainHUD.activeSelf);
     }
 
 }

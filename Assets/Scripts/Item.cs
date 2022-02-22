@@ -9,17 +9,13 @@ public class Item : ScriptableObject
     public bool isPurchased = false;
     public int value;
 
-    public virtual void Use ()
+    public virtual void Use()
     {
         // Use the item
         // Something might happen
-
         Debug.Log("Using " + name);
 
-        GameManager.instance.hotbar.AddItem(this);
-        //Debug.Log(GameManager.instance.hotbar);
-        //Debug.Log(this);
-
+        RemoveFromHotbar();
     }
 
     public void RemoveFromInventory()
@@ -28,4 +24,8 @@ public class Item : ScriptableObject
 
     }
 
+    public void RemoveFromHotbar()
+    {
+        GameManager.instance.hotbar.RemoveItem(this);
+    }
 }

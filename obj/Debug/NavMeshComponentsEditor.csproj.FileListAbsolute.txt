@@ -1,0 +1,2 @@
+C:\Users\Strelitzia\Desktop\Dark Night Hero\obj\Debug\NavMeshComponentsEditor.csproj.AssemblyReference.cache
+C:\Users\Strelitzia\Desktop\Dark Night Hero\obj\Debug\NavMeshComponentsEditor.csproj.CoreCompileInputs.cache
