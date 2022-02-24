@@ -123,7 +123,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 38725
+  controlID: 188
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 342}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 38726
+  controlID: 39
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 38751
+  controlID: 110
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -364,7 +364,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -431,9 +431,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 613.77277, y: 322.19464, z: -373.81577}
+    m_Target: {x: 247.21185, y: 55.56475, z: -2448.8745}
     speed: 2
-    m_Value: {x: 613.77277, y: 322.19464, z: -373.81577}
+    m_Value: {x: 247.21185, y: 55.56475, z: -2448.8745}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -484,9 +484,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 411.95355
+    m_Target: 197.86176
     speed: 2
-    m_Value: 411.95355
+    m_Value: 197.86176
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -661,7 +661,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 78f3ffffd4f4ffff6afbffff
+      m_ExpandedIDs: ee20ffff5075ffff9486ffffaa96ffff06deffff2efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -723,22 +723,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/TextMesh Pro/Resources/Fonts & Materials
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/TextMesh Pro/Resources/Fonts & Materials
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Programming\cSharp\CapstoneGameProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 195}
-    m_SelectedIDs: e4740300
-    m_LastClickedID: 226532
-    m_ExpandedIDs: 000000003c550000a6590000a8590000aa590000ac590000ae590000b0590000b2590000b4590000b6590000b8590000ba590000bc590000be590000c0590000205a0000dc74030000ca9a3b
+    m_SelectedIDs: 105a0000
+    m_LastClickedID: 23056
+    m_ExpandedIDs: 0000000080550000f6590000f8590000fa590000fc590000fe590000005a0000025a0000045a0000065a0000085a00000a5a00000c5a00000e5a0000105a0000aa5a0000ae5a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -766,7 +766,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 2c4f0200
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000003c550000a6590000a8590000aa590000ac590000ae590000b0590000b2590000b4590000b6590000b8590000ba590000bc590000be590000c059000000ca9a3b
+    m_ExpandedIDs: 0000000080550000f6590000f8590000fa590000fc590000fe590000005a0000025a0000045a0000065a0000085a00000a5a00000c5a00000e5a0000105a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -818,7 +818,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 71}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 199
