@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
-public class Spell : MonoBehaviour
+public class SpellUser : MonoBehaviour
 {
     
     //ref to cam
@@ -24,7 +25,7 @@ public class Spell : MonoBehaviour
         
         public float manaCostFireball = 20;
         
-        public float timeBetweenCastsFireball;
+        public int timeBetweenCastsFireball;
         
     }
 
@@ -46,7 +47,17 @@ public class Spell : MonoBehaviour
 
     private void Update()
     {
-        MyInput();
+
+        if (GameManager.instance.spellController.spellSettings.isFireball)
+        {
+            GameManager.instance.spellController.spellSettings.isFireball = false;
+            Debug.Log("IS FIREBALL IS TRUE");
+            MyInput();
+        }
+        
+
+        
+        
         if (GameManager.instance.player.mana < GameManager.instance.player.maxMana)
         {
             
@@ -76,13 +87,16 @@ public class Spell : MonoBehaviour
 
     private void MyInput()
     {
-        cast = Input.GetKeyDown(KeyCode.F);
+        cast = true;
+        Debug.Log("Inside MyInput");
 
         if (cast && readyToCast)
         {
+            Debug.Log("cast and ready to cast");
             if (GameManager.instance.player.mana >= fireBallSettings.manaCostFireball)
             {
 
+                Debug.Log("call cast fireball");
                 GameManager.instance.player.mana -= fireBallSettings.manaCostFireball;
                 GameManager.instance.player.manaBar.SetValue(GameManager.instance.player.mana);
                 CastFireball(); 
@@ -132,12 +146,14 @@ public class Spell : MonoBehaviour
         {
             Invoke("ResetCast",fireBallSettings.timeBetweenCastsFireball);
             allowInvoke = false;
+            
         }
 
     }
 
     private void ResetCast()
     {
+        
         readyToCast = true;
         allowInvoke = true;
     }
