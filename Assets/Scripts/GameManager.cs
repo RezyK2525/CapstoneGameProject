@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public EnemyAiMovement enemyAiMovement;
     public bool isPaused;
     public PotionController potionController;
+    public SpellController spellController;
     public Hotbar hotbar;
 
     //public Weapon weapon;
