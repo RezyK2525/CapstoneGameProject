@@ -5,9 +5,10 @@ using UnityEngine.UI;
 //using UnityEngine.UIElements;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 //using UnityEngine.InputSystem;
 
-public class menuController : MonoBehaviour
+public class menuController : MonoBehaviourPunCallbacks
 {
     [Header("Gameplay Settings")]
     [SerializeField] private float defaultBrightness = 1.0f;
@@ -76,6 +77,11 @@ public class menuController : MonoBehaviour
     private string levelToLoad;
     // [SerializeField] private GameObject noSavedGameDialog = null;
 
+    [Header("Mulitplayer Panels/Inputs")]
+    public GameObject LoadingScreen;
+    public GameObject LobbyPanel;
+    public TMP_InputField hostInput;
+    public TMP_InputField joinInput;
 
     // game save
     public void setSlots()
@@ -381,4 +387,45 @@ public class menuController : MonoBehaviour
         confirmationPrompt.SetActive(false);
     }
 
+
+
+    // multiplayer stuff
+    public void ConnectToServer()
+    {
+        PhotonNetwork.ConnectUsingSettings();
+    }
+    public override void OnConnectedToMaster()
+    {
+        PhotonNetwork.JoinLobby();
+    }
+
+    //public void OnJoinedLobby()
+    public override void OnJoinedLobby()
+    {
+        //SceneManager.LoadScene("MainMenu");
+        LoadingScreen.SetActive(false);
+        LobbyPanel.SetActive(true);
+    }
+
+    public void CreateRoom()
+    {
+        // Photon.Realtime.RoomOptions roomOptions = new Photon.Realtime.RoomOptions();
+        // roomOptions.IsVisible = false;  roomOptions.MaxPlayers = 4;
+        // PhotonNetwork.CreateRoom(hostInput.text, roomOptions);
+        PhotonNetwork.CreateRoom(hostInput.text);
+
+    }
+    public void DiconnectFromServer()
+    {
+        PhotonNetwork.Disconnect();
+    }
+    public void JoinRoom()
+    {
+        PhotonNetwork.JoinRoom(joinInput.text);
+    }
+    public override void OnJoinedRoom()
+    {
+        Debug.Log("Joined room");
+        PhotonNetwork.LoadLevel("Micah_scene");
+    }
 }

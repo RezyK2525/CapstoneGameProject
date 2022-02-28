@@ -1,8 +1,9 @@
-[Ll]ibrary/
+Library/
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
+Logs/
 Assets/AssetStoreTools*
 
 # Visual Studio cache directory
@@ -29,7 +30,6 @@ ExportedObj/
 *.pidb.meta
 *.pdb.meta
 
-*.log
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
