@@ -9,6 +9,7 @@ TagManager:
   - Terrain
   - Chest
   - Item
+  - Weapon
   layers:
   - Default
   - TransparentFX

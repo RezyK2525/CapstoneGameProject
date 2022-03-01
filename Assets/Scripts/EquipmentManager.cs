@@ -20,7 +20,9 @@ public class EquipmentManager : MonoBehaviour
     public OnEquipmentChanged onEquipmentChanged;
 
     Inventory inventory;
-    public Equipment hand;
+
+    // Weapon Holder
+    public Transform weaponHolder;
 
     void Start()
     {
@@ -59,17 +61,33 @@ public class EquipmentManager : MonoBehaviour
         // Equip Weapon
         if (slotIndex == 0)
         {
-            ///GameManager.instance.weapon.SwapWeapon(newItem);
+            Vector3 pos = weaponHolder.position;
+            // Create new Item and place it in the weapon holder
+            Instantiate(newItem.prefab, pos, Quaternion.identity, weaponHolder);
+            //GameObject Sword = GameObject.Instantiate(newItem.prefab).gameObject;
+            //Sword.transform.SetParent(weaponHolder);
+            //weapon.transform.SetPositionAndRotation(pos, id.normalized);
+            //weapon.transform.parent = weaponHolder;
+            //weapon.transform.set
+            
+            
 
-
+            // GameManager.instance.weapon.SwapWeapon(newItem);
         }
-       
+
     }
 
     public void UnEquip(int slotIndex)
     {
         if (currentEquipment[slotIndex] != null)
         {
+            if(weaponHolder.childCount > 0)
+            {
+                GameObject oldWeapon = weaponHolder.GetChild(0).gameObject;
+                Destroy(oldWeapon);
+            }
+
+
             Equipment oldItem = currentEquipment[slotIndex];
             inventory.Add(oldItem);
 

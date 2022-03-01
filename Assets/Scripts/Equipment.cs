@@ -18,17 +18,21 @@ public class Equipment : Item
     public float maxManaModifier;
     public float manaRegenRateModifier;
 
+    // Prefab holder
+    public GameObject prefab;
+
     // Equipment system
     public EquipmentSlot equipSlot;
 
     public override void Use()
     {
-        base.Use();
+        //base.Use();
 
         // Equip the item
-        //EquipmentManager.instance.Equip(this);
-        ///GameManager.instance.inventoryUI.EquipWeapon(this);
-        RemoveFromInventory();
+        EquipmentManager.instance.Equip(this);
+        //GameManager.instance.inventoryUI.EquipWeapon(this);
+        //RemoveFromInventory();
+        // Need to remove from Hotbar and into Equipment Slot
     }
 }
 
@@ -36,7 +40,5 @@ public enum EquipmentSlot
 {
         Weapon,
         Spell,
-        Spell2,
-        Potion,
-        Potion2,
+        Spell2
 }
