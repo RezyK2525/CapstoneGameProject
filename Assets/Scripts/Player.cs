@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Photon.Pun;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -23,7 +24,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         
 
         public int money;
-
+        public PhotonView view;
         
         //Players important things
         public bool isMoving;
@@ -41,34 +42,42 @@ namespace UnityStandardAssets.Characters.FirstPerson
             healthBar.SetMax(maxHP);
             manaBar.SetMax(maxMana);
 
-            
-            
-            DontDestroyOnLoad(gameObject);
+            view = GetComponent<PhotonView>();
+            if (view.IsMine)
+            {
+                GameManager.instance.player = this;
+                cam = GameManager.instance.cam;
+            }
+           // DontDestroyOnLoad(gameObject);
         }
         
         
         private void Update()
         {
-            anim.SetFloat("vertical", Input.GetAxis("Vertical"));
-            anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
-
-            if (Input.GetKeyDown (KeyCode.Escape)) {
-                Debug.Break ();
-            }
-
-            RotateView();
-
-            if (Input.GetButtonDown("Jump") && !m_Jump)
+            if (view.IsMine)
             {
-                m_Jump = true;
-            }
 
-            if (Input.GetMouseButton(0))
-            {
-                if (allowAttack)
+                anim.SetFloat("vertical", Input.GetAxis("Vertical"));
+                anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
+
+                if (Input.GetKeyDown (KeyCode.Escape)) {
+                    Debug.Break ();
+                }
+
+                RotateView();
+
+                if (Input.GetButtonDown("Jump") && !m_Jump)
                 {
-                    // user attack
-                    anim.SetTrigger("attack");
+                    m_Jump = true;
+                }
+
+                if (Input.GetMouseButton(0))
+                {
+                    if (allowAttack)
+                    {
+                        // user attack
+                        anim.SetTrigger("attack");
+                    }
                 }
             }
 
@@ -188,24 +197,27 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
-            GroundCheck();
-            Vector2 input = GetInput();
-
-            if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
+            if (view.IsMine)
             {
-                // always move along the camera forward as it is the direction that it being aimed at
-                Vector3 desiredMove = cam.transform.forward*input.y + cam.transform.right*input.x;
-                desiredMove = Vector3.ProjectOnPlane(desiredMove, m_GroundContactNormal).normalized;
 
-                desiredMove.x = desiredMove.x*movementSettings.CurrentTargetSpeed;
-                desiredMove.z = desiredMove.z*movementSettings.CurrentTargetSpeed;
-                desiredMove.y = desiredMove.y*movementSettings.CurrentTargetSpeed;
-                if (m_RigidBody.velocity.sqrMagnitude <
-                    (movementSettings.CurrentTargetSpeed*movementSettings.CurrentTargetSpeed))
+                GroundCheck();
+                Vector2 input = GetInput();
+
+                if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
                 {
-                    m_RigidBody.AddForce(desiredMove*SlopeMultiplier(), ForceMode.Impulse);
+                    // always move along the camera forward as it is the direction that it being aimed at
+                    Vector3 desiredMove = cam.transform.forward*input.y + cam.transform.right*input.x;
+                    desiredMove = Vector3.ProjectOnPlane(desiredMove, m_GroundContactNormal).normalized;
+
+                    desiredMove.x = desiredMove.x*movementSettings.CurrentTargetSpeed;
+                    desiredMove.z = desiredMove.z*movementSettings.CurrentTargetSpeed;
+                    desiredMove.y = desiredMove.y*movementSettings.CurrentTargetSpeed;
+                    if (m_RigidBody.velocity.sqrMagnitude <
+                        (movementSettings.CurrentTargetSpeed*movementSettings.CurrentTargetSpeed))
+                    {
+                        m_RigidBody.AddForce(desiredMove*SlopeMultiplier(), ForceMode.Impulse);
+                    }
                 }
-            }
 
             if (m_IsGrounded)
             {
@@ -218,28 +230,29 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_RigidBody.drag = 10f;
                 }
 
-                if (m_Jump)
+                    if (m_Jump)
+                    {
+                        m_RigidBody.drag = 0f;
+                        m_RigidBody.velocity = new Vector3(m_RigidBody.velocity.x, 0f, m_RigidBody.velocity.z);
+                        m_RigidBody.AddForce(new Vector3(0f, movementSettings.JumpForce, 0f), ForceMode.Impulse);
+                        m_Jumping = true;
+                    }
+
+                    if (!m_Jumping && Mathf.Abs(input.x) < float.Epsilon && Mathf.Abs(input.y) < float.Epsilon && m_RigidBody.velocity.magnitude < 1f)
+                    {
+                        m_RigidBody.Sleep();
+                    }
+                }
+                else
                 {
                     m_RigidBody.drag = 0f;
-                    m_RigidBody.velocity = new Vector3(m_RigidBody.velocity.x, 0f, m_RigidBody.velocity.z);
-                    m_RigidBody.AddForce(new Vector3(0f, movementSettings.JumpForce, 0f), ForceMode.Impulse);
-                    m_Jumping = true;
+                    if (m_PreviouslyGrounded && !m_Jumping)
+                    {
+                        StickToGroundHelper();
+                    }
                 }
-
-                if (!m_Jumping && Mathf.Abs(input.x) < float.Epsilon && Mathf.Abs(input.y) < float.Epsilon && m_RigidBody.velocity.magnitude < 1f)
-                {
-                    m_RigidBody.Sleep();
-                }
+                m_Jump = false;
             }
-            else
-            {
-                m_RigidBody.drag = 0f;
-                if (m_PreviouslyGrounded && !m_Jumping)
-                {
-                    StickToGroundHelper();
-                }
-            }
-            m_Jump = false;
         }
 
 

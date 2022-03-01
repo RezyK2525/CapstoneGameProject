@@ -6,6 +6,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class GameManager : MonoBehaviour
 {
+
+
     // Instance
     public static GameManager instance;
 
@@ -18,6 +20,10 @@ public class GameManager : MonoBehaviour
     public PotionController potionController;
     public SpellController spellController;
     public Hotbar hotbar;
+    public Camera cam;
+
+    public bool isMultiplayer = false;
+
 
     //public Weapon weapon;
     //public FloatingTextManager floatingTextManager;
