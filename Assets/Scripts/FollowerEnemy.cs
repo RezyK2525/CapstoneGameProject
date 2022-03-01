@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
-public class EnemyAiMovement : Fighter
+public class FollowerEnemy : Fighter
 {
     
     //Enemies stats
@@ -38,7 +38,7 @@ public class EnemyAiMovement : Fighter
     public GameObject projectile;
     
     //States
-    public float sightRange, attackRange;
+    public float sightRange, attackRange, alertRange;
     public bool playerInSightRange, playerInAttackRange;
 
     private void Awake()
@@ -56,15 +56,17 @@ public class EnemyAiMovement : Fighter
 
     private void Update()
     {
-        
+        float teamDistance = Vector3.Distance(GameManager.instance.seekerEnemy.transform.position, transform.position);
         float distance = Vector3.Distance(player.position, transform.position);
 
-        if (distance <= sightRange)
+        if (distance <= sightRange || (teamDistance <= alertRange && GameManager.instance.seekerEnemy.playerInSightRange) )
         {
+            Debug.Log("Player Found");
             playerInSightRange = true;
         }
         else
         {
+            Debug.Log("Player NOT Found");
             playerInSightRange = false;
         }
         
@@ -187,5 +189,8 @@ public class EnemyAiMovement : Fighter
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, alertRange);
     }
 }
+

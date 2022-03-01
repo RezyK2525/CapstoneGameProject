@@ -8,6 +8,7 @@ public class Fireball : MonoBehaviour {
     public Vector3 startDirection;
     public float startMagnitude;
     public ForceMode forceMode;
+    public Transform player;
 
     public GameObject fieryEffect;
     public GameObject smokeEffect;
@@ -40,6 +41,11 @@ public class Fireball : MonoBehaviour {
 */
     public void Push(Vector3 direction, float magnitude)
     {
+        
+        // Helps the enemy shoot at the player more accurately 
+        //transform.LookAt(player);
+        // Might have to change for the player
+        
         Vector3 dir = direction.normalized;
         rgbd.AddForce(dir * magnitude, forceMode);
     }

@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Player player;
     //public InventoryUI inventoryUI;
     public EnemyAiMovement enemyAiMovement;
+    public SeekerEnemy seekerEnemy;
     public bool isPaused;
     public PotionController potionController;
     public SpellController spellController;

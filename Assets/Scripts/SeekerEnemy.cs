@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
-public class EnemyAiMovement : Fighter
+public class SeekerEnemy : Fighter
 {
     
     //Enemies stats
@@ -189,3 +189,4 @@ public class EnemyAiMovement : Fighter
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
 }
+
