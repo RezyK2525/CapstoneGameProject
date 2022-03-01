@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.031968802, g: 0.23031747, b: 0.39013597, a: 1}
+  m_IndirectSpecularColor: {r: 0.031966317, g: 0.2303155, b: 0.39013404, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -509,6 +509,8 @@ MonoBehaviour:
   potionController: {fileID: 11400000, guid: 6f7ba103f1ed1854fa24fae4e80f5c29, type: 2}
   spellController: {fileID: 11400000, guid: e0d3b98ab46b5354fbcb0dee962fadbd, type: 2}
   hotbar: {fileID: 0}
+  cam: {fileID: 0}
+  isMultiplayer: 0
 --- !u!4 &274036321
 Transform:
   m_ObjectHideFlags: 0
@@ -1175,6 +1177,7 @@ MonoBehaviour:
   defense: 25
   spellPower: 25
   money: 0
+  view: {fileID: 0}
   isMoving: 0
   allowAttack: 1
   cam: {fileID: 963194227}
@@ -1301,6 +1304,33 @@ MonoBehaviour:
     timeBetweenCastsFireball: 0
   timeBetweenManaRegen: 2
   allowInvoke: 1
+--- !u!1 &885733855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6184816919916829527, guid: 8ec1f96751af1504a89c9bafba85d31e, type: 3}
+  m_PrefabInstance: {fileID: 1380184886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &885733861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885733855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &928286923 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000010252498714, guid: a967089208f523246bbb4911dd5cde5c, type: 3}
@@ -1345,9 +1375,6 @@ MonoBehaviour:
   hitPoint: 100
   maxHitPoint: 100
   pushRecoverySpeed: 0.2
-  immuneTime: 0.5
-  lastImmune: 0
-  pushDirection: {x: 0, y: 0, z: 0}
   enemyHp: 100
   enemyMaxHp: 100
   healthBar: {fileID: 196954125}
@@ -1356,15 +1383,15 @@ MonoBehaviour:
   agent: {fileID: 928286925}
   player: {fileID: 883785608}
   whatIsGround:
+    serializedVersion: 2
     m_Bits: 512
   whatIsPlayer:
+    serializedVersion: 2
     m_Bits: 2048
   attackPoint: {fileID: 82216553}
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointSet: 0
   walkPointRange: 10
   timeBetweenAttacks: 1.5
-  alreadyAttacked: 0
   projectile: {fileID: 179432, guid: 965716b1b5cefa948bbf456c7b433186, type: 3}
   sightRange: 15
   attackRange: 10
@@ -2223,6 +2250,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6184816919682282937, guid: 8ec1f96751af1504a89c9bafba85d31e, type: 3}
+      propertyPath: view
+      value: 
+      objectReference: {fileID: 885733861}
     - target: {fileID: 6184816919682282937, guid: 8ec1f96751af1504a89c9bafba85d31e, type: 3}
       propertyPath: manaBar
       value: 

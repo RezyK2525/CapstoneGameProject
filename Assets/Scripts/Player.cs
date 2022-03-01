@@ -48,14 +48,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 GameManager.instance.player = this;
                 cam = GameManager.instance.cam;
             }
-           // DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         
         
         private void Update()
         {
-            if (view.IsMine)
-            {
+           /* if (view.IsMine)
+            {*/
 
                 anim.SetFloat("vertical", Input.GetAxis("Vertical"));
                 anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
@@ -79,7 +79,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                         anim.SetTrigger("attack");
                     }
                 }
-            }
+            //}
 
         }
         
@@ -197,8 +197,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
-            if (view.IsMine)
-            {
+            // if (view.IsMine) {
 
                 GroundCheck();
                 Vector2 input = GetInput();
@@ -252,7 +251,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     }
                 }
                 m_Jump = false;
-            }
+            //}
         }
 
 
