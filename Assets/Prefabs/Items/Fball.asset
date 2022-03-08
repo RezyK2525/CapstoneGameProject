@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc90d4762a9b50a49b86997554ab65f7, type: 3}
-  m_Name: New Spell
+  m_Name: Fball
   m_EditorClassIdentifier: 
   name: Fireball
   icon: {fileID: 21300000, guid: db469f7ecd380b34496a977a3b0b7b7d, type: 3}

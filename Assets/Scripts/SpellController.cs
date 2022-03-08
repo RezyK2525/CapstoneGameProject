@@ -11,7 +11,9 @@ public class SpellController : Item
     public class SpellSettings
     {
         public bool isFireball = false;
-        
+
+        public bool isGates = false;
+
     }
 
     public SpellSettings spellSettings = new SpellSettings();
@@ -23,6 +25,14 @@ public class SpellController : Item
             Debug.Log("Called Use in side of SpellController for Fireball");
 
             spellSettings.isFireball = true;
+
+        }
+        
+        if (name.Equals("Gates"))
+        {
+            Debug.Log("Called Use in side of SpellController for Gates");
+
+            spellSettings.isGates = true;
 
         }
 

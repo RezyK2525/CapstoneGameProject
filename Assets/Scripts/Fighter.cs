@@ -44,8 +44,8 @@ public class Fighter : MonoBehaviour
     
     
     public void ReceiveMagicDamage(float dmg){
-
-        if(Time.time - lastImmune > immuneTime){
+        //if(Time.time - lastImmune > immuneTime){
+        if(true){
             lastImmune = Time.time;
 
             GameManager.instance.enemyAiMovement.enemyHp -= dmg;

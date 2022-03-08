@@ -10,6 +10,8 @@ TagManager:
   - Chest
   - Item
   - Weapon
+  - Bullet
+  - Gate
   layers:
   - Default
   - TransparentFX
@@ -25,7 +27,7 @@ TagManager:
   - WhatIsPlayer
   - WhatIsFireball
   - WhatIsItem
-  - 
+  - WhatIsGate
   - 
   - 
   - 
