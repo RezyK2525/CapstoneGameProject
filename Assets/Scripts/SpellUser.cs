@@ -267,10 +267,7 @@ Quaternion newRotation = Quaternion.Euler(xyz);
         }
 
     }
-    
-    
-    
-    
+
 
     private void ResetCast()
     {

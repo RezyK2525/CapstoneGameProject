@@ -10,8 +10,8 @@ TagManager:
   - Chest
   - Item
   - Weapon
-  - Bullet
   - Gate
+  - Bullet
   layers:
   - Default
   - TransparentFX
