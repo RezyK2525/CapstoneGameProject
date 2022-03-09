@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585a8b2d6836a204590429a2eaa72fd1, type: 3}
+  m_Name: Hydra Bow
+  m_EditorClassIdentifier: 
+  name: Hydra Bow
+  icon: {fileID: -604459275668827495, guid: 4c274f0f0b1327d4bb2ccc1b1294f201, type: 3}
+  isDefaultItem: 0
+  isPurchased: 0
+  value: 2000
+  strengthModifier: 800
+  spellPowerModifier: 0
+  hpModifier: -60
+  maxHPModifier: 0
+  manaModifier: 30
+  maxManaModifier: 0
+  manaRegenRateModifier: 0
+  prefab: {fileID: 6733403490526124237, guid: 1b1f897a34e8e9444b3201f0c78ce24b, type: 3}
+  equipSlot: 0

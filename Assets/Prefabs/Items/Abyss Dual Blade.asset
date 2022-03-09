@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Abyss Dual Blade
   m_EditorClassIdentifier: 
   name: Abyss Dual Blade
-  icon: {fileID: 21300000, guid: e7bb97d7f9497964f9df5e733ad7fad0, type: 3}
+  icon: {fileID: -4215498082374071974, guid: 10d3e3d3be5e0c24a882d10d1f8b572e, type: 3}
   isDefaultItem: 0
   isPurchased: 0
   value: 2000
@@ -24,4 +24,5 @@ MonoBehaviour:
   manaModifier: 10
   maxManaModifier: 10
   manaRegenRateModifier: 2
+  prefab: {fileID: 8487683125393258009, guid: e28802a291607ac42865146652c68883, type: 3}
   equipSlot: 0

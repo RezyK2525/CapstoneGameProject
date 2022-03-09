@@ -8,37 +8,31 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (CapsuleCollider))]
     public class Player : Fighter
     {
-        public Animator anim;
+        // Display HUD 
         public StatusBar healthBar;
         public StatusBar manaBar;
-        //Players Stats
-        public float hp = 100;
-        public float maxHP = 100;
-        public float mana = 100;
-        public float maxMana = 100;
-        public float manaRegenRate = 2f;
-    
-        public float strength = 25;
-        public float defense = 25;
-        public float spellPower = 25;
-        
 
+        // Basic Settings
         public int money;
         public PhotonView view;
-        
-        //Players important things
         public bool isMoving;
-        private float cooldown = 0.5f;
+
+        // Animator
+        public Animator anim;
+        
+        //Players Attack Settings
+        private float cooldown = 0.6f;
         private float lastSwing;
         public bool allowAttack = true;
         
         private void Start()
         {
+            // TODO: Need to add method here to put set character stats
+
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
             mouseLook.Init (transform, cam.transform);
             
-
             healthBar.SetMax(maxHP);
             manaBar.SetMax(maxMana);
 
@@ -75,16 +69,49 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     if (allowAttack)
                     {
-                        // user attack
-                        anim.SetTrigger("attack");
+                        if (Time.time - lastSwing > cooldown)
+                        {
+                            Attack();
+                        }
                     }
                 }
             //}
 
         }
-        
-        
-        
+
+        void Attack()
+        {
+            lastSwing = Time.time;
+            // user attack
+            
+
+            if(EquipmentManager.instance.currentEquipment[0] != null)
+            {
+                EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = true;
+                anim.SetTrigger("attack");
+                //EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
+            }
+
+            
+        }
+
+        // Not implemented - need to fix this spaguett
+        public void EndAnimationFunc(string message)
+        {
+            if (message.Equals("AttackAnimationEnded"))
+            {
+                EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
+                //pc_attacking = false;
+                //pc_anim.SetBool("attack", false);
+                // Do other things based on an attack ending.
+            }
+        }
+
+        void ToggleWeaponCollider()
+        {
+
+        }
+
         [Serializable]
         public class MovementSettings
         {

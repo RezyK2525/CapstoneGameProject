@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585a8b2d6836a204590429a2eaa72fd1, type: 3}
+  m_Name: Blizzard
+  m_EditorClassIdentifier: 
+  name: Blizzard
+  icon: {fileID: -4988717530119951220, guid: bb8f2d83804fc5e43b07764729e6deed, type: 3}
+  isDefaultItem: 0
+  isPurchased: 0
+  value: 15000
+  strengthModifier: 500
+  spellPowerModifier: 200
+  hpModifier: 100
+  maxHPModifier: 100
+  manaModifier: 100
+  maxManaModifier: 100
+  manaRegenRateModifier: 0
+  prefab: {fileID: 943673995578523416, guid: 7e05362b2de890c43bb890a85f7f07a9, type: 3}
+  equipSlot: 0

@@ -2,3 +2,5 @@ C:\Users\Strelitzia\Desktop\Dark Night Hero\obj\Debug\NavMeshComponentsEditor.cs
 C:\Users\Strelitzia\Desktop\Dark Night Hero\obj\Debug\NavMeshComponentsEditor.csproj.CoreCompileInputs.cache
 D:\Programming\cSharp\CapstoneGameProject\obj\Debug\NavMeshComponentsEditor.csproj.AssemblyReference.cache
 D:\Programming\cSharp\CapstoneGameProject\obj\Debug\NavMeshComponentsEditor.csproj.CoreCompileInputs.cache
+C:\Users\Strelitzia\Documents\GitHub\CapstoneGameProject\obj\Debug\NavMeshComponentsEditor.csproj.AssemblyReference.cache
+C:\Users\Strelitzia\Documents\GitHub\CapstoneGameProject\obj\Debug\NavMeshComponentsEditor.csproj.CoreCompileInputs.cache

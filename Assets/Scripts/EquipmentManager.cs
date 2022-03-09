@@ -61,10 +61,14 @@ public class EquipmentManager : MonoBehaviour
         // Equip Weapon
         if (slotIndex == 0)
         {
+            //
+
+
             Vector3 pos = weaponHolder.position;
             // Create new Item and place it in the weapon holder
-            Instantiate(newItem.prefab, pos, Quaternion.identity, weaponHolder);
-            //GameObject Sword = GameObject.Instantiate(newItem.prefab).gameObject;
+            GameObject Sword = Instantiate(newItem.prefab, pos, Quaternion.identity, weaponHolder);
+            Sword.gameObject.GetComponent<BoxCollider>().enabled = false;
+            Sword.gameObject.name = "weapon";
             //Sword.transform.SetParent(weaponHolder);
             //weapon.transform.SetPositionAndRotation(pos, id.normalized);
             //weapon.transform.parent = weaponHolder;
@@ -110,13 +114,13 @@ public class EquipmentManager : MonoBehaviour
         }
     }
 
-     void Update()
-     {
+    void Update()
+    {
         if (Input.GetKeyDown(KeyCode.U))
         {
             UnEquipall();
         }
-     }
 
-
+       
+    }
 }

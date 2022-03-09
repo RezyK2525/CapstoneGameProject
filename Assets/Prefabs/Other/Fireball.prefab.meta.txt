@@ -1,0 +1,8 @@
+fileFormatVersion: 2
+guid: df9050afaf7bb1a4da98866208ff8586
+timeCreated: 1446548461
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

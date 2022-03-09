@@ -5,8 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Equipment", menuName = "Inventory/Equipment")]
 public class Equipment : Item
 {
-   
-    
     // Equipment Stat Modifiers
     //public float defenseModifier;
     public float strengthModifier;
@@ -34,6 +32,7 @@ public class Equipment : Item
         //RemoveFromInventory();
         // Need to remove from Hotbar and into Equipment Slot
     }
+
 }
 
 public enum EquipmentSlot

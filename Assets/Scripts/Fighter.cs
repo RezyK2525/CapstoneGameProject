@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Fighter : MonoBehaviour
 {
+    // Stats
+    public float maxHP = 100;
+    public float hp = 100;
+    public float maxMana = 100;
+    public float mana = 100;
+    public float manaRegenRate = 2f;
+    public float strength = 25;
+    public float defense = 25;
+    public float spellPower = 25;
 
     //public EnemyAiMovement enemyAiMovement;
     public float hitPoint = 100f;
@@ -14,32 +23,31 @@ public class Fighter : MonoBehaviour
     protected float immuneTime = 0.5f;
     protected float lastImmune;
 
-    //push
+    //push ?? ?? ? ?? ? ?
     protected Vector3 pushDirection;
 
-    
-    
-    
-    /*
+
     //all fighters can receivedamage/die
-    protected virtual void ReceiveDamage(float dmg){
+    public void ReceiveDamage(float dmg){
+
+        //Debug.Log(EquipmentManager.instance.currentEquipment[0].name);
 
         if(Time.time - lastImmune > immuneTime){
             lastImmune = Time.time;
-            hitPoint -= dmg + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength);
-            pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
+            maxHP -= dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength);
+            //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
             //GameManager.instance.ShowText((dmg.damageAmount + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength)).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
 
 
-            if(hitPoint <= 0){
-                hitPoint = 0;
-                //Death();
+            if(maxHP <= 0){
+                maxHP = 0;
+                Death();
 
             }
-        }
+        } 
     }
-    */
+   
     
     
     

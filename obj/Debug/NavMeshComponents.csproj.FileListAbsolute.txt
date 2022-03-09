@@ -571,3 +571,7 @@ D:\Programming\cSharp\CapstoneGameProject\obj\Debug\NavMeshComponents.csproj.Cor
 D:\Programming\cSharp\CapstoneGameProject\obj\Debug\NavMeshComponents.csproj.CopyComplete
 D:\Programming\cSharp\CapstoneGameProject\obj\Debug\NavMeshComponents.dll
 D:\Programming\cSharp\CapstoneGameProject\obj\Debug\NavMeshComponents.pdb
+C:\Users\Strelitzia\Documents\GitHub\CapstoneGameProject\obj\Debug\NavMeshComponents.csproj.AssemblyReference.cache
+C:\Users\Strelitzia\Documents\GitHub\CapstoneGameProject\obj\Debug\NavMeshComponents.csproj.CoreCompileInputs.cache
+C:\Users\Strelitzia\Documents\GitHub\CapstoneGameProject\obj\Debug\NavMeshComponents.dll
+C:\Users\Strelitzia\Documents\GitHub\CapstoneGameProject\obj\Debug\NavMeshComponents.pdb
