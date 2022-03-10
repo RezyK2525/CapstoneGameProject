@@ -28,9 +28,8 @@ public class Equipment : Item
 
         // Equip the item
         EquipmentManager.instance.Equip(this);
-        //GameManager.instance.inventoryUI.EquipWeapon(this);
-        //RemoveFromInventory();
-        // Need to remove from Hotbar and into Equipment Slot
+        RemoveFromHotbar();
+        
     }
 
 }

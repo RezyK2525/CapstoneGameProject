@@ -15,6 +15,7 @@ public class InventorySlot : MonoBehaviour {
 
         icon.sprite = item.icon;
         icon.enabled = true;
+        icon.color = new Color(icon.color.r, icon.color.g, icon.color.b, 1f);
         removeButton.interactable = true;
     }
 
@@ -55,8 +56,13 @@ public class InventorySlot : MonoBehaviour {
             bool added = Inventory.instance.Add(item);
             if (added)
                GameManager.instance.hotbar.RemoveItem(item);
-           
+            
         }
+    }
+
+    public void Unquip(int i)
+    {
+        EquipmentManager.instance.UnEquip(i);
     }
 
     public void UseItem ()

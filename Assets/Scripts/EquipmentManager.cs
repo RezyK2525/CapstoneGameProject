@@ -21,6 +21,11 @@ public class EquipmentManager : MonoBehaviour
 
     Inventory inventory;
 
+    // Update UI Slots for Equipment Tab
+    public InventorySlot weaponSlot;
+    public InventorySlot spellSlot;
+    public InventorySlot AbilitySlot;
+
     // Weapon Holder
     public Transform weaponHolder;
 
@@ -47,6 +52,7 @@ public class EquipmentManager : MonoBehaviour
         {
             oldItem = currentEquipment[slotIndex];
             inventory.Add(oldItem);
+            Destroy(weaponHolder.GetChild(0).gameObject);
         }
 
         // An item has been equipped
@@ -61,22 +67,24 @@ public class EquipmentManager : MonoBehaviour
         // Equip Weapon
         if (slotIndex == 0)
         {
-            //
-
-
+            /// Put the Sword in the player's Hand
             Vector3 pos = weaponHolder.position;
+
             // Create new Item and place it in the weapon holder
             GameObject Sword = Instantiate(newItem.prefab, pos, Quaternion.identity, weaponHolder);
             Sword.gameObject.GetComponent<BoxCollider>().enabled = false;
+            Sword.gameObject.GetComponent<ItemPickup>().enabled = false;
             Sword.gameObject.name = "weapon";
-            //Sword.transform.SetParent(weaponHolder);
-            //weapon.transform.SetPositionAndRotation(pos, id.normalized);
-            //weapon.transform.parent = weaponHolder;
-            //weapon.transform.set
-            
-            
 
-            // GameManager.instance.weapon.SwapWeapon(newItem);
+            weaponSlot.AddItem(newItem);
+        }
+        else if (slotIndex == 1)
+        {
+            spellSlot.AddItem(newItem);
+        }
+        else if(slotIndex == 2)
+        {
+            AbilitySlot.AddItem(newItem);
         }
 
     }
@@ -85,6 +93,7 @@ public class EquipmentManager : MonoBehaviour
     {
         if (currentEquipment[slotIndex] != null)
         {
+
             if(weaponHolder.childCount > 0)
             {
                 GameObject oldWeapon = weaponHolder.GetChild(0).gameObject;
@@ -102,7 +111,20 @@ public class EquipmentManager : MonoBehaviour
                 onEquipmentChanged.Invoke(null, oldItem);
             }
 
-            ///GameManager.instance.weapon.SwapHand();
+            if (slotIndex == 0)
+            {
+                Destroy(weaponHolder.GetChild(0).gameObject);
+                weaponSlot.ClearSlot();
+            }
+            else if (slotIndex == 1)
+            {
+                spellSlot.ClearSlot();
+            }
+            else if (slotIndex == 2)
+            {
+                AbilitySlot.ClearSlot();
+            }
+
         }
     }
 

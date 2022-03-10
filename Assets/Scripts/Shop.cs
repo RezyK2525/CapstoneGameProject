@@ -106,6 +106,7 @@ public class Shop : MonoBehaviour
     public void OpenShop ()
     {
         gameObject.SetActive(true);
+        setCoinsUI();
 
         // Bring cursor back
         GameManager.instance.player.mouseLook.SetCursorLock(false);

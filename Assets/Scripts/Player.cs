@@ -21,9 +21,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public Animator anim;
         
         //Players Attack Settings
+        public bool allowAttack = true;
         private float cooldown = 0.6f;
         private float lastSwing;
-        public bool allowAttack = true;
+        //public float nextAttackTime = 0f;
+        //public static int noOfClicks = 0;
+        //float maxComboDelay = 1;
+       
         
         private void Start()
         {
@@ -54,27 +58,54 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 anim.SetFloat("vertical", Input.GetAxis("Vertical"));
                 anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
 
-                if (Input.GetKeyDown (KeyCode.Escape)) {
-                    Debug.Break ();
-                }
+            /*  COMBO ANIMATION -- 
+            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
+            {
+                anim.SetBool("Attack1", false);
+            }
+            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
+            {
+                anim.SetBool("Attack2", false);
+            }
+            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
+            {
+                anim.SetBool("Attack3", false);
+                noOfClicks = 0;
+            }
 
-                RotateView();
+            if(Time.time - lastSwing > maxComboDelay)
+            {
+                noOfClicks = 0;
+            }
 
-                if (Input.GetButtonDown("Jump") && !m_Jump)
+            if(Time.time > nextAttackTime)
+            {
+            */
+
+            if (Input.GetMouseButton(0))
+            {
+                if (allowAttack)
                 {
-                    m_Jump = true;
-                }
-
-                if (Input.GetMouseButton(0))
-                {
-                    if (allowAttack)
+                    if (Time.time - lastSwing > cooldown)
                     {
-                        if (Time.time - lastSwing > cooldown)
-                        {
-                            Attack();
-                        }
+                        Attack();
                     }
                 }
+            }
+            
+
+            if (Input.GetKeyDown (KeyCode.Escape)) {
+                    Debug.Break ();
+            }
+
+            RotateView();
+
+            if (Input.GetButtonDown("Jump") && !m_Jump)
+            {
+                m_Jump = true;
+            }
+
+                
             //}
 
         }
@@ -82,17 +113,35 @@ namespace UnityStandardAssets.Characters.FirstPerson
         void Attack()
         {
             lastSwing = Time.time;
+            //noOfClicks++;
             // user attack
-            
 
-            if(EquipmentManager.instance.currentEquipment[0] != null)
+            //if (noOfClicks == 1)
+            //{
+
+            if (EquipmentManager.instance.currentEquipment[0] != null)
             {
                 EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = true;
                 anim.SetTrigger("attack");
                 //EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
             }
+            // Else add punch here
+                
+            //}
+            /*noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
 
-            
+            if(noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
+            {
+                anim.SetBool("Attack1", false);
+                anim.SetBool("Attack2", true);
+            }
+
+            if (noOfClicks >= 3 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
+            {
+                anim.SetBool("Attack2", false);
+                anim.SetBool("Attack3", true);
+            }
+            */
         }
 
         // Not implemented - need to fix this spaguett
