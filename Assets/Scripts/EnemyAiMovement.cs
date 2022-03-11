@@ -49,6 +49,7 @@ public class EnemyAiMovement : Fighter
         //enemyHp = enemyMaxHp;
         healthBar.SetMax(maxHP);
         healthBar.healthBarUI.SetActive(false);
+        player = GameManager.instance.player.transform;
     }
 
     private void Update()

@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     // references
     public Player player;
+    //public Player[] players;
     //public InventoryUI inventoryUI;
     public EnemyAiMovement enemyAiMovement;
     public SeekerEnemy seekerEnemy;
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
     public Hotbar hotbar;
     public Camera cam;
 
-    public bool isMultiplayer = false;
+    public bool isMultiplayer;
 
 
     //public Weapon weapon;
@@ -50,9 +51,12 @@ public class GameManager : MonoBehaviour
 
             return;
         }
-
+        isMultiplayer = PlayerPrefs.GetInt("isMultiplayer") == 1;
+        GameObject.Find("SpawnPlayers").GetComponent<SpawnPlayers>().SpawnPlayersNowPlz(isMultiplayer);
         instance = this;
         player = FindObjectOfType<Player>();
+        Debug.Log("Gamemanager waking");
+        Debug.Log(player);
         // hotbar = FindObjectOfType<Hotbar>();
         SceneManager.sceneLoaded += LoadState;
         isPaused = false;

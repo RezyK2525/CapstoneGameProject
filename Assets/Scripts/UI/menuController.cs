@@ -104,6 +104,8 @@ public class menuController : MonoBehaviourPunCallbacks
     public void NewGame()
     {
         PlayerPrefs.SetString("SaveSlotNumber", ""+currentSlot);
+        PlayerPrefs.SetInt("isMultiplayer", 0);
+
         SceneManager.LoadScene(_newGameLevel);
     }
     public void LoadGame()
@@ -111,6 +113,7 @@ public class menuController : MonoBehaviourPunCallbacks
         PlayerData data = SaveSystem.loadgameState(currentSlot);
         string s = data.money.ToString() + "|";
         // s += data.weapon.ToString();
+        PlayerPrefs.SetInt("isMultiplayer", 0);
 
         PlayerPrefs.SetString("SaveState", s);
         SceneManager.LoadScene("Map" + data.stageNumber + "_" + data.stageNumber);
@@ -425,6 +428,7 @@ public class menuController : MonoBehaviourPunCallbacks
     }
     public override void OnJoinedRoom()
     {
+        PlayerPrefs.SetInt("isMultiplayer", 1);
         Debug.Log("Joined room");
         PhotonNetwork.LoadLevel("Micah_scene");
     }

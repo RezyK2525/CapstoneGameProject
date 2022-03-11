@@ -13,6 +13,7 @@ public class HUDController : MonoBehaviour
 
 	public KeyCode pauseKey;
 	public GameObject pauseHUD;
+	public GameObject[] secondaryPauseMenus;
 
    [SerializeField] private TMP_Text healthValue = null;
 	[SerializeField] private TMP_Text manaValue = null;
@@ -40,6 +41,12 @@ public class HUDController : MonoBehaviour
             }
             else
             {
+				// reset menu to initial state
+                foreach ( GameObject menu in secondaryPauseMenus)
+					menu.SetActive(false);
+				pauseHUD.transform.GetChild(0).gameObject.SetActive(true);
+
+
 				GameManager.instance.ResumeGame();
 				pauseHUD.SetActive(false);
             }

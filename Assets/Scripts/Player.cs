@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using Photon.Pun;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -35,25 +37,33 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
-            mouseLook.Init (transform, cam.transform);
-            
-            healthBar.SetMax(maxHP);
-            manaBar.SetMax(maxMana);
+
 
             view = GetComponent<PhotonView>();
-            if (view.IsMine)
+            if (!GameManager.instance.isMultiplayer || view.IsMine)
             {
                 GameManager.instance.player = this;
                 cam = GameManager.instance.cam;
-            }
+                GameManager.instance.player.GetComponent<SpellUser>().fpCam = cam;
+
+                List<StatusBar> bars = new List<StatusBar>(FindObjectsOfType<StatusBar>());
+                healthBar = bars.Where(bar => bar.name == "HealthBar").First();
+                manaBar = bars.Where(bar => bar.name == "ManaBar").First();
+                healthBar.SetMax(maxHP);
+                manaBar.SetMax(maxMana);
+                cam.transform.position = transform.position + new Vector3(0f, 1.287f, 0.192f);
+                cam.transform.parent = transform;
+
+                mouseLook.Init (transform, cam.transform);
+            } 
             DontDestroyOnLoad(gameObject);
         }
         
         
         private void Update()
         {
-           /* if (view.IsMine)
-            {*/
+            if (!GameManager.instance.isMultiplayer || view.IsMine)
+            {
 
                 anim.SetFloat("vertical", Input.GetAxis("Vertical"));
                 anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
@@ -273,10 +283,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
-            // if (view.IsMine) {
+             if (!GameManager.instance.isMultiplayer || view.IsMine) {
 
                 GroundCheck();
                 Vector2 input = GetInput();
+
+
+                ////////////////// Micah Added camera movement ///////
+                //cam.transform.position = transform.position;
+                ////////////////////////////////////////////////////////
 
                 if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
                 {
@@ -327,7 +342,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     }
                 }
                 m_Jump = false;
-            //}
+            }
         }
 
 
