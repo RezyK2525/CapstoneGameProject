@@ -73,7 +73,12 @@ public class GatesOfBabylon : MonoBehaviour
 */
         if (col.collider.CompareTag("Player") && explodeOnTouch) ExplodePlayer();
         if (col.collider.CompareTag("Terrain") && explodeOnTouch) Explode();
-        if (col.collider.CompareTag("Enemy") && explodeOnTouch) ExplodeEnemy();
+        if (col.collider.CompareTag("Enemy") && explodeOnTouch)
+        {
+
+            GameManager.instance.enemyAiMovement = col.collider.GetComponent<EnemyAiMovement>();
+            ExplodeEnemy();
+        }
     }
 
     private void Update()
@@ -112,7 +117,9 @@ public class GatesOfBabylon : MonoBehaviour
         for (int p = 0; p < enemies.Length; p++)
         {
             //get component of enemy and call take damage
+
             
+
             //example
             enemies[p].GetComponent<Fighter>().ReceiveMagicDamage(gateDamage);
 

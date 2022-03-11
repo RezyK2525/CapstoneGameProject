@@ -52,12 +52,6 @@ public class BuffController : Item
         {
             GameManager.instance.player.defense += buffTypesSettings.DEFENSE;
         }
-        
-        
-        
-        
-        
-        
     }
     
 

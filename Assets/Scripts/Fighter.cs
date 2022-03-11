@@ -5,18 +5,16 @@ using UnityEngine;
 public class Fighter : MonoBehaviour
 {
     // Stats
-    public float maxHP = 100;
-    public float hp = 100;
-    public float maxMana = 100;
-    public float mana = 100;
-    public float manaRegenRate = 2f;
-    public float strength = 25;
-    public float defense = 25;
-    public float spellPower = 25;
+    public float maxHP;
+    public float hp;
+    public float maxMana;
+    public float mana;
+    public float manaRegenRate;
+    public float strength;
+    public float defense;
+    public float spellPower;
 
-    //public EnemyAiMovement enemyAiMovement;
-    public float hitPoint = 100f;
-    public float maxHitPoint = 100f;
+    //public EnemyAiMovement enemyAiMovement
     public float pushRecoverySpeed = 0.2f;
 
     //immunity
@@ -31,17 +29,19 @@ public class Fighter : MonoBehaviour
     public void ReceiveDamage(float dmg){
 
         //Debug.Log(EquipmentManager.instance.currentEquipment[0].name);
-
+        Debug.Log("Damage: " + dmg);
+        Debug.Log("Enemy Health: " + GameManager.instance.enemyAiMovement.hp);
         if(Time.time - lastImmune > immuneTime){
             lastImmune = Time.time;
-            maxHP -= dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength);
+            //Debug.Log("DMG BIG DAMAGE: " + dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength));
+            GameManager.instance.enemyAiMovement.hp -= dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength);
             //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
             //GameManager.instance.ShowText((dmg.damageAmount + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength)).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
 
 
-            if(maxHP <= 0){
-                maxHP = 0;
+            if(GameManager.instance.enemyAiMovement.hp <= 0){
+                GameManager.instance.enemyAiMovement.hp = 0;
                 Death();
 
             }
@@ -53,11 +53,14 @@ public class Fighter : MonoBehaviour
     
     public void ReceiveMagicDamage(float dmg){
         //if(Time.time - lastImmune > immuneTime){
-        if(true){
+
+        
+        
+
             lastImmune = Time.time;
 
-            GameManager.instance.enemyAiMovement.enemyHp -= dmg;
-            hitPoint -= dmg;// + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength);
+            GameManager.instance.enemyAiMovement.hp -= dmg;
+            // + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength);
             //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
             //GameManager.instance.ShowText((dmg.damageAmount + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength)).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
@@ -65,18 +68,18 @@ public class Fighter : MonoBehaviour
 
 
             GameManager.instance.enemyAiMovement.healthBar.healthBarUI.SetActive(true);
-            GameManager.instance.enemyAiMovement.healthBar.SetValue(GameManager.instance.enemyAiMovement.enemyHp);
+            GameManager.instance.enemyAiMovement.healthBar.SetValue(GameManager.instance.enemyAiMovement.hp);
             
             
             //enemyAiMovement.healthBar.healthBarUI.SetActive(true);
             //enemyAiMovement.healthBar.SetHealth(hitPoint);
             
-            if(hitPoint <= 0){
-                hitPoint = 0;
+            if(GameManager.instance.enemyAiMovement.hp <= 0){
+                GameManager.instance.enemyAiMovement.hp = 0;
                 Death();
 
             }
-        }
+        
     }
 
     

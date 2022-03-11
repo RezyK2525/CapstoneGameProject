@@ -7,11 +7,6 @@ using Random = UnityEngine.Random;
 
 public class EnemyAiMovement : Fighter
 {
-    
-    //Enemies stats
-    public float enemyHp = 100f;
-    public float enemyMaxHp = 100f;
-
     public StatusBar healthBar;
 
     public float projectileSpeed;
@@ -49,8 +44,10 @@ public class EnemyAiMovement : Fighter
 
     private void Start()
     {
+        Debug.Log("enemy hp at start " + maxHP);
+        Debug.Log("enemy HP at start" + hp);
         //enemyHp = enemyMaxHp;
-        healthBar.SetMax(enemyMaxHp);
+        healthBar.SetMax(maxHP);
         healthBar.healthBarUI.SetActive(false);
     }
 

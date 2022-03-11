@@ -19,6 +19,13 @@ public class Shop : MonoBehaviour
 
     #endregion
 
+    /*
+     *  Add ShopItem Tabs for each Equipment / items
+     * 
+     * 
+     */
+
+
     [SerializeField] List<Item> ShopItemsList;
     [SerializeField] Transform ShopScrollView;
     //[SerializeField] Animator NoCoinsAnim;
