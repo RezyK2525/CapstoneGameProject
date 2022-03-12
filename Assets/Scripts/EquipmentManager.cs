@@ -21,6 +21,9 @@ public class EquipmentManager : MonoBehaviour
 
     Inventory inventory;
 
+    // Canvas
+    public GameObject canvas;
+
     // Update UI Slots for Equipment Tab
     public InventorySlot weaponSlot;
     public InventorySlot spellSlot;
@@ -32,15 +35,20 @@ public class EquipmentManager : MonoBehaviour
     void Start()
     {
         inventory = Inventory.instance;
-
         int numSlots = System.Enum.GetNames(typeof(EquipmentSlot)).Length;
         currentEquipment = new Equipment[numSlots];
 
+
+        canvas = GameObject.Find("Canvas");
+
+        weaponSlot = canvas.transform.GetChild(2).GetChild(3).GetChild(0).GetChild(0).GetComponent<InventorySlot>();
+        spellSlot = canvas.transform.GetChild(2).GetChild(3).GetChild(0).GetChild(1).GetComponent<InventorySlot>();
+        AbilitySlot = canvas.transform.GetChild(2).GetChild(3).GetChild(0).GetChild(2).GetComponent<InventorySlot>();
     }
 
-    // Equip a new Item
-    public void Equip (Equipment newItem)
-    {
+        // Equip a new Item
+        public void Equip (Equipment newItem)
+        {
         // Find what slot the item fits
         int slotIndex = (int)newItem.equipSlot;
 

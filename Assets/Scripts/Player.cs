@@ -22,6 +22,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Animator
         public Animator anim;
         
+        // Equipment Manager
+
         //Players Attack Settings
         public bool allowAttack = true;
         private float cooldown = 0.6f;
@@ -58,8 +60,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             } 
             DontDestroyOnLoad(gameObject);
         }
-        
-        
+
+
         private void Update()
         {
             if (!GameManager.instance.isMultiplayer || view.IsMine)
@@ -68,56 +70,56 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 anim.SetFloat("vertical", Input.GetAxis("Vertical"));
                 anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
 
-            /*  COMBO ANIMATION -- 
-            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
-            {
-                anim.SetBool("Attack1", false);
-            }
-            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
-            {
-                anim.SetBool("Attack2", false);
-            }
-            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
-            {
-                anim.SetBool("Attack3", false);
-                noOfClicks = 0;
-            }
-
-            if(Time.time - lastSwing > maxComboDelay)
-            {
-                noOfClicks = 0;
-            }
-
-            if(Time.time > nextAttackTime)
-            {
-            */
-
-            if (Input.GetMouseButton(0))
-            {
-                if (allowAttack)
+                /*  COMBO ANIMATION -- 
+                if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
                 {
-                    if (Time.time - lastSwing > cooldown)
+                    anim.SetBool("Attack1", false);
+                }
+                if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
+                {
+                    anim.SetBool("Attack2", false);
+                }
+                if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
+                {
+                    anim.SetBool("Attack3", false);
+                    noOfClicks = 0;
+                }
+
+                if(Time.time - lastSwing > maxComboDelay)
+                {
+                    noOfClicks = 0;
+                }
+
+                if(Time.time > nextAttackTime)
+                {
+                */
+
+                if (Input.GetMouseButton(0))
+                {
+                    if (allowAttack)
                     {
-                        Attack();
+                        if (Time.time - lastSwing > cooldown)
+                        {
+                            Attack();
+                        }
                     }
                 }
+
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    Debug.Break();
+                }
+
+                RotateView();
+
+                if (Input.GetButtonDown("Jump") && !m_Jump)
+                {
+                    m_Jump = true;
+                }
+
+
             }
-            
-
-            if (Input.GetKeyDown (KeyCode.Escape)) {
-                    Debug.Break ();
-            }
-
-            RotateView();
-
-            if (Input.GetButtonDown("Jump") && !m_Jump)
-            {
-                m_Jump = true;
-            }
-
-                
-            //}
-
         }
 
         void Attack()
@@ -165,12 +167,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 // Do other things based on an attack ending.
             }
         }
-
+        
         void ToggleWeaponCollider()
         {
 
         }
-
+        
         [Serializable]
         public class MovementSettings
         {

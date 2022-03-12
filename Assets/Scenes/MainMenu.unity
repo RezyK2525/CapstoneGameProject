@@ -17349,7 +17349,7 @@ MonoBehaviour:
   deleteBtn: {fileID: 1693589683}
   numSaveSlots: 3
   deleteSlotText: {fileID: 1893353417}
-  _newGameLevel: Micah_scene
+  _newGameLevel: TheTimeTemple
   LoadingScreen: {fileID: 1603956552}
   LobbyPanel: {fileID: 199682718}
   hostInput: {fileID: 1168391600}
