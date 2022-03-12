@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/micah_scene.unity
     guid: 2a5855626bdd38f42b8c0ffef04659a0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BlackBoxScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
