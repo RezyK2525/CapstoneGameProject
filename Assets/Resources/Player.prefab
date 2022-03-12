@@ -457,6 +457,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 7786391156389098933}
+  - {fileID: 6420740547960080206}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -484,7 +485,7 @@ MonoBehaviour:
     ExtrapolateIncludingRoundTripTime: 1
     ExtrapolateNumberOfStoredPositions: 1
   m_RotationModel:
-    SynchronizeEnabled: 0
+    SynchronizeEnabled: 1
     InterpolateOption: 1
     InterpolateRotateTowardsSpeed: 180
     InterpolateLerpSpeed: 5
@@ -506,6 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentEquipment: []
+  canvas: {fileID: 0}
   weaponSlot: {fileID: 0}
   spellSlot: {fileID: 0}
   AbilitySlot: {fileID: 0}
@@ -1718,6 +1720,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2916926807668769221}
   - component: {fileID: 2916926807668769220}
+  - component: {fileID: 6420740547960080206}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -1775,6 +1778,45 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6420740547960080206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2916926807668769227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 0
+    Name: Blend
+  - Type: 1
+    SynchronizeType: 0
+    Name: vertical
+  - Type: 1
+    SynchronizeType: 0
+    Name: horizontal
+  - Type: 9
+    SynchronizeType: 0
+    Name: attack
+  - Type: 4
+    SynchronizeType: 0
+    Name: Attack1
+  - Type: 4
+    SynchronizeType: 0
+    Name: Attack2
+  - Type: 4
+    SynchronizeType: 0
+    Name: Attack3
+  m_SynchronizeLayers:
+  - SynchronizeType: 1
+    LayerIndex: 0
 --- !u!1 &2916926807739247439
 GameObject:
   m_ObjectHideFlags: 0
