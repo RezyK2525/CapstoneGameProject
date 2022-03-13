@@ -23,10 +23,10 @@ public class NetworkManager : MonoBehaviour
     public bool isMultiplayer;
 
 
-    private void Awake()
+    private void Start()
     {
 
-        if (instance != null)
+        /*if (instance != null)
         {
             Destroy(this.gameObject);
             foreach (Player player in players)
@@ -34,7 +34,7 @@ public class NetworkManager : MonoBehaviour
                 Destroy(player.gameObject);
             }
             return;
-        }
+        }*/
         Debug.Log("NetworkManager waking");
         isMultiplayer = PlayerPrefs.GetInt("isMultiplayer") == 1;
 
@@ -43,7 +43,7 @@ public class NetworkManager : MonoBehaviour
         players = FindObjectsOfType<Player>();
         
         // items 
-        int itemCount = GameObject.Find("Items").transform.childCount;
+       /* int itemCount = GameObject.Find("Items").transform.childCount;
         items = new GameObject[itemCount];
         for (int i = 0; i < itemCount; i++)
             items[i] = GameObject.Find("Items").transform.GetChild(i).gameObject;
@@ -52,7 +52,7 @@ public class NetworkManager : MonoBehaviour
         int enemyCount = GameObject.Find("Enemies").transform.childCount;
         enemies = new GameObject[enemyCount];
         for (int i = 0; i < enemyCount; i++)
-            enemies[i] = GameObject.Find("Enemies").transform.GetChild(i).gameObject;
+            enemies[i] = GameObject.Find("Enemies").transform.GetChild(i).gameObject;*/
 
         if (PhotonNetwork.IsMasterClient)
             InstantiateEntities();
