@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -60,7 +61,10 @@ public class EquipmentManager : MonoBehaviour
         {
             oldItem = currentEquipment[slotIndex];
             inventory.Add(oldItem);
-            Destroy(weaponHolder.GetChild(0).gameObject);
+            if (GameManager.instance.isMultiplayer)
+                PhotonNetwork.Destroy(weaponHolder.GetChild(0).gameObject);
+            else
+                Destroy(weaponHolder.GetChild(0).gameObject);
         }
 
         // An item has been equipped
