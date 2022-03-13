@@ -18,7 +18,10 @@ public class ItemPickup : Interactable
         bool wasPickedup = Inventory.instance.Add(item);
         
         if(wasPickedup)
-            Destroy(gameObject);
+            if (GameManager.instance.isMultiplayer)
+                PhotonNetwork.Destroy(gameObject);
+            else
+                Destroy(gameObject);
     }
 
     public void OnCollisionEnter(Collision collision)

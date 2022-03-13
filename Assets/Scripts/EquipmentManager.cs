@@ -61,9 +61,9 @@ public class EquipmentManager : MonoBehaviour
         {
             oldItem = currentEquipment[slotIndex];
             inventory.Add(oldItem);
-            if (GameManager.instance.isMultiplayer)
+            /*if (GameManager.instance.isMultiplayer)
                 PhotonNetwork.Destroy(weaponHolder.GetChild(0).gameObject);
-            else
+            else*/
                 Destroy(weaponHolder.GetChild(0).gameObject);
         }
 
