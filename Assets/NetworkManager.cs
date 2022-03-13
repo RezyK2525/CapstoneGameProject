@@ -64,7 +64,7 @@ public class NetworkManager : MonoBehaviour
 
     public void InstantiateEntities()
     {
-        PhotonNetwork.Instantiate(ItemsPrefab.name, Vector3.zero, Quaternion.identity);
+        PhotonNetwork.Instantiate(ItemsPrefab.name, ItemsPrefab.transform.position, Quaternion.identity);
 
     }
 

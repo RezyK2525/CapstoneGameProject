@@ -35,6 +35,7 @@ public class EquipmentManager : MonoBehaviour
 
     void Start()
     {
+        
         inventory = Inventory.instance;
         int numSlots = System.Enum.GetNames(typeof(EquipmentSlot)).Length;
         currentEquipment = new Equipment[numSlots];
@@ -42,14 +43,17 @@ public class EquipmentManager : MonoBehaviour
 
         canvas = GameObject.Find("Canvas");
 
+        weaponHolder = gameObject.transform.GetChild(1).GetChild(16).GetChild(0).GetChild(6).GetChild(0).GetChild(3).GetChild(1).GetChild(0).GetChild(0).GetChild(0).GetChild(3);
+
+
         weaponSlot = canvas.transform.GetChild(2).GetChild(3).GetChild(0).GetChild(0).GetComponent<InventorySlot>();
         spellSlot = canvas.transform.GetChild(2).GetChild(3).GetChild(0).GetChild(1).GetComponent<InventorySlot>();
         AbilitySlot = canvas.transform.GetChild(2).GetChild(3).GetChild(0).GetChild(2).GetComponent<InventorySlot>();
     }
 
         // Equip a new Item
-        public void Equip (Equipment newItem)
-        {
+    public void Equip (Equipment newItem)
+    {
         // Find what slot the item fits
         int slotIndex = (int)newItem.equipSlot;
 
