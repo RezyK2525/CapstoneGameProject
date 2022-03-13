@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.FirstPerson;
 using Photon.Pun;
 
-public class NetworkManager : MonoBehaviour
+public class NetworkManager : MonoBehaviourPunCallbacks
 {
  
     // Instance
@@ -15,7 +15,7 @@ public class NetworkManager : MonoBehaviour
     public GameObject EnemiesPrefab;
 
     // references
-    public Player[] players;
+    public GameObject[] players;
 
     public GameObject[] enemies;
     public GameObject[] items;
@@ -40,7 +40,7 @@ public class NetworkManager : MonoBehaviour
 
         //GameObject.Find("SpawnPlayers").GetComponent<SpawnPlayers>().SpawnPlayersNowPlz(isMultiplayer);
         instance = this;
-        players = FindObjectsOfType<Player>();
+        //players = FindObjectsOfType<Player>();
         
         // items 
        /* int itemCount = GameObject.Find("Items").transform.childCount;
@@ -73,7 +73,11 @@ public class NetworkManager : MonoBehaviour
         
     }
 
-
+ /*   void OnPhotonPlayerConnected()
+    {
+        Debug.Log("OnPhotonPlayerConnected() " + other.name); // not seen if you're the player connecting
+    }
+*/
 
 }
 

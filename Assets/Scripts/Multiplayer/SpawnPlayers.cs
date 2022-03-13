@@ -8,7 +8,7 @@ public class SpawnPlayers : MonoBehaviour
     public GameObject playerPrefab;
 
     public Vector3 spawnPoint;
-
+    private int playerCount = 0;
  /*   private void Start1()
     {
         if (GameManager.instance.isMultiplayer)
@@ -29,13 +29,17 @@ public class SpawnPlayers : MonoBehaviour
         {
             PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint, Quaternion.identity);
             Debug.Log("spawning players");
+            GameObject.Find("Player(clone)").name = "Player" + playerCount;
+            playerCount++;
         }
         else
         {
             Instantiate(playerPrefab, spawnPoint, Quaternion.identity);
             Debug.Log("spawning player");
+    
         }
     }
 
+    
 
 }
