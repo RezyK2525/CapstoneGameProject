@@ -35,8 +35,7 @@ public class EquipmentManager : MonoBehaviour
 
     void Start()
     {
-        if (!GameManager.instance.isMultiplayer || gameObject.GetComponent<PhotonView>().IsMine)
-        { 
+        
             inventory = Inventory.instance;
             int numSlots = System.Enum.GetNames(typeof(EquipmentSlot)).Length;
             currentEquipment = new Equipment[numSlots];
@@ -50,7 +49,7 @@ public class EquipmentManager : MonoBehaviour
             weaponSlot = canvas.transform.GetChild(2).GetChild(3).GetChild(0).GetChild(0).GetComponent<InventorySlot>();
             spellSlot = canvas.transform.GetChild(2).GetChild(3).GetChild(0).GetChild(1).GetComponent<InventorySlot>();
             AbilitySlot = canvas.transform.GetChild(2).GetChild(3).GetChild(0).GetChild(2).GetComponent<InventorySlot>();
-        }
+        
     }
 
         // Equip a new Item
