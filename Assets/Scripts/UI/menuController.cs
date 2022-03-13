@@ -430,6 +430,6 @@ public class menuController : MonoBehaviourPunCallbacks
     {
         PlayerPrefs.SetInt("isMultiplayer", 1);
         Debug.Log("Joined room");
-        PhotonNetwork.LoadLevel("TheTimeTemple");
+        PhotonNetwork.LoadLevel(_newGameLevel);
     }
 }

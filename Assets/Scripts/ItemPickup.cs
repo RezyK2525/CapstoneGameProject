@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ItemPickup : Interactable
 {
-    public GameObject go;
+    //public GameObject go;
     public Item item;
     public override void Interact()
     {
@@ -18,7 +18,7 @@ public class ItemPickup : Interactable
         bool wasPickedup = Inventory.instance.Add(item);
         
         if(wasPickedup)
-            Destroy(go);
+            Destroy(gameObject);
     }
 
     public void OnCollisionEnter(Collision collision)

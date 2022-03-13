@@ -1,3 +1,5 @@
+
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,10 +12,11 @@ public class GameManager : MonoBehaviour
 
     // Instance
     public static GameManager instance;
+    private NetworkManager networkManager;
+    public GameObject networkManagerPrefab;
 
     // references
     public Player player;
-    //public Player[] players;
     //public InventoryUI inventoryUI;
     internal EnemyAiMovement enemyAiMovement;
     public SeekerEnemy seekerEnemy;
@@ -25,17 +28,6 @@ public class GameManager : MonoBehaviour
 
     public bool isMultiplayer;
 
-
-    //public Weapon weapon;
-    //public FloatingTextManager floatingTextManager;
-    //public PotionController potionController;
-    //public Equipment equipment
-    //resources
-    //public List<Sprite> playerSprites;
-    //public List<Sprite> weaponSprites;
-    //logic Moved Into Player??? 
-    //public int money;
-
     private void Awake()
     {
 
@@ -46,22 +38,34 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             //Destroy(inventoryUI.gameObject);
             Destroy(player.gameObject);
-            // Destroy(hotbar.gameObject);
             //Destroy(floatingTextManager.gameObject);
 
             return;
         }
+
         isMultiplayer = PlayerPrefs.GetInt("isMultiplayer") == 1;
+        if (isMultiplayer){
+            if (PhotonNetwork.IsMasterClient)
+                PhotonNetwork.Instantiate(networkManagerPrefab.name, Vector3.zero, Quaternion.identity);
+            else
+                ;
+        }
+        else
+        {
+            Instantiate(networkManagerPrefab);
+            
+        }
+        networkManager = FindObjectOfType<NetworkManager>();
+
         GameObject.Find("SpawnPlayers").GetComponent<SpawnPlayers>().SpawnPlayersNowPlz(isMultiplayer);
         instance = this;
         player = FindObjectOfType<Player>();
-        Debug.Log("Gamemanager waking");
+        Debug.Log("GameManager waking");
         Debug.Log(player);
-        // hotbar = FindObjectOfType<Hotbar>();
+        
         SceneManager.sceneLoaded += LoadState;
         isPaused = false;
         DontDestroyOnLoad(gameObject);
-        
 
     }
 
@@ -130,7 +134,8 @@ public class GameManager : MonoBehaviour
     }
     public void ExitGame()
     {
-         SceneManager.LoadScene("MainMenu");
+        //Destroy(GameObject.Find("DontDestroyOnLoad"));
+        SceneManager.LoadScene("MainMenu");
 
     }
 }

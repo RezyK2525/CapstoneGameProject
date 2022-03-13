@@ -9,7 +9,7 @@ public class SpawnPlayers : MonoBehaviour
 
     public Vector3 spawnPoint;
 
-    private void Start1()
+ /*   private void Start1()
     {
         if (GameManager.instance.isMultiplayer)
         {
@@ -21,7 +21,7 @@ public class SpawnPlayers : MonoBehaviour
             Instantiate(playerPrefab, spawnPoint, Quaternion.identity);
             Debug.Log("spawning player");
         }
-    }
+    }*/
 
     public void SpawnPlayersNowPlz(bool isMultiplayer)
     {
