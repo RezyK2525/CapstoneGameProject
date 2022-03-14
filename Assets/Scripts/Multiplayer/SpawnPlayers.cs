@@ -29,7 +29,7 @@ public class SpawnPlayers : MonoBehaviour
         {
             PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint, Quaternion.identity);
             Debug.Log("spawning players");
-            GameObject.Find("Player(clone)").name = "Player" + playerCount;
+            GameObject.Find("Player(Clone)").name = "Player" + playerCount;
             playerCount++;
         }
         else
