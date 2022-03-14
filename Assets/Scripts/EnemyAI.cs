@@ -78,10 +78,21 @@ public class EnemyAI : Fighter
 
     private void Update()
     {
-        float teamDistance = Vector3.Distance(GameManager.instance.enemyAI.transform.position, transform.position);
+        float teamDistance;
         float distance = Vector3.Distance(player.position, transform.position);
-
-        if (distance <= sightRange || (teamDistance <= followerEnemySettings.alertRange && GameManager.instance.enemyAI.playerInSightRange && enemyType.isFollower))
+        if (enemyType.isFollower)
+        {
+            teamDistance = Vector3.Distance(GameManager.instance.enemyAI.transform.position, transform.position);
+            if (distance <= sightRange || (teamDistance <= followerEnemySettings.alertRange && GameManager.instance.enemyAI.playerInSightRange && enemyType.isFollower))
+            {
+                playerInSightRange = true;
+            }
+            else
+            {
+                playerInSightRange = false;
+            }
+        }
+        if (distance <= sightRange || GameManager.instance.enemyAI.playerInSightRange)
         {
             playerInSightRange = true;
         }
@@ -89,7 +100,7 @@ public class EnemyAI : Fighter
         {
             playerInSightRange = false;
         }
-        
+
         if (distance <= attackRange)
         {
             playerInAttackRange = true;
