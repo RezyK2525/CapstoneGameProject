@@ -5,41 +5,60 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
-public class FollowerEnemy : Fighter
+public class EnemyAI : Fighter
 {
     
-    //Enemies stats
-    public float enemyHp = 100f;
-    public float enemyMaxHp = 100f;
-
-    public StatusBar healthBar;
-
-    public float projectileSpeed;
-    public float projectileUpwardDirection;
-
-    public NavMeshAgent agent;
-
-    public Transform player;
-
-    public LayerMask whatIsGround, whatIsPlayer;
-
-    public Transform attackPoint;
-    
-    
-    //Patrolling
+    //ALL ENEMY SETTINGS
     public Vector3 walkPoint;
     private bool walkPointSet;
     public float walkPointRange;
-    
-    
-    //Attacking
+    public StatusBar healthBar;
+    public NavMeshAgent agent;
+    public Transform player;
+    public LayerMask whatIsGround, whatIsPlayer;
     public float timeBetweenAttacks;
     private bool alreadyAttacked;
-    public GameObject projectile;
+    public float sightRange, attackRange;
+    internal bool playerInSightRange, playerInAttackRange;
     
-    //States
-    public float sightRange, attackRange, alertRange;
-    public bool playerInSightRange, playerInAttackRange;
+    [Serializable]
+    public class EnemyType
+    {
+        public bool isRanged;
+        public bool isMeelee;
+        public bool isFollower;
+    }
+    
+    [Serializable]
+    public class RangedEnemySettings
+    {
+        
+    public float projectileSpeed;
+    public float projectileUpwardDirection;
+    public Transform attackPoint;
+    
+    //Attacking
+    public GameObject projectile;
+    }
+
+    [Serializable]
+    public class MeeleeEnemySettings
+    {
+        public Animator anim;
+    }
+    
+    [Serializable]
+    public class FollowerEnemySettings
+    {
+        public float alertRange;
+    }
+
+    public EnemyType enemyType = new EnemyType();
+    public RangedEnemySettings rangedEnemySettings = new RangedEnemySettings();
+    public MeeleeEnemySettings meeleeEnemySettings = new MeeleeEnemySettings();
+    public FollowerEnemySettings followerEnemySettings = new FollowerEnemySettings();
+
+
 
     private void Awake()
     {
@@ -49,24 +68,25 @@ public class FollowerEnemy : Fighter
 
     private void Start()
     {
+        Debug.Log("enemy hp at start " + maxHP);
+        Debug.Log("enemy HP at start" + hp);
         //enemyHp = enemyMaxHp;
-        healthBar.SetMax(enemyMaxHp);
+        healthBar.SetMax(maxHP);
         healthBar.healthBarUI.SetActive(false);
+        player = GameManager.instance.player.transform;
     }
 
     private void Update()
     {
-        float teamDistance = Vector3.Distance(GameManager.instance.seekerEnemy.transform.position, transform.position);
+        float teamDistance = Vector3.Distance(GameManager.instance.enemyAI.transform.position, transform.position);
         float distance = Vector3.Distance(player.position, transform.position);
 
-        if (distance <= sightRange || (teamDistance <= alertRange && GameManager.instance.seekerEnemy.playerInSightRange) )
+        if (distance <= sightRange || (teamDistance <= followerEnemySettings.alertRange && GameManager.instance.enemyAI.playerInSightRange && enemyType.isFollower))
         {
-            Debug.Log("Player Found");
             playerInSightRange = true;
         }
         else
         {
-            Debug.Log("Player NOT Found");
             playerInSightRange = false;
         }
         
@@ -88,9 +108,9 @@ public class FollowerEnemy : Fighter
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInSightRange && playerInAttackRange) AttackPlayer();
-        
-        
+        if (playerInSightRange && playerInAttackRange && enemyType.isRanged) AttackPlayerRanged();
+        if (playerInSightRange && playerInAttackRange && enemyType.isMeelee) AttackPlayerMeelee();
+
     }
 
     private void Patroling()
@@ -131,7 +151,7 @@ public class FollowerEnemy : Fighter
         agent.SetDestination(player.position);
     }
     
-    private void AttackPlayer()
+    private void AttackPlayerRanged()
     {
         
         //Make sure enemy doesnt move
@@ -144,10 +164,36 @@ public class FollowerEnemy : Fighter
         {
             
             //Attack Code HERE
-            Rigidbody rb = Instantiate(projectile, attackPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
+            Rigidbody rb = Instantiate(rangedEnemySettings.projectile, rangedEnemySettings.attackPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
             //rb.transform.forward;
-            rb.AddForce(transform.forward * projectileSpeed, ForceMode.Impulse);
-            rb.AddForce(transform.up * projectileUpwardDirection, ForceMode.Impulse);
+            rb.AddForce(transform.forward * rangedEnemySettings.projectileSpeed, ForceMode.Impulse);
+            rb.AddForce(transform.up * rangedEnemySettings.projectileUpwardDirection, ForceMode.Impulse);
+            
+            
+            //
+            
+            
+            alreadyAttacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        }
+
+    }
+    
+    private void AttackPlayerMeelee()
+    {
+        
+        //Make sure enemy doesnt move
+        agent.SetDestination(transform.position);
+        
+
+        Vector3 playerPosition = new Vector3(player.position.x, this.transform.position.y, player.position.z);
+        transform.LookAt(playerPosition);
+
+        if (!alreadyAttacked)
+        {
+            
+            //Attack Code HERE   PUT IN MELEE ANIMATION FOR DAMAGE
+
             
             
             //
@@ -165,19 +211,9 @@ public class FollowerEnemy : Fighter
     }
 
 
-    
-/*
-    public void TakeDamage(int damage)
-    {
-        enemyHP -= damage;
-
-        if (enemyHP <= 0) Invoke(nameof(DestroyEnemy), .5f);
-
-    }
-*/
 
 
-    protected override void Death()
+protected override void Death()
     {
         Destroy(gameObject);
     }
@@ -189,8 +225,19 @@ public class FollowerEnemy : Fighter
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, alertRange);
-    }
-}
 
+        if (enemyType.isFollower)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position, followerEnemySettings.alertRange);
+        }
+        
+        
+    }
+    
+    
+
+    
+    
+    
+}

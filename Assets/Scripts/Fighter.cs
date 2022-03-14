@@ -30,18 +30,18 @@ public class Fighter : MonoBehaviour
 
         //Debug.Log(EquipmentManager.instance.currentEquipment[0].name);
         Debug.Log("Damage: " + dmg);
-        Debug.Log("Enemy Health: " + GameManager.instance.enemyAiMovement.hp);
+        Debug.Log("Enemy Health: " + GameManager.instance.enemyAI.hp);
         if(Time.time - lastImmune > immuneTime){
             lastImmune = Time.time;
             //Debug.Log("DMG BIG DAMAGE: " + dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength));
-            GameManager.instance.enemyAiMovement.hp -= dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength);
+            GameManager.instance.enemyAI.hp -= dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength);
             //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
             //GameManager.instance.ShowText((dmg.damageAmount + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength)).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
 
 
-            if(GameManager.instance.enemyAiMovement.hp <= 0){
-                GameManager.instance.enemyAiMovement.hp = 0;
+            if(GameManager.instance.enemyAI.hp <= 0){
+                GameManager.instance.enemyAI.hp = 0;
                 Death();
 
             }
@@ -59,7 +59,7 @@ public class Fighter : MonoBehaviour
 
             lastImmune = Time.time;
 
-            GameManager.instance.enemyAiMovement.hp -= dmg;
+            GameManager.instance.enemyAI.hp -= dmg;
             // + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength);
             //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
@@ -67,15 +67,15 @@ public class Fighter : MonoBehaviour
 
 
 
-            GameManager.instance.enemyAiMovement.healthBar.healthBarUI.SetActive(true);
-            GameManager.instance.enemyAiMovement.healthBar.SetValue(GameManager.instance.enemyAiMovement.hp);
+            GameManager.instance.enemyAI.healthBar.healthBarUI.SetActive(true);
+            GameManager.instance.enemyAI.healthBar.SetValue(GameManager.instance.enemyAI.hp);
             
             
             //enemyAiMovement.healthBar.healthBarUI.SetActive(true);
             //enemyAiMovement.healthBar.SetHealth(hitPoint);
             
-            if(GameManager.instance.enemyAiMovement.hp <= 0){
-                GameManager.instance.enemyAiMovement.hp = 0;
+            if(GameManager.instance.enemyAI.hp <= 0){
+                GameManager.instance.enemyAI.hp = 0;
                 Death();
 
             }

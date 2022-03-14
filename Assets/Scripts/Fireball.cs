@@ -69,7 +69,7 @@ public class Fireball : MonoBehaviour {
         if (col.collider.CompareTag("Terrain") && explodeOnTouch) Explode();
         if (col.collider.CompareTag("Enemy") && explodeOnTouch)
         {
-            GameManager.instance.enemyAiMovement = col.collider.GetComponent<EnemyAiMovement>();
+            GameManager.instance.enemyAI = col.collider.GetComponent<EnemyAI>();
             ExplodeEnemy();
         }
     }

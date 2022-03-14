@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class GameManager : MonoBehaviour
@@ -18,8 +19,7 @@ public class GameManager : MonoBehaviour
     // references
     public Player player;
     //public InventoryUI inventoryUI;
-    internal EnemyAiMovement enemyAiMovement;
-    public SeekerEnemy seekerEnemy;
+    [FormerlySerializedAs("enemyAiMovement")] public EnemyAI enemyAI;
     public bool isPaused;
     public PotionController potionController;
     public SpellController spellController;

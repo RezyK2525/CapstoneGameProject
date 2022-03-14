@@ -11,8 +11,8 @@ public class Meelee : MonoBehaviour
         if(coll.tag == "Enemy")
         {
             Collider collide = coll;
-            GameManager.instance.enemyAiMovement = collide.GetComponent<EnemyAiMovement>();
-            collide.GetComponent<EnemyAiMovement>().ReceiveDamage(100);
+            GameManager.instance.enemyAI = collide.GetComponent<EnemyAI>();
+            collide.GetComponent<EnemyAI>().ReceiveDamage(100);
             //coll.GetComponent<Fighter>().reciveDamage(100);
 
         }
