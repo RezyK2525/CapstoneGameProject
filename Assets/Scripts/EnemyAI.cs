@@ -20,6 +20,7 @@ public class EnemyAI : Fighter
     private bool alreadyAttacked;
     public float sightRange, attackRange;
     internal bool playerInSightRange, playerInAttackRange;
+    public int money;
     
     [Serializable]
     public class EnemyType
@@ -226,8 +227,18 @@ public class EnemyAI : Fighter
 
 protected override void Death()
     {
+        GameManager.instance.player.money += money;
+        GameManager.instance.player.gainedMoney = money;
+        
+        GameManager.instance.hud.gainedMoney.gameObject.SetActive(true);
+        Invoke("DisableGainedMoney", 1.5f);
         Destroy(gameObject);
     }
+
+void DisableGainedMoney()
+{
+    GameManager.instance.hud.gainedMoney.gameObject.SetActive(false);
+}
 
 
     private void OnDrawGizmosSelected()

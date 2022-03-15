@@ -14,6 +14,7 @@ public class ItemPickup : Interactable
 
     void PickUp()
     {
+        GameManager.instance.hud.interactField.gameObject.SetActive(false);
         Debug.Log("Picked up " + item.name);
         // Add to inventory
         bool wasPickedup = Inventory.instance.Add(item);

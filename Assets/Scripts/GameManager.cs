@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public bool isPaused;
     public PotionController potionController;
     public SpellController spellController;
+    public HUDController hud;
     public Hotbar hotbar;
     public Camera cam;
 

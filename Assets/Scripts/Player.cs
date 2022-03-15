@@ -16,8 +16,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         // Basic Settings
         public int money;
+        internal int gainedMoney;
         public PhotonView view;
         public bool isMoving;
+        public bool inInteractRange;
 
         // Animator
         public Animator anim;

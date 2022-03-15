@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
@@ -29,15 +30,45 @@ public class Interactable : MonoBehaviour
             float distance = Vector3.Distance(player.position, transform.position);
             if (distance <= radius)
             {
+
+                //GameManager.instance.hud.interactField.gameObject.SetActive(true);
+                
+                
+                
+
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    DisableInteractField();
                     Interact();
-                    
                 }
+                
+                
             }
 
         }
     }
+
+    private void DisableInteractField()
+    {
+        GameManager.instance.hud.interactField.gameObject.SetActive(false);
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            GameManager.instance.hud.interactField.gameObject.SetActive(true);
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            GameManager.instance.hud.interactField.gameObject.SetActive(false);
+        }
+    }
+
 
     private void OnDrawGizmosSelected()
     {

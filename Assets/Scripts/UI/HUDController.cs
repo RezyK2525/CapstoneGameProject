@@ -18,12 +18,16 @@ public class HUDController : MonoBehaviour
    [SerializeField] private TMP_Text healthValue = null;
 	[SerializeField] private TMP_Text manaValue = null;
 	[SerializeField] private TMP_Text moneyValue = null;
+	[SerializeField] public TMP_Text gainedMoney = null;
+	[SerializeField] public TMP_Text interactField;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		healthBar.SetMax(GameManager.instance.player.maxHP);
 		manaBar.SetMax(GameManager.instance.player.maxMana);
+		interactField.gameObject.SetActive(false);
+		gainedMoney.gameObject.SetActive(false);
 		// cooldownBar.SetMax(GameManager.instance.player.maxMana);
 	}
 	
@@ -52,7 +56,7 @@ public class HUDController : MonoBehaviour
             }
 
 		}
-	
+
 
 		// update values
 		healthBar.SetValue(GameManager.instance.player.hp);
@@ -61,7 +65,8 @@ public class HUDController : MonoBehaviour
 		healthValue.text = ""+GameManager.instance.player.hp;
 		manaValue.text = ""+GameManager.instance.player.mana;
 		moneyValue.text = ""+GameManager.instance.player.money;
-	}
+		gainedMoney.text = "+" + GameManager.instance.player.gainedMoney;
+    }
 
 
 }
