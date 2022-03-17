@@ -37,14 +37,14 @@ public class InventoryUI : MonoBehaviour
             if (isOpen)
             {
                 GameManager.instance.player.allowAttack = true;
-                GameManager.instance.player.mouseLook.SetCursorLock(true);
+                GameManager.instance.player.cursorState();
                 isOpen = false;
                 
             }
             else
             {
                 GameManager.instance.player.allowAttack = false;
-                GameManager.instance.player.mouseLook.SetCursorLock(false);
+                GameManager.instance.player.cursorState();
                 isOpen = true;
             }
             UpdateUI();

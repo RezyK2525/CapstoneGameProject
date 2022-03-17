@@ -69,10 +69,10 @@ public class EnemyAI : Fighter
 
     private void Start()
     {
-        Debug.Log("enemy hp at start " + maxHP);
-        Debug.Log("enemy HP at start" + hp);
+        Debug.Log("enemy hp at start " + stats.maxHP);
+        Debug.Log("enemy HP at start" + stats.hp);
         //enemyHp = enemyMaxHp;
-        healthBar.SetMax(maxHP);
+        healthBar.SetMax(stats.maxHP);
         healthBar.healthBarUI.SetActive(false);
         player = GameManager.instance.player.transform;
     }

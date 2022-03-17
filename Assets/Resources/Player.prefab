@@ -305,22 +305,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a909a3c5c7aeb479ca5262b8ec3879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
-  hp: 100
-  maxMana: 100
-  mana: 100
-  manaRegenRate: 2
-  strength: 25
-  defense: 25
-  spellPower: 25
-  pushRecoverySpeed: 0.2
-  healthBar: {fileID: 0}
-  manaBar: {fileID: 0}
-  money: 500
+  stats:
+    maxHP: 0
+    hp: 0
+    maxMana: 0
+    mana: 0
+    manaRegenRate: 0
+    strength: 0
+    defense: 0
+    spellPower: 0
+  hudSettings:
+    healthBar: {fileID: 0}
+    manaBar: {fileID: 0}
   view: {fileID: 0}
-  isMoving: 0
-  anim: {fileID: 2916926807668769220}
-  allowAttack: 1
   cam: {fileID: 0}
   movementSettings:
     ForwardSpeed: 6
@@ -436,7 +433,6 @@ MonoBehaviour:
     - {x: 0, y: 0, z: 0}
     - {x: 0, y: 0, z: 0}
   timeBetweenManaRegen: 2
-  allowInvoke: 1
 --- !u!114 &5686386052678157433
 MonoBehaviour:
   m_ObjectHideFlags: 0

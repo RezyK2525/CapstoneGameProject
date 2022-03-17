@@ -49,7 +49,7 @@ public class PotionController : Item
             Debug.Log("Called Use in side of Potion Controller For Health!");
             prepare();
             GameManager.instance.potionController = this;
-            if (GameManager.instance.player.hp == GameManager.instance.player.maxHP)
+            if (GameManager.instance.player.stats.hp == GameManager.instance.player.stats.maxHP)
             {
                 Debug.Log("Cant use that potion you are already full health!");
                 //GameManager.instance.ShowText("Cant use that potion you are already full health!", 15, Color.blue, GameManager.instance.player.transform.position, Vector3.up * 30, 1.5f);
@@ -66,7 +66,7 @@ public class PotionController : Item
             Debug.Log("Called Use in side of Potion Controller For Mana!");
             prepare();
             GameManager.instance.potionController = this;
-            if (GameManager.instance.player.mana == GameManager.instance.player.maxMana)
+            if (GameManager.instance.player.stats.mana == GameManager.instance.player.stats.maxMana)
             {
                 Debug.Log("Cant use that potion you are already full mana!");
                 //GameManager.instance.ShowText("Cant use that potion you are already full health!", 15, Color.blue, GameManager.instance.player.transform.position, Vector3.up * 30, 1.5f);

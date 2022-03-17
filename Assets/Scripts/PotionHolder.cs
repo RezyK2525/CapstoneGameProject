@@ -18,15 +18,15 @@ public class PotionHolder : MonoBehaviour
                 {
                     GameManager.instance.potionController.lastEffected = Time.time;
                     //GameManager.instance.player.HealPot(GameManager.instance.potionController.healthPotionSettings.healingAmount);
-                    if (GameManager.instance.player.hp == GameManager.instance.player.maxHP)
+                    if (GameManager.instance.player.stats.hp == GameManager.instance.player.stats.maxHP)
                     {
                         return;
                     }
-                    GameManager.instance.player.hp += GameManager.instance.potionController.healthPotionSettings.healingAmount;
-                    GameManager.instance.player.healthBar.SetValue(GameManager.instance.player.hp);
-                    if (GameManager.instance.player.hp > GameManager.instance.player.maxHP)
+                    GameManager.instance.player.stats.hp += GameManager.instance.potionController.healthPotionSettings.healingAmount;
+                    GameManager.instance.player.hudSettings.healthBar.SetValue(GameManager.instance.player.stats.hp);
+                    if (GameManager.instance.player.stats.hp > GameManager.instance.player.stats.maxHP)
                     {
-                        GameManager.instance.player.hp = GameManager.instance.player.maxHP;
+                        GameManager.instance.player.stats.hp = GameManager.instance.player.stats.maxHP;
                     }
                     
                 }
@@ -51,15 +51,15 @@ public class PotionHolder : MonoBehaviour
                 {
                     GameManager.instance.potionController.lastEffected = Time.time;
                     //GameManager.instance.player.ManaPotRegen(GameManager.instance.potionController.manaPotionSettings.manaAmount);
-                    if (GameManager.instance.player.mana == GameManager.instance.player.maxMana)
+                    if (GameManager.instance.player.stats.mana == GameManager.instance.player.stats.maxMana)
                     {
                         return;
                     }
-                    GameManager.instance.player.mana += GameManager.instance.potionController.manaPotionSettings.manaAmount;
-                    GameManager.instance.player.manaBar.SetValue(GameManager.instance.player.mana);
-                    if (GameManager.instance.player.mana > GameManager.instance.player.maxMana)
+                    GameManager.instance.player.stats.mana += GameManager.instance.potionController.manaPotionSettings.manaAmount;
+                    GameManager.instance.player.hudSettings.manaBar.SetValue(GameManager.instance.player.stats.mana);
+                    if (GameManager.instance.player.stats.mana > GameManager.instance.player.stats.maxMana)
                     {
-                        GameManager.instance.player.mana = GameManager.instance.player.maxMana;
+                        GameManager.instance.player.stats.mana = GameManager.instance.player.stats.maxMana;
                     }
                     
                 }

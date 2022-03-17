@@ -1,3 +1,4 @@
+/*
 using System;
 using UnityEngine;
 using Photon.Pun;
@@ -11,23 +12,37 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class Player : Fighter
     {
         // Display HUD 
+    
+        [Serializable]
+        public class HUDsettings
+        {
+            
         public StatusBar healthBar;
         public StatusBar manaBar;
+        }
 
+        public HUDsettings hudSettings = new HUDsettings();
         // Basic Settings
-        public int money;
+        //MADE MONEY INTERNAL???
+        internal int money;
         internal int gainedMoney;
+        
         public PhotonView view;
-        public bool isMoving;
-        public bool inInteractRange;
+        
+        
+        //Changed these to private??? they arent used???
+        private bool isMoving;
+        private bool inInteractRange;
 
         // Animator
-        public Animator anim;
+        //MADE INTERNAL????????????
+        internal Animator anim;
         
         // Equipment Manager
 
         //Players Attack Settings
-        public bool allowAttack = true;
+        //MADE ALLOW ATTACK INTERNAL??????????
+        internal bool allowAttack = true;
         private float cooldown = 0.6f;
         private float lastSwing;
         //public float nextAttackTime = 0f;
@@ -40,7 +55,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // TODO: Need to add method here to put set character stats
 
             m_RigidBody = GetComponent<Rigidbody>();
-            m_Capsule = GetComponent<CapsuleCollider>();
+            
+            //DONT NEED THIS MAYBE????
+            //m_Capsule = GetComponent<CapsuleCollider>();
 
 
             view = GetComponent<PhotonView>();
@@ -51,10 +68,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 GameManager.instance.player.GetComponent<SpellUser>().fpCam = cam;
 
                 List<StatusBar> bars = new List<StatusBar>(FindObjectsOfType<StatusBar>());
-                healthBar = bars.Where(bar => bar.name == "HealthBar").First();
-                manaBar = bars.Where(bar => bar.name == "ManaBar").First();
-                healthBar.SetMax(maxHP);
-                manaBar.SetMax(maxMana);
+                hudSettings.healthBar = bars.Where(bar => bar.name == "HealthBar").First();
+                hudSettings.manaBar = bars.Where(bar => bar.name == "ManaBar").First();
+                hudSettings.healthBar.SetMax(stats.maxHP);
+                hudSettings.manaBar.SetMax(stats.maxMana);
                 cam.transform.position = transform.position + new Vector3(0f, 1.287f, 0.192f);
                 cam.transform.parent = transform;
 
@@ -94,7 +111,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 if(Time.time > nextAttackTime)
                 {
-                */
+                
 
                 if (Input.GetMouseButton(0))
                 {
@@ -155,7 +172,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 anim.SetBool("Attack2", false);
                 anim.SetBool("Attack3", true);
             }
-            */
+            
         }
 
         // Not implemented - need to fix this spaguett
@@ -429,5 +446,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_Jumping = false;
             }
         }
+        
+        
+        
+        
     }
 }
+*/

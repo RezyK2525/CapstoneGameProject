@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,11 @@ using UnityEngine;
 public class Fighter : MonoBehaviour
 {
     // Stats
+    [Serializable]
+    public class Stats
+    {
+        
+    
     public float maxHP;
     public float hp;
     public float maxMana;
@@ -13,9 +19,11 @@ public class Fighter : MonoBehaviour
     public float strength;
     public float defense;
     public float spellPower;
-
+    }
+    
+    public Stats stats = new Stats();
     //public EnemyAiMovement enemyAiMovement
-    public float pushRecoverySpeed = 0.2f;
+    //public float pushRecoverySpeed = 0.2f;
 
     //immunity
     protected float immuneTime = 0.5f;
@@ -30,7 +38,7 @@ public class Fighter : MonoBehaviour
 
         //Debug.Log(EquipmentManager.instance.currentEquipment[0].name);
         Debug.Log("Damage: " + dmg);
-        Debug.Log("Enemy Health: " + GameManager.instance.enemyAI.hp);
+        Debug.Log("Enemy Health: " + GameManager.instance.enemyAI.stats.hp);
         if(Time.time - lastImmune > immuneTime){
             lastImmune = Time.time;
             //Debug.Log("DMG BIG DAMAGE: " + dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength));
@@ -38,14 +46,14 @@ public class Fighter : MonoBehaviour
             
             //display damage above the enemy head and in red
             // dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength);  <- used for the damage amount
-            GameManager.instance.enemyAI.hp -= dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength);
+            GameManager.instance.enemyAI.stats.hp -= dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.stats.strength);
             //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
             //GameManager.instance.ShowText((dmg.damageAmount + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength)).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
 
 
-            if(GameManager.instance.enemyAI.hp <= 0){
-                GameManager.instance.enemyAI.hp = 0;
+            if(GameManager.instance.enemyAI.stats.hp <= 0){
+                GameManager.instance.enemyAI.stats.hp = 0;
                 Death();
 
             }
@@ -63,7 +71,7 @@ public class Fighter : MonoBehaviour
 
             lastImmune = Time.time;
 
-            GameManager.instance.enemyAI.hp -= dmg;
+            GameManager.instance.enemyAI.stats.hp -= dmg;
             // + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength);
             //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
@@ -72,14 +80,14 @@ public class Fighter : MonoBehaviour
 
 
             GameManager.instance.enemyAI.healthBar.healthBarUI.SetActive(true);
-            GameManager.instance.enemyAI.healthBar.SetValue(GameManager.instance.enemyAI.hp);
+            GameManager.instance.enemyAI.healthBar.SetValue(GameManager.instance.enemyAI.stats.hp);
             
             
             //enemyAiMovement.healthBar.healthBarUI.SetActive(true);
             //enemyAiMovement.healthBar.SetHealth(hitPoint);
             
-            if(GameManager.instance.enemyAI.hp <= 0){
-                GameManager.instance.enemyAI.hp = 0;
+            if(GameManager.instance.enemyAI.stats.hp <= 0){
+                GameManager.instance.enemyAI.stats.hp = 0;
                 Death();
 
             }
@@ -96,12 +104,12 @@ public class Fighter : MonoBehaviour
             lastImmune = Time.time;
             
 
-            GameManager.instance.player.hp -= dmg;
+            GameManager.instance.player.stats.hp -= dmg;
             //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
             //GameManager.instance.ShowText((dmg.damageAmount - dmgReduction).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
 
-            GameManager.instance.player.healthBar.SetValue(GameManager.instance.player.hp);
+            GameManager.instance.player.hudSettings.healthBar.SetValue(GameManager.instance.player.stats.hp);
 
             ////////GameManager.instance.player.healthBar.SetHealth(GameManager.instance.player.hp);
 

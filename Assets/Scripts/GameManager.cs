@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject networkManagerPrefab;
 
     // references
-    public Player player;
+    public BetterPlayerMovement player;
     //public InventoryUI inventoryUI;
     [FormerlySerializedAs("enemyAiMovement")] public EnemyAI enemyAI;
     public bool isPaused;
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
 
         GameObject.Find("SpawnPlayers").GetComponent<SpawnPlayers>().SpawnPlayersNowPlz(isMultiplayer);
         instance = this;
-        player = FindObjectOfType<Player>();
+        player = FindObjectOfType<BetterPlayerMovement>();
         Debug.Log("GameManager waking");
         Debug.Log(player);
         
@@ -125,13 +125,13 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         isPaused = true;
-        GameManager.instance.player.mouseLook.SetCursorLock(false);
+        GameManager.instance.player.cursorState();
     }
     public void ResumeGame()
     {
         Time.timeScale = 1;
         isPaused = false;
-        GameManager.instance.player.mouseLook.SetCursorLock(true);
+        GameManager.instance.player.cursorState();
     }
     public void ExitGame()
     {

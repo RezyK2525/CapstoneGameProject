@@ -67,7 +67,7 @@ Quaternion newRotation = Quaternion.Euler(xyz);
 
     private bool notFull = true;
 
-    public bool allowInvoke = true;
+    internal bool allowInvoke = true;
 
     private void Awake()
     {
@@ -91,7 +91,7 @@ Quaternion newRotation = Quaternion.Euler(xyz);
             MyInputGates();
         }
         
-        if (GameManager.instance.player.mana < GameManager.instance.player.maxMana)
+        if (GameManager.instance.player.stats.mana < GameManager.instance.player.stats.maxMana)
         {
             
             notFullMana();
@@ -110,9 +110,9 @@ Quaternion newRotation = Quaternion.Euler(xyz);
     }
     private void RestoreMana()
     {
-        GameManager.instance.player.mana += GameManager.instance.player.manaRegenRate;
+        GameManager.instance.player.stats.mana += GameManager.instance.player.stats.manaRegenRate;
 
-        GameManager.instance.player.manaBar.SetValue(GameManager.instance.player.mana);
+        GameManager.instance.player.hudSettings.manaBar.SetValue(GameManager.instance.player.stats.mana);
 
         ////////GameManager.instance.player.manaBar.SetHealth(GameManager.instance.player.mana);
 
@@ -127,12 +127,12 @@ Quaternion newRotation = Quaternion.Euler(xyz);
         if (cast && readyToCast)
         {
             Debug.Log("cast and ready to cast");
-            if (GameManager.instance.player.mana >= fireBallSettings.manaCostFireball)
+            if (GameManager.instance.player.stats.mana >= fireBallSettings.manaCostFireball)
             {
 
                 Debug.Log("call cast fireball");
-                GameManager.instance.player.mana -= fireBallSettings.manaCostFireball;
-                GameManager.instance.player.manaBar.SetValue(GameManager.instance.player.mana);
+                GameManager.instance.player.stats.mana -= fireBallSettings.manaCostFireball;
+                GameManager.instance.player.hudSettings.manaBar.SetValue(GameManager.instance.player.stats.mana);
                 CastFireball(); 
 
 
@@ -157,12 +157,12 @@ Quaternion newRotation = Quaternion.Euler(xyz);
         if (cast && readyToCast)
         {
             Debug.Log("cast and ready to cast");
-            if (GameManager.instance.player.mana >= gatesSettings.manaCostGates)
+            if (GameManager.instance.player.stats.mana >= gatesSettings.manaCostGates)
             {
 
                 Debug.Log("call cast Gates");
-                GameManager.instance.player.mana -= gatesSettings.manaCostGates;
-                GameManager.instance.player.manaBar.SetValue(GameManager.instance.player.mana);
+                GameManager.instance.player.stats.mana -= gatesSettings.manaCostGates;
+                GameManager.instance.player.hudSettings.manaBar.SetValue(GameManager.instance.player.stats.mana);
                 CastGates(); 
 
 

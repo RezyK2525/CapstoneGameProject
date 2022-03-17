@@ -116,7 +116,7 @@ public class Shop : MonoBehaviour
         setCoinsUI();
 
         // Bring cursor back
-        GameManager.instance.player.mouseLook.SetCursorLock(false);
+        GameManager.instance.player.cursorState();
 
         // Pause game
         Time.timeScale = 0;
@@ -130,7 +130,7 @@ public class Shop : MonoBehaviour
         gameObject.SetActive(false);
 
         // Bring cursor back
-        GameManager.instance.player.mouseLook.lockCursor = true;
+        GameManager.instance.player.cursorState();
 
         // Resume game
         Time.timeScale = 1;

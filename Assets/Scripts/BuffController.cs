@@ -30,27 +30,27 @@ public class BuffController : Item
 
         if (name.Equals("HPbuff"))
         {
-            GameManager.instance.player.maxHP += buffTypesSettings.HP;
+            GameManager.instance.player.stats.maxHP += buffTypesSettings.HP;
         }
         if (name.Equals("MANAbuff"))
         {
-            GameManager.instance.player.maxMana += buffTypesSettings.MANA;
+            GameManager.instance.player.stats.maxMana += buffTypesSettings.MANA;
         }
         if (name.Equals("STRENGTHbuff"))
         {
-            GameManager.instance.player.strength += buffTypesSettings.STRENGTH;
+            GameManager.instance.player.stats.strength += buffTypesSettings.STRENGTH;
         }
         if (name.Equals("SPELLPOWERbuff"))
         {
-            GameManager.instance.player.spellPower += buffTypesSettings.SPELLPOWER;
+            GameManager.instance.player.stats.spellPower += buffTypesSettings.SPELLPOWER;
         }
         if (name.Equals("ManaRegenRatebuff"))
         {
-            GameManager.instance.player.manaRegenRate += buffTypesSettings.ManaRegenRate;
+            GameManager.instance.player.stats.manaRegenRate += buffTypesSettings.ManaRegenRate;
         }
         if (name.Equals("DEFENSEbuff"))
         {
-            GameManager.instance.player.defense += buffTypesSettings.DEFENSE;
+            GameManager.instance.player.stats.defense += buffTypesSettings.DEFENSE;
         }
     }
     

@@ -24,8 +24,8 @@ public class HUDController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		healthBar.SetMax(GameManager.instance.player.maxHP);
-		manaBar.SetMax(GameManager.instance.player.maxMana);
+		healthBar.SetMax(GameManager.instance.player.stats.maxHP);
+		manaBar.SetMax(GameManager.instance.player.stats.maxMana);
 		interactField.gameObject.SetActive(false);
 		gainedMoney.gameObject.SetActive(false);
 		// cooldownBar.SetMax(GameManager.instance.player.maxMana);
@@ -59,11 +59,11 @@ public class HUDController : MonoBehaviour
 
 
 		// update values
-		healthBar.SetValue(GameManager.instance.player.hp);
-		manaBar.SetValue(GameManager.instance.player.mana);
+		healthBar.SetValue(GameManager.instance.player.stats.hp);
+		manaBar.SetValue(GameManager.instance.player.stats.mana);
 
-		healthValue.text = ""+GameManager.instance.player.hp;
-		manaValue.text = ""+GameManager.instance.player.mana;
+		healthValue.text = ""+GameManager.instance.player.stats.hp;
+		manaValue.text = ""+GameManager.instance.player.stats.mana;
 		moneyValue.text = ""+GameManager.instance.player.money;
 		gainedMoney.text = "+" + GameManager.instance.player.gainedMoney;
     }
