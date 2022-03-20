@@ -68,5 +68,9 @@ public class HUDController : MonoBehaviour
 		gainedMoney.text = "+" + GameManager.instance.player.gainedMoney;
     }
 
+	public void ExitGame()
+    {
+		GameManager.instance.ExitGame();
+    }
 
 }

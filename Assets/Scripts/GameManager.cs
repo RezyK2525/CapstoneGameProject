@@ -48,8 +48,6 @@ public class GameManager : MonoBehaviour
         if (isMultiplayer){
             if (PhotonNetwork.IsMasterClient)
                 PhotonNetwork.Instantiate(networkManagerPrefab.name, Vector3.zero, Quaternion.identity);
-            else
-                ;
         }
         else
         {

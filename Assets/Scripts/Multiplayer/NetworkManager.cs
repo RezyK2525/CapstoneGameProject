@@ -43,18 +43,21 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         //players = FindObjectsOfType<Player>();
         
         // items 
-       /* int itemCount = GameObject.Find("Items").transform.childCount;
+        
+        /*
+        int itemCount = GameObject.Find("Items").transform.childCount;
         items = new GameObject[itemCount];
         for (int i = 0; i < itemCount; i++)
             items[i] = GameObject.Find("Items").transform.GetChild(i).gameObject;
-
+        */
+        /*
         //enemies
         int enemyCount = GameObject.Find("Enemies").transform.childCount;
         enemies = new GameObject[enemyCount];
         for (int i = 0; i < enemyCount; i++)
             enemies[i] = GameObject.Find("Enemies").transform.GetChild(i).gameObject;*/
 
-        if (PhotonNetwork.IsMasterClient)
+        if ((isMultiplayer && PhotonNetwork.IsMasterClient) || !isMultiplayer)
             InstantiateEntities();
 
             DontDestroyOnLoad(this.gameObject);
@@ -64,7 +67,16 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public void InstantiateEntities()
     {
-        PhotonNetwork.Instantiate(ItemsPrefab.name, ItemsPrefab.transform.position, Quaternion.identity);
+        if (isMultiplayer)
+        {
+            PhotonNetwork.Instantiate(ItemsPrefab.name, ItemsPrefab.transform.position, Quaternion.identity);
+            //PhotonNetwork.Instantiate(EnemiesPrefab.name, EnemiesPrefab.transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(ItemsPrefab);
+            // Instantiate(EnemiesPrefab);
+        }
 
     }
 

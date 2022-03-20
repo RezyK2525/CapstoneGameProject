@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e5c39a8c8e8b04cacd68a5e4699573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemsPrefab: {fileID: 3884777918261637499, guid: f324ec4b718375144abdf7a4c9bdd566, type: 3}
+  ItemsPrefab: {fileID: 2990865914229000791, guid: 9266fa863f4202e48954ae79f0bb75d8, type: 3}
   EnemiesPrefab: {fileID: 0}
   players: []
   enemies: []
