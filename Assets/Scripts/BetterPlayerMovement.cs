@@ -163,13 +163,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void Update()
         {
-            Debug.Log(vel);
-            MouseLook();
-            GetMovementInput();
+            // Debug.Log(vel);
+            //MouseLook();
+            //GetMovementInput();
             //Debug.Log("GettingCalled");
             if (!GameManager.instance.isMultiplayer || view.IsMine)
             {
-                Debug.Log("GettingCalled");
+                // Debug.Log("GettingCalled");
                 MouseLook();
                 GetMovementInput();
 
@@ -316,7 +316,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     void GetMovementInput() {
         float x = Input.GetAxisRaw(movementSettings.xAxisInput);
         float z = Input.GetAxisRaw(movementSettings.yAxisInput);
-        Debug.Log(isRunning);
+        //Debug.Log(isRunning);
         
         if (Input.GetKey(movementSettings.RunKey))
         {
