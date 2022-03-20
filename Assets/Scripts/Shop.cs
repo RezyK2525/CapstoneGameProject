@@ -68,6 +68,22 @@ public class Shop : MonoBehaviour
             CloseShop();
         }
     }
+    
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            GameManager.instance.hud.interactField.gameObject.SetActive(true);
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            GameManager.instance.hud.interactField.gameObject.SetActive(false);
+        }
+    }
 
     public void OnBuyItemClick(int itemIndex)
     {
