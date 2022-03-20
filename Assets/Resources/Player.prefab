@@ -4335,6 +4335,7 @@ GameObject:
   - component: {fileID: 5634646307658842835}
   - component: {fileID: 708387130195917604}
   - component: {fileID: 2375196442759802676}
+  - component: {fileID: 8199688651820883738}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -4569,6 +4570,18 @@ MonoBehaviour:
   spellSlot: {fileID: 0}
   AbilitySlot: {fileID: 0}
   weaponHolder: {fileID: 2919464403788351781}
+--- !u!114 &8199688651820883738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3356866983570036144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a223385610c564f8fb8a107a9c3caa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3356866983571436877
 GameObject:
   m_ObjectHideFlags: 0

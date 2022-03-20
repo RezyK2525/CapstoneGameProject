@@ -3,21 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="97b38def-8585-4862-8180-afece488f109" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.tdDungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tdDungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Imports/Player Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Imports/Player Controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ClassicFPSController/Scripts/SmoothPlayerCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ClassicFPSController/Scripts/SmoothPlayerCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/New Potion 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/New Potion 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/New Potion.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items/New Potion.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Other/Player 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Other/Player 1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Other/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Other/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Other/Player.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Other/Player.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TheTimeTemple.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TheTimeTemple.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BetterPlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BetterPlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/NavMeshComponents.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NavMeshComponents.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/NavMeshComponentsEditor.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NavMeshComponentsEditor.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +70,7 @@
       <workItem from="1646779537916" duration="1590000" />
       <workItem from="1647294514284" duration="4084000" />
       <workItem from="1647469628708" duration="8973000" />
-      <workItem from="1647742905935" duration="1094000" />
+      <workItem from="1647742905935" duration="1732000" />
     </task>
     <servers />
   </component>
