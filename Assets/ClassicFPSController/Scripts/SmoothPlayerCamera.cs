@@ -7,7 +7,7 @@ public class SmoothPlayerCamera : MonoBehaviour
     [SerializeField] private float moveSpeed = 100f;
     [SerializeField] private float turnSpeed = 100f;
     [SerializeField] private float distanceLimit = 1f;
-    [SerializeField] private BetterPlayerMovement controller;
+    [SerializeField] public BetterPlayerMovement controller;
 
     private Vector3 oldPos;
     private Quaternion oldRot;

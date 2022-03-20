@@ -118,14 +118,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
 
                 //= THIS DOESNT WORK NEEDS FIX!
-                //GameManager.instance.player = this;
+                GameManager.instance.player = this;
 
 
 
-                /*
-                cam = GameManager.instance.cam;
-                GameManager.instance.player.GetComponent<SpellUser>().fpCam = cam;
-                */
+
+                GameManager.instance.cam.GetComponent<SmoothPlayerCamera>().controller = this;
+                GameManager.instance.player.GetComponent<SpellUser>().fpCam = GameManager.instance.cam;
+                
 
                 List<StatusBar> bars = new List<StatusBar>(FindObjectsOfType<StatusBar>());
                 hudSettings.healthBar = bars.Where(bar => bar.name == "HealthBar").First();
@@ -173,8 +173,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 MouseLook();
                 GetMovementInput();
 
-                anim.SetFloat("vertical", Input.GetAxis("Vertical"));
-                anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
+                //FIXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX THIS
+                //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                //anim.SetFloat("vertical", Input.GetAxis("Vertical"));
+                //anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
 
                 /*  COMBO ANIMATION -- 
                 if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
