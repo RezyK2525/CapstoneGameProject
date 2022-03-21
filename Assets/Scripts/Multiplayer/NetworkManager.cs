@@ -10,21 +10,24 @@ public class NetworkManager : MonoBehaviourPunCallbacks
  
     // Instance
     public static NetworkManager instance;
+    internal const int MAX_PLAYERS = 5;
 
     public GameObject ItemsPrefab;
     public GameObject EnemiesPrefab;
 
     // references
-    public GameObject[] players;
+    public List<GameObject> players;
 
-    public GameObject[] enemies;
-    public GameObject[] items;
+    /*public GameObject[] enemies;
+    public GameObject[] items;*/
 
     public bool isMultiplayer;
 
+    public int playerCount = 0;
 
     private void Start()
     {
+        Debug.Log("NetworkManager waking");
 
         /*if (instance != null)
         {
@@ -35,34 +38,20 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             }
             return;
         }*/
-        Debug.Log("NetworkManager waking");
+        instance = this;
+        if (players == null)
+        {
+            players = new List<GameObject>();
+
+        }
         isMultiplayer = PlayerPrefs.GetInt("isMultiplayer") == 1;
 
-        //GameObject.Find("SpawnPlayers").GetComponent<SpawnPlayers>().SpawnPlayersNowPlz(isMultiplayer);
-        instance = this;
-        //players = FindObjectsOfType<Player>();
-        
-        // items 
-        
-        /*
-        int itemCount = GameObject.Find("Items").transform.childCount;
-        items = new GameObject[itemCount];
-        for (int i = 0; i < itemCount; i++)
-            items[i] = GameObject.Find("Items").transform.GetChild(i).gameObject;
-        */
-        /*
-        //enemies
-        int enemyCount = GameObject.Find("Enemies").transform.childCount;
-        enemies = new GameObject[enemyCount];
-        for (int i = 0; i < enemyCount; i++)
-            enemies[i] = GameObject.Find("Enemies").transform.GetChild(i).gameObject;*/
 
         if ((isMultiplayer && PhotonNetwork.IsMasterClient) || !isMultiplayer)
+        {
             InstantiateEntities();
-
-            DontDestroyOnLoad(this.gameObject);
-
-
+        }
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void InstantiateEntities()
@@ -70,26 +59,59 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         if (isMultiplayer)
         {
             PhotonNetwork.Instantiate(ItemsPrefab.name, ItemsPrefab.transform.position, Quaternion.identity);
-            //PhotonNetwork.Instantiate(EnemiesPrefab.name, EnemiesPrefab.transform.position, Quaternion.identity);
+            PhotonNetwork.Instantiate(EnemiesPrefab.name, EnemiesPrefab.transform.position, Quaternion.identity);
         }
         else
         {
             Instantiate(ItemsPrefab);
-            // Instantiate(EnemiesPrefab);
+            Instantiate(EnemiesPrefab);
         }
-
     }
 
-    void Update()
+    /* void Update()
+     {
+
+     }
+ */
+    public void Destroy(GameObject g)
     {
-        
+        Debug.Log("destroy " + g.GetPhotonView().ViewID);
+        GetComponent<PhotonView>().RPC("DestroyMaster", RpcTarget.MasterClient, g.GetPhotonView().ViewID);
+    }
+    [PunRPC]
+    public void DestroyMaster(int gID)
+    {
+        PhotonNetwork.Destroy(PhotonView.Find(gID).gameObject);
     }
 
- /*   void OnPhotonPlayerConnected()
+    public void AddPlayer(GameObject newPlayer)
     {
-        Debug.Log("OnPhotonPlayerConnected() " + other.name); // not seen if you're the player connecting
+        GetComponent<PhotonView>().RPC("AddPlayerMaster", RpcTarget.MasterClient, newPlayer.GetPhotonView().ViewID);
     }
-*/
+    [PunRPC]
+    public void AddPlayerMaster(int newPlayerID)
+    {
+        if (instance == null)
+        {
+            players = new List<GameObject>();
+        }
+        if ((isMultiplayer && PhotonNetwork.IsMasterClient) || !isMultiplayer)
+        {
+            GameObject newPlayer = PhotonView.Find(newPlayerID).gameObject;
+            Debug.Log("adding player");
+            Debug.Log(instance);
+            Debug.Log(players);
+            Debug.Log(playerCount);
+            players.Add(newPlayer);
+            newPlayer.name = "Player" + playerCount;
+            playerCount++;
+            //Debug.Log("OnPhotonPlayerConnected() " + other.name);
+            if (PhotonNetwork.IsMasterClient)
+            {
+                GetComponent<PhotonView>().RPC("AddPlayerMaster", RpcTarget.Others, newPlayerID);
+            }
+        }
+    }
 
 }
 

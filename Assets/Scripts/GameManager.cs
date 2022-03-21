@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
 
     // Instance
     public static GameManager instance;
-    private NetworkManager networkManager;
+    public NetworkManager networkManager;
+    private bool NetManInstantiated = false;
     public GameObject networkManagerPrefab;
 
     // references
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("GameManager waking");
 
 
         if (instance != null)
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
 
             return;
         }
+        instance = this;
 
         isMultiplayer = PlayerPrefs.GetInt("isMultiplayer") == 1;
         if (isMultiplayer){
@@ -52,28 +55,26 @@ public class GameManager : MonoBehaviour
         else
         {
             Instantiate(networkManagerPrefab);
-            
         }
         networkManager = FindObjectOfType<NetworkManager>();
+        Debug.Log(networkManager);
 
-        GameObject.Find("SpawnPlayers").GetComponent<SpawnPlayers>().SpawnPlayersNowPlz(isMultiplayer);
-        instance = this;
-        player = FindObjectOfType<BetterPlayerMovement>();
-        Debug.Log("GameManager waking");
-        Debug.Log(player);
-        
         SceneManager.sceneLoaded += LoadState;
         isPaused = false;
+
+        //networkManager.AddPlayer(player.gameObject);
+        // Debug.Log(player);
+        NetManInstantiated = true;
+
         DontDestroyOnLoad(gameObject);
 
     }
 
+
     //floating text
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
-
         //floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
-
     }
 
     // SAVE STATE
@@ -83,7 +84,6 @@ public class GameManager : MonoBehaviour
 
     public void SaveState()
     {
-
         //string s = money.ToString() + "|";
         // s += inventory.ToString();
 
@@ -96,21 +96,17 @@ public class GameManager : MonoBehaviour
 
     }
 
-
     public void LoadState(Scene s, LoadSceneMode mode)
     {
          if(!PlayerPrefs.HasKey("SaveState"))
             return;
 
         string[] data = PlayerPrefs.GetString("SaveState").Split('|');
-
         Debug.Log(PlayerPrefs.GetString("SaveState"));
-        
         
         //Change Character
         //money = int.Parse(data[0]);
 
-       
         //change inventory
         // inventoryUI = (int.Parse(data[1]));
 
@@ -134,6 +130,10 @@ public class GameManager : MonoBehaviour
     public void ExitGame()
     {
         //Destroy(GameObject.Find("DontDestroyOnLoad"));
+        if (isMultiplayer)
+        {
+            PhotonNetwork.Disconnect();
+        }
         SceneManager.LoadScene("MainMenu");
 
     }

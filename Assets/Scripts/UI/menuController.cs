@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
+using Photon.Realtime;
 //using UnityEngine.InputSystem;
 
 public class menuController : MonoBehaviourPunCallbacks
@@ -395,6 +396,12 @@ public class menuController : MonoBehaviourPunCallbacks
     // multiplayer stuff
     public void ConnectToServer()
     {
+        /*AppSettings connectionSettings = new AppSettings();
+        connectionSettings.UseNameServer = true;
+        connectionSettings.ServerAddress = "ns.photonengine.cn";
+        connectionSettings.AppIdRealtime = "491273a3-d20f-4d61-83cf-f0089fa65c7d"; // TODO: replace with your own PUN AppId unlocked for China region
+        connectionSettings.AppVersion = "ChinaAppVersion"; // optional
+*/
         PhotonNetwork.ConnectUsingSettings();
     }
     public override void OnConnectedToMaster()
@@ -420,6 +427,7 @@ public class menuController : MonoBehaviourPunCallbacks
     }
     public void DiconnectFromServer()
     {
+
         PhotonNetwork.Disconnect();
     }
     public void JoinRoom()

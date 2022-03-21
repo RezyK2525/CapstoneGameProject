@@ -93,7 +93,8 @@ public class EnemyAI : Fighter
                 playerInSightRange = false;
             }
         }
-        if (distance <= sightRange || GameManager.instance.enemyAI.playerInSightRange)
+        if (distance <= sightRange || playerInSightRange)
+        // if (false)
         {
             playerInSightRange = true;
         }
@@ -110,10 +111,10 @@ public class EnemyAI : Fighter
         {
             playerInAttackRange = false;
         }
-        
-        
-        
-        
+
+
+
+
         //check for sight and attack range
         //playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         //playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);

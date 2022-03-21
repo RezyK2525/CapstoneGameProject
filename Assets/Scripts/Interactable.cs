@@ -7,12 +7,12 @@ public class Interactable : MonoBehaviour
     // Chest, Items, Buffs, Money
 
     public float radius = 3f;
-    Transform player;
+    //Transform player;
     bool hasInteracted = false;
 
     void Start()   
     {
-        player = GameManager.instance.player.transform;
+        //player = 
     }
 
     public virtual void Interact()
@@ -27,7 +27,7 @@ public class Interactable : MonoBehaviour
     {
         if (!hasInteracted)
         {
-            float distance = Vector3.Distance(player.position, transform.position);
+            float distance = Vector3.Distance(GameManager.instance.player.transform.position, transform.position);
             if (distance <= radius)
             {
 

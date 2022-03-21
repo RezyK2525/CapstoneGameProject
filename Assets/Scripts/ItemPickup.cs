@@ -21,7 +21,7 @@ public class ItemPickup : Interactable
         
         if(wasPickedup)
             if (GameManager.instance.isMultiplayer)
-                PhotonNetwork.Destroy(gameObject);
+                NetworkManager.instance.Destroy(gameObject);
             else
                 Destroy(gameObject);
     }
