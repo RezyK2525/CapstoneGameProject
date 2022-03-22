@@ -2775,6 +2775,7 @@ MonoBehaviour:
     healthBar: {fileID: 0}
     manaBar: {fileID: 0}
   view: {fileID: 0}
+  anim: {fileID: 241994878707122437}
 --- !u!1 &241994878321194770
 GameObject:
   m_ObjectHideFlags: 0

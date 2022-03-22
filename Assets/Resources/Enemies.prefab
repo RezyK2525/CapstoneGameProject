@@ -15456,6 +15456,8 @@ MonoBehaviour:
   sightRange: 75
   attackRange: 6.13
   money: 0
+  anim: {fileID: 0}
+  moving: 0
   enemyType:
     isRanged: 1
     isMeelee: 0
@@ -15465,8 +15467,6 @@ MonoBehaviour:
     projectileUpwardDirection: 1
     attackPoint: {fileID: 1456506884114771226}
     projectile: {fileID: 179432, guid: c0e117866f5839a4988e7725f9986546, type: 3}
-  meeleeEnemySettings:
-    anim: {fileID: 0}
   followerEnemySettings:
     alertRange: 0
 --- !u!195 &1456506884340327736

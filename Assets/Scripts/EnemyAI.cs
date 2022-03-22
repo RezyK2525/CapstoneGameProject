@@ -21,6 +21,10 @@ public class EnemyAI : Fighter
     public float sightRange, attackRange;
     internal bool playerInSightRange, playerInAttackRange;
     public int money;
+
+    // animations
+    public Animator anim;
+    public bool moving;
     
     [Serializable]
     public class EnemyType
@@ -42,10 +46,11 @@ public class EnemyAI : Fighter
     public GameObject projectile;
     }
 
+    
     [Serializable]
     public class MeeleeEnemySettings
     {
-        public Animator anim;
+        //public Animator anim;
     }
     
     [Serializable]
@@ -87,6 +92,7 @@ public class EnemyAI : Fighter
             if (distance <= sightRange || (teamDistance <= followerEnemySettings.alertRange && GameManager.instance.enemyAI.playerInSightRange && enemyType.isFollower))
             {
                 playerInSightRange = true;
+
             }
             else
             {
@@ -143,7 +149,7 @@ public class EnemyAI : Fighter
             walkPointSet = false;
         }
 
-
+        //anim.SetBool("isMoving", false);
     }
 
     private void SearchWalkPoint()
@@ -162,6 +168,7 @@ public class EnemyAI : Fighter
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+        anim.SetBool("isMoving", true);
     }
     
     private void AttackPlayerRanged()
@@ -198,15 +205,18 @@ public class EnemyAI : Fighter
         //Make sure enemy doesnt move
         agent.SetDestination(transform.position);
         
-
         Vector3 playerPosition = new Vector3(player.position.x, this.transform.position.y, player.position.z);
         transform.LookAt(playerPosition);
 
         if (!alreadyAttacked)
         {
-            
-            //Attack Code HERE   PUT IN MELEE ANIMATION FOR DAMAGE
 
+            //Attack Code HERE   PUT IN MELEE ANIMATION FOR DAMAGE
+            int rand = Random.Range(0, 4);
+
+            string[] attacks = { "Attack1", "Attack2", "CrushAttack", "JumpAttack" };
+
+            anim.SetTrigger(attacks[rand]);
             
             
             //

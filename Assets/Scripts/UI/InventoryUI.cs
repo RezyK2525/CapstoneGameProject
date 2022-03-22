@@ -36,14 +36,14 @@ public class InventoryUI : MonoBehaviour
         {
             if (isOpen)
             {
-                GameManager.instance.player.allowAttack = true;
+                GameManager.instance.player.setAllowedToAttack(true);
                 GameManager.instance.player.cursorState();
                 isOpen = false;
                 
             }
             else
             {
-                GameManager.instance.player.allowAttack = false;
+                GameManager.instance.player.setAllowedToAttack(false);
                 GameManager.instance.player.cursorState();
                 isOpen = true;
             }

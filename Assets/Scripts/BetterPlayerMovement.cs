@@ -80,15 +80,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool isMoving;
         private bool inInteractRange;
 
-        // Animator
-        //MADE INTERNAL????????????
-        internal Animator anim;
+        // Animator - Not internal, needs to be public
+        public Animator anim;
 
         // Equipment Manager
 
         //Players Attack Settings
-        //MADE ALLOW ATTACK INTERNAL??????????
-        internal bool allowAttack = true;
+        private bool allowAttack = true;
         private float cooldown = 0.6f;
 
         private float lastSwing;
@@ -222,6 +220,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
+        // Attack //===================================
         void Attack()
         {
             lastSwing = Time.time;
@@ -269,12 +268,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 // Do other things based on an attack ending.
             }
         }
-
-        void ToggleWeaponCollider()
-        {
-
-        }
         
+        public void setAllowedToAttack(bool maybe)
+        {
+            allowAttack = maybe;
+        }
+
+        // ------- // ===================================
         
     private void FixedUpdate() {
         vel = rb.velocity; 
