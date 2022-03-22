@@ -131,9 +131,14 @@ Quaternion newRotation = Quaternion.Euler(xyz);
     }
     private void RestoreMana()
     {
-        GameManager.instance.player.stats.mana += GameManager.instance.player.stats.manaRegenRate;
+        if (GameManager.instance.player.stats.mana != GameManager.instance.player.stats.maxMana)
+        {
+            GameManager.instance.player.stats.mana += GameManager.instance.player.stats.manaRegenRate;
+            GameManager.instance.player.hudSettings.manaBar.SetValue(GameManager.instance.player.stats.mana);
+        }
+        
 
-        GameManager.instance.player.hudSettings.manaBar.SetValue(GameManager.instance.player.stats.mana);
+        
 
         ////////GameManager.instance.player.manaBar.SetHealth(GameManager.instance.player.mana);
 

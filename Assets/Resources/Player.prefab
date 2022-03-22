@@ -4423,8 +4423,8 @@ MonoBehaviour:
     - {fileID: 8196493572460308203}
     - {fileID: 8196493572502072172}
     - {fileID: 8196493573641052139}
-    manaCostGates: 25
-    timeBetweenCastsGates: 1
+    manaCostGates: 40
+    timeBetweenCastsGates: 2
     gateDirections:
     - {x: 0, y: 0, z: 0}
     - {x: 0, y: 0, z: 0}
