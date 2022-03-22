@@ -4393,6 +4393,7 @@ MonoBehaviour:
   - {fileID: 179432, guid: c0e117866f5839a4988e7725f9986546, type: 3}
   - {fileID: 3252483538034296009, guid: 96611e8f44b2da24fa30d90b35be3a1c, type: 3}
   - {fileID: 7957763276450273661, guid: 0cc84947da77afe4a858102f47c42cda, type: 3}
+  - {fileID: 4133317143634052803, guid: 65960b53a14d49546b650a8e89e9b27f, type: 3}
   fireBallSettings:
     fireForce: 45
     upwardForce: 1
@@ -4434,6 +4435,12 @@ MonoBehaviour:
     - {x: 0, y: 0, z: 0}
     - {x: 0, y: 0, z: 0}
     - {x: 0, y: 0, z: 0}
+  magicBulletSettings:
+    fireForce: 45
+    upwardForce: 1
+    attackPointFireball: {fileID: 3356866982454733625}
+    manaCostMagicBullet: 2
+    timeBetweenCastsMagicBullet: 1
   timeBetweenManaRegen: 2
 --- !u!136 &2782331552799369708
 CapsuleCollider:
@@ -4496,6 +4503,7 @@ MonoBehaviour:
     healthBar: {fileID: 0}
     manaBar: {fileID: 0}
   view: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &5634646307658842835
 MonoBehaviour:
   m_ObjectHideFlags: 0

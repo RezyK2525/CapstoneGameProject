@@ -20,6 +20,19 @@ Quaternion newRotation = Quaternion.Euler(xyz);
     
     //Spell array
     [SerializeField] private GameObject[] spellPrefab;
+    
+        [Serializable]
+        public class MagicBullet
+        {
+            public float fireForce, upwardForce;
+            
+            public Transform attackPointFireball;
+            
+            public float manaCostMagicBullet = 20;
+            
+            public int timeBetweenCastsMagicBullet;
+            
+        }
 
     [Serializable]
     public class FireBallSettings
@@ -59,6 +72,7 @@ Quaternion newRotation = Quaternion.Euler(xyz);
 
     public FireBallSettings fireBallSettings = new FireBallSettings();
     public GatesSettings gatesSettings = new GatesSettings();
+    public MagicBullet magicBulletSettings = new MagicBullet();
     
 
     public float timeBetweenManaRegen;
@@ -82,6 +96,13 @@ Quaternion newRotation = Quaternion.Euler(xyz);
             GameManager.instance.spellController.spellSettings.isFireball = false;
             Debug.Log("IS FIREBALL IS TRUE");
             MyInputFireball();
+        }
+        
+        if (GameManager.instance.spellController.spellSettings.isMagicBullet)
+        {
+            GameManager.instance.spellController.spellSettings.isMagicBullet = false;
+            Debug.Log("IS FIREBALL IS TRUE");
+            MyInputMagicBullet();
         }
         
         if (GameManager.instance.spellController.spellSettings.isGates)
@@ -149,6 +170,37 @@ Quaternion newRotation = Quaternion.Euler(xyz);
 
     }
     
+    private void MyInputMagicBullet()
+    {
+        cast = true;
+        Debug.Log("Inside MyInputMagicBullet");
+
+        if (cast && readyToCast)
+        {
+            Debug.Log("cast and ready to cast");
+            if (GameManager.instance.player.stats.mana >= magicBulletSettings.manaCostMagicBullet)
+            {
+
+                Debug.Log("call cast MagicBullet");
+                GameManager.instance.player.stats.mana -= magicBulletSettings.manaCostMagicBullet;
+                GameManager.instance.player.hudSettings.manaBar.SetValue(GameManager.instance.player.stats.mana);
+                CastMagicBullet(); 
+
+
+                ////////GameManager.instance.player.manaBar.SetHealth(GameManager.instance.player.mana);
+
+            }
+            else
+            {
+                Debug.Log("Not Enough Mana To Cost");
+            }
+            
+        }
+
+
+    }
+    
+    
     private void MyInputGates()
     {
         cast = true;
@@ -210,6 +262,42 @@ Quaternion newRotation = Quaternion.Euler(xyz);
         if (allowInvoke)
         {
             Invoke("ResetCast",fireBallSettings.timeBetweenCastsFireball);
+            allowInvoke = false;
+            
+        }
+
+    }
+    
+    private void CastMagicBullet()
+    {
+        readyToCast = false;
+
+        //Find the exact hit position using a raycast
+        Ray ray = fpCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); // ray through middle of screen
+        RaycastHit hit;
+
+        //check if ray hits something
+        Vector3 targetPoint;
+        if (Physics.Raycast(ray, out hit)){
+            targetPoint = hit.point;
+        }
+        else {
+            targetPoint = ray.GetPoint(75);
+        }
+        
+        //calculate direction
+        Vector3 direction = targetPoint - magicBulletSettings.attackPointFireball.position;
+        
+        Rigidbody rb = Instantiate(spellPrefab[3], magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
+        rb.transform.forward = direction.normalized;
+        
+        rb.AddForce(direction.normalized * magicBulletSettings.fireForce, ForceMode.Impulse);
+        rb.AddForce(fpCam.transform.up * magicBulletSettings.upwardForce, ForceMode.Impulse);
+
+        //invoke resetCast
+        if (allowInvoke)
+        {
+            Invoke("ResetCast",magicBulletSettings.timeBetweenCastsMagicBullet);
             allowInvoke = false;
             
         }

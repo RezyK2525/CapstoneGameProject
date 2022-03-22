@@ -4,11 +4,11 @@ using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Fireball : MonoBehaviour {
-    public bool pushOnAwake = true;
-    public Vector3 startDirection;
-    public float startMagnitude;
+    //public bool pushOnAwake = true;
+    //public Vector3 startDirection;
+    //public float startMagnitude;
     public ForceMode forceMode;
-    public Transform player;
+    //public Transform player;
 
     public GameObject fieryEffect;
     public GameObject smokeEffect;
