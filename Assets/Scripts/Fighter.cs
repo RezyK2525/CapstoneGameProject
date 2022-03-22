@@ -46,6 +46,9 @@ public class Fighter : MonoBehaviour
             
             //display damage above the enemy head and in red
             // dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength);  <- used for the damage amount
+            
+            
+            
             GameManager.instance.enemyAI.stats.hp -= dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.stats.strength);
             //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
