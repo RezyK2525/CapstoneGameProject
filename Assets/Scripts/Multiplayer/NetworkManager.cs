@@ -12,10 +12,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public static NetworkManager instance;
     internal const int MAX_PLAYERS = 5;
 
-    public GameObject ItemsPrefab;
-    public GameObject EnemiesPrefab;
+   /* public GameObject ItemsPrefab;
+    public GameObject EnemiesPrefab;*/
 
     // references
+    public List<GameObject> items;
+    public List<GameObject> enemies;
     public List<GameObject> players;
 
     /*public GameObject[] enemies;
@@ -45,7 +47,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         }
         isMultiplayer = PlayerPrefs.GetInt("isMultiplayer") == 1;
-
+        
 
         if ((isMultiplayer && PhotonNetwork.IsMasterClient) || !isMultiplayer)
         {
@@ -58,13 +60,34 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         if (isMultiplayer)
         {
-            PhotonNetwork.Instantiate(ItemsPrefab.name, ItemsPrefab.transform.position, Quaternion.identity);
-            PhotonNetwork.Instantiate(EnemiesPrefab.name, EnemiesPrefab.transform.position, Quaternion.identity);
+            // items
+            // PhotonNetwork.Instantiate(ItemsPrefab.name, ItemsPrefab.transform.position, Quaternion.identity);
+
+            foreach (GameObject item in items)
+            {
+                string itemName = item.name;
+                // Debug.Log(itemName);
+                GameObject itemObj = Resources.Load<GameObject>(itemName);
+
+                // Debug.Log(itemObj);
+                PhotonNetwork.Instantiate(itemName, itemObj.transform.position, Quaternion.identity);
+            }
+            foreach (GameObject enemy in enemies)
+            {
+                string enemyName = enemy.name;
+                GameObject enemyObj = Resources.Load<GameObject>(enemyName);
+                PhotonNetwork.Instantiate(enemyName, enemyObj.transform.position, Quaternion.identity);
+                //PhotonNetwork.Instantiate(EnemiesPrefab.name, EnemiesPrefab.transform.position, Quaternion.identity);
+            }
         }
         else
         {
-            Instantiate(ItemsPrefab);
-            Instantiate(EnemiesPrefab);
+            // Instantiate(ItemsPrefab);
+            // Instantiate(EnemiesPrefab);
+            foreach (GameObject item in items)
+                Instantiate(item);
+            foreach (GameObject enemy in enemies)
+                Instantiate(enemy);
         }
     }
 
@@ -81,6 +104,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     [PunRPC]
     public void DestroyMaster(int gID)
     {
+        Debug.Log("destroy master " + gID);
         PhotonNetwork.Destroy(PhotonView.Find(gID).gameObject);
     }
 
