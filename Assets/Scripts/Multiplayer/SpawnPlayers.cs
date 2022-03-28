@@ -23,11 +23,11 @@ public class SpawnPlayers : MonoBehaviour
             GameManager.instance.player = GameObject.Find("Player(Clone)").GetComponent<BetterPlayerMovement>();
             try
             {
-                GameManager.instance.networkManager.AddPlayer(GameManager.instance.player.gameObject);
+                // GameManager.instance.networkManager.AddPlayer(GameManager.instance.player.gameObject);
+                NetworkManager.instance.AddPlayer(GameManager.instance.player.gameObject.GetPhotonView().ViewID);
                 GameManager.instance.hud.SetMax();
                 spawnSuccessful = true;
-            } catch (Exception e)
-            {
+            } catch (Exception) {
                 spawnSuccessful = false;
             }
         }
@@ -43,11 +43,14 @@ public class SpawnPlayers : MonoBehaviour
         {
             try
             {
-                GameManager.instance.networkManager.AddPlayer(GameManager.instance.player.gameObject);
+                // GameManager.instance.networkManager.AddPlayer(GameManager.instance.player.gameObject);
+                NetworkManager.instance.AddPlayer(GameManager.instance.player.gameObject.GetPhotonView().ViewID);
                 GameManager.instance.hud.SetMax(); 
                 spawnSuccessful = true;
             }
-            catch (Exception e) {}
+            catch (Exception e ) {
+                Debug.LogError(e);
+            }
         }
     }
 

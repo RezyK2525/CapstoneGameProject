@@ -30,27 +30,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private void Start()
     {
         Debug.Log("NetworkManager waking");
-
-        /*if (instance != null)
-        {
-            Destroy(this.gameObject);
-            foreach (Player player in players)
-            {
-                Destroy(player.gameObject);
-            }
-            return;
-        }*/
         instance = this;
-        if (players == null)
-        {
+        if (players == null) {
             players = new List<GameObject>();
-
         }
         isMultiplayer = PlayerPrefs.GetInt("isMultiplayer") == 1;
         
 
-        if ((isMultiplayer && PhotonNetwork.IsMasterClient) || !isMultiplayer)
-        {
+        if ((isMultiplayer && PhotonNetwork.IsMasterClient) || !isMultiplayer) {
             InstantiateEntities();
         }
         DontDestroyOnLoad(this.gameObject);
@@ -61,15 +48,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         if (isMultiplayer)
         {
             // items
-            // PhotonNetwork.Instantiate(ItemsPrefab.name, ItemsPrefab.transform.position, Quaternion.identity);
-
             foreach (GameObject item in items)
             {
                 string itemName = item.name;
                 // Debug.Log(itemName);
                 GameObject itemObj = Resources.Load<GameObject>(itemName);
-
-                // Debug.Log(itemObj);
                 PhotonNetwork.Instantiate(itemName, itemObj.transform.position, Quaternion.identity);
             }
             foreach (GameObject enemy in enemies)
@@ -90,12 +73,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
                 Instantiate(enemy);
         }
     }
-
-    /* void Update()
-     {
-
-     }
- */
     public void Destroy(GameObject g)
     {
         Debug.Log("destroy " + g.GetPhotonView().ViewID);
@@ -108,9 +85,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.Destroy(PhotonView.Find(gID).gameObject);
     }
 
-    public void AddPlayer(GameObject newPlayer)
+    public void AddPlayer(int pID)
     {
-        GetComponent<PhotonView>().RPC("AddPlayerMaster", RpcTarget.MasterClient, newPlayer.GetPhotonView().ViewID);
+        Debug.Log("add player " + pID);
+        GetComponent<PhotonView>().RPC("AddPlayerMaster", RpcTarget.MasterClient, pID);
     }
     [PunRPC]
     public void AddPlayerMaster(int newPlayerID)
@@ -122,17 +100,52 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         if ((isMultiplayer && PhotonNetwork.IsMasterClient) || !isMultiplayer)
         {
             GameObject newPlayer = PhotonView.Find(newPlayerID).gameObject;
-            Debug.Log("adding player");
-            Debug.Log(instance);
-            Debug.Log(players);
+            Debug.Log("adding player master");
+            // Debug.Log(instance);
+            // Debug.Log(players);
             Debug.Log(playerCount);
             players.Add(newPlayer);
             newPlayer.name = "Player" + playerCount;
             playerCount++;
             //Debug.Log("OnPhotonPlayerConnected() " + other.name);
-            if (PhotonNetwork.IsMasterClient)
+            
+            int[] pIDs = new int[players.Count];
+            for (int i = 0; i < players.Count; i++)
+                pIDs[i] = players[i].GetPhotonView().ViewID;
+            Debug.Log("update pList client please for " + players.Count);
+            GetComponent<PhotonView>().RPC("UpdatePlayerListClient", RpcTarget.All, pIDs);
+            
+        }
+    }
+    [PunRPC]
+    public void UpdatePlayerListClient(int[] pIDs)
+    {
+        if (instance == null)
+        {
+            Debug.Log("null instance");
+            players = new List<GameObject>();
+        }
+        if (isMultiplayer && !PhotonNetwork.IsMasterClient)
+        {
+            Debug.Log("update pList client " + pIDs.Length);
+            for (int i = 0; i < pIDs.Length; i++)
             {
-                GetComponent<PhotonView>().RPC("AddPlayerMaster", RpcTarget.Others, newPlayerID);
+                bool playerAdded = false;
+                foreach (GameObject p in players)
+                {
+                    if (p.GetPhotonView().ViewID == pIDs[i]) {
+                        playerAdded = true;
+                        break;
+                    }
+                }
+                if (!playerAdded)
+                {
+                    Debug.Log("adding player " + pIDs[i]);
+                    GameObject newPlayer = PhotonView.Find(pIDs[i]).gameObject;
+                    players.Add(newPlayer);
+                    newPlayer.name = "Player" + i;
+                    playerCount++;
+                }
             }
         }
     }
