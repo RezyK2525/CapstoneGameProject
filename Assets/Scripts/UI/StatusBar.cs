@@ -5,22 +5,22 @@ using UnityEngine.UI;
 
 public class StatusBar : MonoBehaviour
 {
-	public GameObject healthBarUI;
+	// public GameObject healthBarUI;
 	public Slider slider;
 	public Gradient gradient;
 	public Image fill;
 
-	public void SetMax(float health)
+	public void SetMax(float max)
 	{
-		slider.maxValue = health;
-		slider.value = health;
+		slider.maxValue = max;
+		slider.value = max;
 
 		fill.color = gradient.Evaluate(1f);
 	}
 
-	public void SetValue(float health)
+	public void SetValue(float max)
 	{
-		slider.value = health;
+		slider.value = max;
 
 		fill.color = gradient.Evaluate(slider.normalizedValue);
 
