@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class MagicBulletSpell : MonoBehaviour
 {
-    public bool pushOnAwake = true;
-    public Vector3 startDirection;
-    public float startMagnitude;
+
     public ForceMode forceMode;
-    public Transform player;
 
     //public GameObject fieryEffect;
     //public GameObject smokeEffect;
     //public GameObject explodeEffect;
 
-    public GameObject explosion;
+    //public GameObject explosion;
 
     public LayerMask whatIsEnemies, whatIsPlayer;
 
@@ -70,7 +67,8 @@ public class MagicBulletSpell : MonoBehaviour
     private void ExplodePlayer()
     {
 
-        if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
+        Debug.Log("EXPLODE Player");
+        //if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
 
         Collider[] players = Physics.OverlapSphere(transform.position, explosionRange, whatIsPlayer);
         for (int i = 0; i < players.Length; i++)
@@ -88,8 +86,9 @@ public class MagicBulletSpell : MonoBehaviour
     
     private void ExplodeEnemy()
     {
+        Debug.Log("EXPLODE ENEMY");
 
-        if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
+        //if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
         
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsEnemies);
         for (int p = 0; p < enemies.Length; p++)
@@ -106,8 +105,8 @@ public class MagicBulletSpell : MonoBehaviour
     
     private void Explode()
     {
-
-        if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
+        Debug.Log("EXPLODE");
+        //if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
         
         Invoke("Delay", 0.05f);
     }

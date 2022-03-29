@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 179432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 30, z: 30}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.56277966, y: 0.6455224, z: 0.75548}
   m_Children:
   - {fileID: 451446}
   - {fileID: 489966}
@@ -62,8 +62,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.70832926
+  m_Center: {x: 0.011027682, y: -0.01717736, z: 0}
 --- !u!114 &11441266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,12 +73,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 179432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aba4f60f1c542ae44ab00737321e4aea, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f342402ddf814142a772281568a499c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushOnAwake: 0
-  startDirection: {x: 0, y: 0, z: 0}
-  startMagnitude: 0
   forceMode: 1
   fieryEffect: {fileID: 191522}
   smokeEffect: {fileID: 183770}
@@ -89,8 +86,8 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 2048
-  fireballDamage: 15
-  explosionRange: 5
+  fireballDamage: 20
+  explosionRange: 0.66
   maxLifetime: 5
   explodeOnTouch: 1
 --- !u!1 &183770
@@ -377,8 +374,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 3
-      minScalar: 2
+      scalar: 1.5
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -411,7 +408,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -464,7 +461,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -4903,7 +4900,7 @@ Transform:
   m_GameObject: {fileID: 191522}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.72606, y: 0.75548, z: 0.64991}
   m_Children:
   - {fileID: 405216}
   m_Father: {fileID: 493306}
@@ -5161,8 +5158,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 0.5
+      scalar: 0.5
+      minScalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5195,7 +5192,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -5248,7 +5245,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -9971,7 +9968,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 7
+      scalar: 4
       minScalar: 1
       maxCurve:
         serializedVersion: 2

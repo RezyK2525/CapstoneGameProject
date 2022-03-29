@@ -31607,8 +31607,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    maxHP: 0
-    hp: 0
+    maxHP: 100
+    hp: 100
     maxMana: 0
     mana: 0
     manaRegenRate: 0
@@ -31628,9 +31628,8 @@ MonoBehaviour:
     m_Bits: 2048
   timeBetweenAttacks: 1.5
   sightRange: 75
-  attackRange: 6.13
-  money: 0
-  anim: {fileID: 0}
+  attackRange: 36.04
+  money: 100
   moving: 0
   enemyType:
     isRanged: 1
@@ -31675,10 +31674,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.1151205
+  m_Radius: 2.16927
   m_Height: 6.8550262
   m_Direction: 1
-  m_Center: {x: 0.01479339, y: 3.2410731, z: -0.4488194}
+  m_Center: {x: -0.04055786, y: 3.2410731, z: 0.026700974}
 --- !u!114 &3344119481011638859
 MonoBehaviour:
   m_ObjectHideFlags: 0

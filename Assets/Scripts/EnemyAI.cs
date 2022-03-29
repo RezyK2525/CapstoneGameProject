@@ -23,7 +23,7 @@ public class EnemyAI : Fighter
     public int money;
 
     // animations
-    public Animator anim;
+    //public Animator anim;
     public bool moving;
     
     [Serializable]
@@ -168,7 +168,7 @@ public class EnemyAI : Fighter
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
-        anim.SetBool("isMoving", true);
+        //anim.SetBool("isMoving", true);
     }
     
     private void AttackPlayerRanged()
@@ -216,7 +216,7 @@ public class EnemyAI : Fighter
 
             string[] attacks = { "Attack1", "Attack2", "CrushAttack", "JumpAttack" };
 
-            anim.SetTrigger(attacks[rand]);
+            //anim.SetTrigger(attacks[rand]);
             
             
             //

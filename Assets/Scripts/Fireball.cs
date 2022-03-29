@@ -69,6 +69,7 @@ public class Fireball : MonoBehaviour {
         if (col.collider.CompareTag("Terrain") && explodeOnTouch) Explode();
         if (col.collider.CompareTag("Enemy") && explodeOnTouch)
         {
+            Debug.Log("CALLEDEXPLODEENEMY");
             GameManager.instance.enemyAI = col.collider.GetComponent<EnemyAI>();
             ExplodeEnemy();
         }
@@ -82,7 +83,7 @@ public class Fireball : MonoBehaviour {
 
     private void ExplodePlayer()
     {
-
+        Debug.Log("CALLED EXPLODE PLAYER");
         if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
 
         Collider[] players = Physics.OverlapSphere(transform.position, explosionRange, whatIsPlayer);
@@ -102,6 +103,7 @@ public class Fireball : MonoBehaviour {
     private void ExplodeEnemy()
     {
 
+        
         if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
         
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsEnemies);
@@ -120,6 +122,7 @@ public class Fireball : MonoBehaviour {
     private void Explode()
     {
 
+        Debug.Log("CALLED EXPLODE ");
         if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
         
         Invoke("Delay", 0.05f);

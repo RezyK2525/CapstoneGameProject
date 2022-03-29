@@ -91,7 +91,8 @@ public class Fighter : MonoBehaviour
             
             if(GameManager.instance.enemyAI.stats.hp <= 0){
                 GameManager.instance.enemyAI.stats.hp = 0;
-                Death();
+                GameManager.instance.enemyAI.Death();
+                //Death();
 
             }
         
