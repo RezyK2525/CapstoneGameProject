@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97b38def-8585-4862-8180-afece488f109" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.tdDungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tdDungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Effects/Prefab/FireballExplode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Artwork/Effects/Prefab/FireballExplode.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SpellStuff/FairyMeteorSpell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SpellStuff/FairyMeteorSpell.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SpellStuff/Fireball.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SpellStuff/Fireball.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_The Wizard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_The Wizard.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/i_Abyss Dual Blade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/i_Abyss Dual Blade.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/i_Blizzard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/i_Blizzard.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TheTimeTemple.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TheTimeTemple.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Billboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Billboard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Fighter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Fighter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MagicBulletSpell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MagicBulletSpell.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NavMeshComponents.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NavMeshComponents.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NavMeshComponentsEditor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NavMeshComponentsEditor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/NavMeshComponentsEditor.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NavMeshComponentsEditor.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +73,7 @@
       <workItem from="1647742905935" duration="1732000" />
       <workItem from="1647978877543" duration="3690000" />
       <workItem from="1648508270584" duration="1000" />
-      <workItem from="1648509759817" duration="3279000" />
+      <workItem from="1648509759817" duration="3936000" />
     </task>
     <servers />
   </component>

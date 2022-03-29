@@ -17,7 +17,7 @@ MonoBehaviour:
   isDefaultItem: 0
   isPurchased: 0
   value: 400
-  strengthModifier: 50
+  strengthModifier: 4
   spellPowerModifier: 0
   hpModifier: 0
   maxHPModifier: 0

@@ -17,12 +17,12 @@ MonoBehaviour:
   isDefaultItem: 0
   isPurchased: 0
   value: 15000
-  strengthModifier: 1000
-  spellPowerModifier: -200
-  hpModifier: -100
-  maxHPModifier: -100
-  manaModifier: -100
-  maxManaModifier: -100
+  strengthModifier: 5
+  spellPowerModifier: 0
+  hpModifier: 0
+  maxHPModifier: 0
+  manaModifier: 0
+  maxManaModifier: 0
   manaRegenRateModifier: 0
   prefab: {fileID: 5318790610751273159, guid: 16926380bb54b0f4fb16890c1fc3ca45, type: 3}
   equipSlot: 0
