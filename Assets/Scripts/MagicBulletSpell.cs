@@ -67,7 +67,7 @@ public class MagicBulletSpell : MonoBehaviour
     private void ExplodePlayer()
     {
 
-        Debug.Log("EXPLODE Player");
+        //Debug.Log("EXPLODE Player");
         //if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
 
         Collider[] players = Physics.OverlapSphere(transform.position, explosionRange, whatIsPlayer);
@@ -86,7 +86,7 @@ public class MagicBulletSpell : MonoBehaviour
     
     private void ExplodeEnemy()
     {
-        Debug.Log("EXPLODE ENEMY");
+        //Debug.Log("EXPLODE ENEMY");
 
         //if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
         
@@ -105,7 +105,7 @@ public class MagicBulletSpell : MonoBehaviour
     
     private void Explode()
     {
-        Debug.Log("EXPLODE");
+        //Debug.Log("EXPLODE");
         //if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
         
         Invoke("Delay", 0.05f);

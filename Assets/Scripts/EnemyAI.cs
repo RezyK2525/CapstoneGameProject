@@ -13,6 +13,8 @@ public class EnemyAI : Fighter
     private bool walkPointSet;
     public float walkPointRange;
     public StatusBar healthBar;
+    public EnemyDamageUI enemyDamage;
+    
     public NavMeshAgent agent;
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
@@ -79,6 +81,7 @@ public class EnemyAI : Fighter
         //enemyHp = enemyMaxHp;
         healthBar.SetMax(stats.maxHP);
         healthBar.healthBarUI.SetActive(false);
+        enemyDamage.enemyDamageUI.SetActive(false);
         player = GameManager.instance.player.transform;
     }
 

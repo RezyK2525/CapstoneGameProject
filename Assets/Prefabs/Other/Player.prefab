@@ -2713,6 +2713,12 @@ MonoBehaviour:
     - {x: 0, y: 0, z: 0}
     - {x: 0, y: 0, z: 0}
     - {x: 0, y: 0, z: 0}
+  magicBulletSettings:
+    fireForce: 0
+    upwardForce: 0
+    attackPointFireball: {fileID: 0}
+    manaCostMagicBullet: 20
+    timeBetweenCastsMagicBullet: 0
   timeBetweenManaRegen: 2
 --- !u!136 &815875550160335710
 CapsuleCollider:
@@ -2741,6 +2747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
+    hitMarkerPrefab: {fileID: 7602819740563144872, guid: e1a6afd424a711a48b1ebf8b03fc1925, type: 3}
     maxHP: 0
     hp: 0
     maxMana: 0

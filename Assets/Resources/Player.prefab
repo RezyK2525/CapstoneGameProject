@@ -4469,6 +4469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
+    hitMarkerPrefab: {fileID: 7602819740563144872, guid: e1a6afd424a711a48b1ebf8b03fc1925, type: 3}
     maxHP: 100
     hp: 100
     maxMana: 100

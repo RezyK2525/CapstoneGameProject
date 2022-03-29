@@ -1935,6 +1935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
+    hitMarkerPrefab: {fileID: 7602819740563144872, guid: e1a6afd424a711a48b1ebf8b03fc1925, type: 3}
     maxHP: 50000
     hp: 50000
     maxMana: 0
@@ -1958,7 +1959,6 @@ MonoBehaviour:
   sightRange: 27.11
   attackRange: 7.06
   money: 101
-  anim: {fileID: 403325126024580108}
   moving: 0
   enemyType:
     isRanged: 0

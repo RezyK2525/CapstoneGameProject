@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Fighter : MonoBehaviour
 {
@@ -9,16 +10,16 @@ public class Fighter : MonoBehaviour
     [Serializable]
     public class Stats
     {
-        
+        //public GameObject hitMarkerPrefab;
     
-    public float maxHP;
-    public float hp;
-    public float maxMana;
-    public float mana;
-    public float manaRegenRate;
-    public float strength;
-    public float defense;
-    public float spellPower;
+        public float maxHP;
+        public float hp;
+        public float maxMana;
+        public float mana;
+        public float manaRegenRate;
+        public float strength;
+        public float defense;
+        public float spellPower;
     }
     
     public Stats stats = new Stats();
@@ -48,7 +49,10 @@ public class Fighter : MonoBehaviour
             // dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength);  <- used for the damage amount
             
             
-            
+            GameManager.instance.enemyAI.enemyDamage.SetValue(dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.stats.strength));
+            GameManager.instance.enemyAI.enemyDamage.showDamage();
+
+
             GameManager.instance.enemyAI.stats.hp -= dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.stats.strength);
             //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
@@ -68,11 +72,12 @@ public class Fighter : MonoBehaviour
     
     public void ReceiveMagicDamage(float dmg){
         //if(Time.time - lastImmune > immuneTime){
-
-        
         
 
             lastImmune = Time.time;
+            
+            GameManager.instance.enemyAI.enemyDamage.SetValue(dmg);
+            GameManager.instance.enemyAI.enemyDamage.showDamage();
 
             GameManager.instance.enemyAI.stats.hp -= dmg;
             // + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength);
