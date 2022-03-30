@@ -9,7 +9,7 @@ public class SpawnPlayers : MonoBehaviour
 {
     public GameObject playerPrefab;
 
-    public Vector3 spawnPoint;
+    // public Vector3 spawnPoint;
     private bool spawnSuccessful;
 
     public void Start()
@@ -18,7 +18,7 @@ public class SpawnPlayers : MonoBehaviour
         // if (isMultiplayer)
         if (GameManager.instance.isMultiplayer)
         {
-            PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint, Quaternion.identity);
+            PhotonNetwork.Instantiate(playerPrefab.name, playerPrefab.transform.position, Quaternion.identity);
             Debug.Log("spawning players");
             GameManager.instance.player = GameObject.Find("Player(Clone)").GetComponent<BetterPlayerMovement>();
             try
@@ -33,7 +33,7 @@ public class SpawnPlayers : MonoBehaviour
         }
         else
         {
-            Instantiate(playerPrefab, spawnPoint, Quaternion.identity);
+            Instantiate(playerPrefab);
             Debug.Log("spawning player");
         }
     }
