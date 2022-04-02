@@ -17,7 +17,7 @@ public class EnemyDamageUI : MonoBehaviour
     public void showDamage()
     {
         enemyDamageUI.SetActive(true);
-        Invoke("NoShowDamage", 1.5f);
+        Invoke("NoShowDamage", 0.5f);
     }
 
     void NoShowDamage()
