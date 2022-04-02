@@ -12,19 +12,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public static NetworkManager instance;
     internal const int MAX_PLAYERS = 5;
 
-   /* public GameObject ItemsPrefab;
-    public GameObject EnemiesPrefab;*/
-
     // references
     public List<GameObject> items;
     public List<GameObject> enemies;
     public List<GameObject> players;
 
-    /*public GameObject[] enemies;
-    public GameObject[] items;*/
-
     public bool isMultiplayer;
-
     public int playerCount = 0;
 
     private void Start()
@@ -42,7 +35,32 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
         DontDestroyOnLoad(this.gameObject);
     }
-
+    private void Update()
+    {
+        BetterPlayerMovement[] existingPlayers = FindObjectsOfType<BetterPlayerMovement>();
+        if (existingPlayers.Length < playerCount)
+        {
+            // remove the left player
+            for (int i = 0; i < playerCount; i++)
+            {
+                bool playerStillConnected = false;
+                foreach (BetterPlayerMovement pl in existingPlayers)
+                {
+                    if (pl.gameObject == players[i])
+                    {
+                        playerStillConnected = true;
+                        break;
+                    }
+                }
+                if (!playerStillConnected)
+                {
+                    players.RemoveAt(i);
+                    playerCount--;
+                    break;
+                }
+            }
+        }
+    }
     public void InstantiateEntities()
     {
         if (isMultiplayer)
@@ -93,7 +111,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         {
             players = new List<GameObject>();
         }
-        if ((isMultiplayer && PhotonNetwork.IsMasterClient) || !isMultiplayer)
+        if (!isMultiplayer || PhotonNetwork.IsMasterClient)
         {
             GameObject newPlayer = PhotonView.Find(newPlayerID).gameObject;
            // Debug.Log("adding player master");

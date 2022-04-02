@@ -143,7 +143,6 @@ public class GameManager : MonoBehaviour
             PhotonNetwork.Disconnect();
         }
         SceneManager.LoadScene("MainMenu");
-
     }
 }
 

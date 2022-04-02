@@ -84,7 +84,7 @@ public class EnemyAI : Fighter
         healthBar.healthBarUI.SetActive(false);
         enemyDamage.enemyDamageUI.SetActive(false);
 
-        player = NetworkManager.instance.players[0].transform;
+        // player = NetworkManager.instance.players[0].transform;
     }
 
     private IEnumerator UpdateClosestPlayer()
@@ -277,7 +277,14 @@ public class EnemyAI : Fighter
         
         GameManager.instance.hud.gainedMoney.gameObject.SetActive(true);
         Invoke("DisableGainedMoney", 1.5f);
-        Destroy(gameObject);
+        if (GameManager.instance.isMultiplayer)
+        {
+            NetworkManager.instance.Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void DisableGainedMoney()
