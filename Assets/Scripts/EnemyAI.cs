@@ -82,7 +82,8 @@ public class EnemyAI : Fighter
         healthBar.SetMax(stats.maxHP);
         healthBar.healthBarUI.SetActive(false);
         enemyDamage.enemyDamageUI.SetActive(false);
-        player = GameManager.instance.player.transform;
+        // needs to be changed to figure out closest player and should prolly be moved to update
+        player = NetworkManager.instance.players[0].transform;
     }
 
     private void Update()

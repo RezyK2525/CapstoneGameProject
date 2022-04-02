@@ -7,7 +7,7 @@ public class SmoothPlayerCamera : MonoBehaviour
     [SerializeField] private float moveSpeed = 100f;
     [SerializeField] private float turnSpeed = 100f;
     [SerializeField] private float distanceLimit = 1f;
-    [SerializeField] public BetterPlayerMovement controller;
+    [SerializeField] public BetterPlayerMovement player;
 
     private Vector3 oldPos;
     private Quaternion oldRot;
@@ -19,11 +19,11 @@ public class SmoothPlayerCamera : MonoBehaviour
     }
 
     private void LateUpdate() {
-        Vector3 targetPos = controller.transform.position + new Vector3(0f, height, 0f);
+        Vector3 targetPos = player.transform.position + new Vector3(0f, height, 0f);
 
         // Lerp position
         transform.position = Vector3.Lerp(oldPos, targetPos, moveSpeed * Time.deltaTime);
-        transform.rotation = Quaternion.Lerp(oldRot, Quaternion.Euler(controller.InputRot), turnSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(oldRot, Quaternion.Euler(player.InputRot), turnSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, targetPos) > distanceLimit) {
             transform.position = targetPos;

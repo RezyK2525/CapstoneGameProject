@@ -121,7 +121,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
 
-                GameManager.instance.cam.GetComponent<SmoothPlayerCamera>().controller = this;
+                GameManager.instance.cam.GetComponent<SmoothPlayerCamera>().player = this;
                 GameManager.instance.player.GetComponent<SpellUser>().fpCam = GameManager.instance.cam;
                 
 
