@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun;
 using Random = UnityEngine.Random;
 
 public class EnemyAI : Fighter
@@ -76,64 +77,93 @@ public class EnemyAI : Fighter
 
     private void Start()
     {
-        Debug.Log("enemy hp at start " + stats.maxHP);
-        Debug.Log("enemy HP at start" + stats.hp);
+        // Debug.Log("enemy hp at start " + stats.maxHP);
+        // Debug.Log("enemy HP at start" + stats.hp);
         //enemyHp = enemyMaxHp;
         healthBar.SetMax(stats.maxHP);
         healthBar.healthBarUI.SetActive(false);
         enemyDamage.enemyDamageUI.SetActive(false);
-        // needs to be changed to figure out closest player and should prolly be moved to update
+
         player = NetworkManager.instance.players[0].transform;
     }
 
+    private IEnumerator UpdateClosestPlayer()
+    {
+        
+        yield return new WaitForSeconds(1);
+        // find closest player
+        foreach (GameObject p in NetworkManager.instance.players)
+        {
+            float currPlayerDist = (player.position - transform.position).magnitude;
+            float newPlayerDist = (p.transform.position - transform.position).magnitude;
+            if (newPlayerDist < currPlayerDist)
+            {
+                player = p.transform;
+            }
+        }
+    }
     private void Update()
     {
-        float teamDistance;
-        float distance = Vector3.Distance(player.position, transform.position);
-        if (enemyType.isFollower)
+        if (!GameManager.instance.isMultiplayer || PhotonNetwork.IsMasterClient)
         {
-            teamDistance = Vector3.Distance(GameManager.instance.enemyAI.transform.position, transform.position);
-            if (distance <= sightRange || (teamDistance <= followerEnemySettings.alertRange && GameManager.instance.enemyAI.playerInSightRange && enemyType.isFollower))
+            float teamDistance;
+            if (GameManager.instance.isMultiplayer)
+            {
+                StartCoroutine(UpdateClosestPlayer());
+            } else
+            {
+                player = GameManager.instance.player.transform;
+            }
+            if (player == null)
+            {
+                Debug.Log("resetting player");
+                player = NetworkManager.instance.players[0].transform;
+            }
+            float distance = Vector3.Distance(player.position, transform.position);
+            if (enemyType.isFollower)
+            {
+                teamDistance = Vector3.Distance(GameManager.instance.enemyAI.transform.position, transform.position);
+                if (distance <= sightRange || (teamDistance <= followerEnemySettings.alertRange && GameManager.instance.enemyAI.playerInSightRange && enemyType.isFollower))
+                {
+                    playerInSightRange = true;
+
+                }
+                else
+                {
+                    playerInSightRange = false;
+                }
+            }
+            if (distance <= sightRange || playerInSightRange)
+            // if (false)
             {
                 playerInSightRange = true;
-
             }
             else
             {
                 playerInSightRange = false;
             }
+
+            if (distance <= attackRange)
+            {
+                playerInAttackRange = true;
+            }
+            else
+            {
+                playerInAttackRange = false;
+            }
+
+
+
+
+            //check for sight and attack range
+            //playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+            //playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+
+            if (!playerInSightRange && !playerInAttackRange) Patroling();
+            if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+            if (playerInSightRange && playerInAttackRange && enemyType.isRanged) AttackPlayerRanged();
+            if (playerInSightRange && playerInAttackRange && enemyType.isMeelee) AttackPlayerMeelee();
         }
-        if (distance <= sightRange || playerInSightRange)
-        // if (false)
-        {
-            playerInSightRange = true;
-        }
-        else
-        {
-            playerInSightRange = false;
-        }
-
-        if (distance <= attackRange)
-        {
-            playerInAttackRange = true;
-        }
-        else
-        {
-            playerInAttackRange = false;
-        }
-
-
-
-
-        //check for sight and attack range
-        //playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        //playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInSightRange && playerInAttackRange && enemyType.isRanged) AttackPlayerRanged();
-        if (playerInSightRange && playerInAttackRange && enemyType.isMeelee) AttackPlayerMeelee();
-
     }
 
     private void Patroling()
@@ -240,7 +270,7 @@ public class EnemyAI : Fighter
 
 
 
-protected override void Death()
+    protected override void Death()
     {
         GameManager.instance.player.money += money;
         GameManager.instance.player.gainedMoney = money;
@@ -250,10 +280,10 @@ protected override void Death()
         Destroy(gameObject);
     }
 
-void DisableGainedMoney()
-{
-    GameManager.instance.hud.gainedMoney.gameObject.SetActive(false);
-}
+    void DisableGainedMoney()
+    {
+        GameManager.instance.hud.gainedMoney.gameObject.SetActive(false);
+    }
 
 
     private void OnDrawGizmosSelected()
@@ -270,11 +300,6 @@ void DisableGainedMoney()
         }
         
         
-    }
-    
-    
-
-    
-    
+    }  
     
 }

@@ -37,7 +37,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         isMultiplayer = PlayerPrefs.GetInt("isMultiplayer") == 1;
         
 
-        if ((isMultiplayer && PhotonNetwork.IsMasterClient) || !isMultiplayer) {
+        if (!isMultiplayer || PhotonNetwork.IsMasterClient) {
             InstantiateEntities();
         }
         DontDestroyOnLoad(this.gameObject);
@@ -50,17 +50,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             // items
             foreach (GameObject item in items)
             {
-                string itemName = item.name;
-                // Debug.Log(itemName);
-                GameObject itemObj = Resources.Load<GameObject>(itemName);
-                PhotonNetwork.Instantiate(itemName, itemObj.transform.position, Quaternion.identity);
+                GameObject itemObj = Resources.Load<GameObject>(item.name);
+                PhotonNetwork.Instantiate(item.name, itemObj.transform.position, Quaternion.identity);
             }
             foreach (GameObject enemy in enemies)
             {
-                string enemyName = enemy.name;
-                GameObject enemyObj = Resources.Load<GameObject>(enemyName);
-                PhotonNetwork.Instantiate(enemyName, enemyObj.transform.position, Quaternion.identity);
-                //PhotonNetwork.Instantiate(EnemiesPrefab.name, EnemiesPrefab.transform.position, Quaternion.identity);
+                GameObject enemyObj = Resources.Load<GameObject>(enemy.name);
+                PhotonNetwork.Instantiate(enemy.name, enemyObj.transform.position, Quaternion.identity);
             }
         }
         else
@@ -100,10 +96,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         if ((isMultiplayer && PhotonNetwork.IsMasterClient) || !isMultiplayer)
         {
             GameObject newPlayer = PhotonView.Find(newPlayerID).gameObject;
-            Debug.Log("adding player master");
+           // Debug.Log("adding player master");
             // Debug.Log(instance);
             // Debug.Log(players);
-            Debug.Log(playerCount);
+            // Debug.Log(playerCount);
             players.Add(newPlayer);
             newPlayer.name = "Player" + playerCount;
             playerCount++;
@@ -112,7 +108,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             int[] pIDs = new int[players.Count];
             for (int i = 0; i < players.Count; i++)
                 pIDs[i] = players[i].GetPhotonView().ViewID;
-            Debug.Log("update pList client please for " + players.Count);
+            // Debug.Log("update pList client please for " + players.Count);
             GetComponent<PhotonView>().RPC("UpdatePlayerListClient", RpcTarget.All, pIDs);
             
         }

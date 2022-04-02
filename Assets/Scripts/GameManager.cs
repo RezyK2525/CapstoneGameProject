@@ -69,6 +69,14 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
     }
+    private void Update()
+    {
+        if (networkManager == null)
+        {
+            Debug.Log("resetting networkManager");
+            networkManager = FindObjectOfType<NetworkManager>();
+        }
+    }
 
 
     //floating text
