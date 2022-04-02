@@ -5,15 +5,14 @@ using UnityEngine;
 public class Meelee : MonoBehaviour
 { 
 
-    void OnTriggerEnter(Collider coll)
+    void OnTriggerEnter(Collider collide)
     {
         // Player Attacking Enemy
-        if(coll.tag == "Enemy")
+        if(collide.tag == "Enemy")
         {
-            Collider collide = coll;
             GameManager.instance.enemyAI = collide.GetComponent<EnemyAI>();
             collide.GetComponent<EnemyAI>().ReceiveDamage(100);
-            //coll.GetComponent<Fighter>().reciveDamage(100);
+            // collide.GetComponent<Fighter>().reciveDamage(100);
 
         }
     }
