@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class MagicBulletSpell : MonoBehaviour
 {
@@ -118,7 +119,8 @@ public class MagicBulletSpell : MonoBehaviour
     {
         if (GameManager.instance.isMultiplayer)
         {
-            NetworkManager.instance.Destroy(gameObject);
+            // NetworkManager.instance.Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
         else
         {

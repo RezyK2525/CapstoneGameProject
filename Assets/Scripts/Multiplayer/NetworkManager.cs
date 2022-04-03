@@ -69,12 +69,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             foreach (GameObject item in items)
             {
                 GameObject itemObj = Resources.Load<GameObject>(item.name);
-                PhotonNetwork.Instantiate(item.name, itemObj.transform.position, Quaternion.identity);
+                PhotonNetwork.Instantiate(item.name, itemObj.transform.position, itemObj.transform.rotation);
             }
             foreach (GameObject enemy in enemies)
             {
                 GameObject enemyObj = Resources.Load<GameObject>(enemy.name);
-                PhotonNetwork.Instantiate(enemy.name, enemyObj.transform.position, Quaternion.identity);
+                PhotonNetwork.Instantiate(enemy.name, enemyObj.transform.position, enemyObj.transform.rotation);
             }
         }
         else
@@ -98,6 +98,19 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("destroy master " + gID);
         PhotonNetwork.Destroy(PhotonView.Find(gID).gameObject);
     }
+
+    /*public GameObject Instantiate(string prefabName, Vector3 pos, Quaternion rot)
+    {
+        //Debug.Log("instantiate " + g.GetPhotonView().ViewID);
+        object[] parameters = { prefabName, pos, rot };
+        //return GetComponent<PhotonView>().RPC("InstantiateMaster", RpcTarget.MasterClient, parameters);
+    }
+    [PunRPC]
+    public GameObject InstantiateMaster(object[] parameters)
+    {
+        Debug.Log("instantiate master " + parameters[0]);
+        return PhotonNetwork.Instantiate((string)parameters[0], (Vector3)parameters[1], (Quaternion)parameters[2]);
+    }*/
 
     public void AddPlayer(int pID)
     {

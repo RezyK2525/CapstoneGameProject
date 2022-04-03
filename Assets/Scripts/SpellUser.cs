@@ -295,9 +295,16 @@ Quaternion newRotation = Quaternion.Euler(xyz);
         
         //calculate direction
         Vector3 direction = targetPoint - magicBulletSettings.attackPointFireball.position;
-        Rigidbody rb = GameManager.instance.isMultiplayer
-            ? PhotonNetwork.Instantiate(spellPrefab[3].name, magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>()
-            : Instantiate(spellPrefab[3], magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
+        Rigidbody rb;
+        if (GameManager.instance.isMultiplayer)
+        {
+            rb = PhotonNetwork.Instantiate(spellPrefab[3].name, magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
+            // rb = NetworkManager.instance.Instantiate(spellPrefab[3].name, magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
+        }
+        else
+        {
+            rb = Instantiate(spellPrefab[3], magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
+        }
 
         rb.transform.forward = direction.normalized;
         
