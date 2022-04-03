@@ -26,7 +26,7 @@ public class EnemyAI : Fighter
     public int money;
 
     // animations
-    //public Animator anim;
+    public Animator anim;
     public bool moving;
     
     [Serializable]
@@ -53,7 +53,8 @@ public class EnemyAI : Fighter
     [Serializable]
     public class MeeleeEnemySettings
     {
-        //public Animator anim;
+        public bool canAttack;
+       
     }
     
     [Serializable]
@@ -159,6 +160,12 @@ public class EnemyAI : Fighter
             //playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
             //playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
+            if(anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
+            {
+                return;
+            }
+
+
             if (!playerInSightRange && !playerInAttackRange) Patroling();
             if (playerInSightRange && !playerInAttackRange) ChasePlayer();
             if (playerInSightRange && playerInAttackRange && enemyType.isRanged) AttackPlayerRanged();
@@ -183,7 +190,7 @@ public class EnemyAI : Fighter
             walkPointSet = false;
         }
 
-        //anim.SetBool("isMoving", false);
+        anim.SetBool("isMoving", false);
     }
 
     private void SearchWalkPoint()
@@ -202,12 +209,12 @@ public class EnemyAI : Fighter
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
-        //anim.SetBool("isMoving", true);
+        anim.SetBool("isMoving", true);
     }
     
     private void AttackPlayerRanged()
     {
-        
+
         //Make sure enemy doesnt move
         agent.SetDestination(transform.position);
 
@@ -243,30 +250,40 @@ public class EnemyAI : Fighter
         }
 
     }
-    
+
     private void AttackPlayerMeelee()
     {
-        
+
         //Make sure enemy doesnt move
         agent.SetDestination(transform.position);
-        
+
         Vector3 playerPosition = new Vector3(player.position.x, this.transform.position.y, player.position.z);
         transform.LookAt(playerPosition);
 
         if (!alreadyAttacked)
         {
 
-            //Attack Code HERE   PUT IN MELEE ANIMATION FOR DAMAGE
+            //Attack Code HERE PUT IN MELEE ANIMATION FOR DAMAGE
             int rand = Random.Range(0, 4);
 
-            string[] attacks = { "Attack1", "Attack2", "CrushAttack", "JumpAttack" };
+            string[] attacks = new string[4];
+            attacks[0] = "Attack1";
+            attacks[1] = "Attack2";
 
-            //anim.SetTrigger(attacks[rand]);
-            
-            
-            //
-            
-            
+            if (gameObject.name == "Golem")
+            {
+
+                attacks[2] = "CrushAttack";
+                attacks[3] = "JumpAttack";
+            }
+            else
+            {
+                attacks[2] = "Attack1";
+                attacks[3] = "Attack2";
+            }
+
+            anim.SetTrigger(attacks[rand]);
+
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -278,7 +295,35 @@ public class EnemyAI : Fighter
         alreadyAttacked = false;
     }
 
+    public void canAttack()
+    {
+        this.meeleeEnemySettings.canAttack = true;
+    }
 
+    public void cannotAttack()
+    {
+        this.meeleeEnemySettings.canAttack = false;
+    }
+
+    void OnTriggerEnter(Collider collide)
+    {
+        if (collide.tag == "Player" && meeleeEnemySettings.canAttack)
+        {
+            //Debug.Log("Attacking player");
+
+            player.GetComponent<UnityStandardAssets.Characters.FirstPerson.BetterPlayerMovement>().PlayerReceiveDamage(5f);
+        
+            // Check if enemy is doing attack
+            //if(anim.name = )
+            // Player Attacking Enemy
+        
+
+            //GameManager.instance.enemyAI = collide.GetComponent<EnemyAI>();
+            //collide.GetComponent<EnemyAI>().ReceiveDamage(100);
+            // collide.GetComponent<Fighter>().reciveDamage(100);
+
+        }
+    }
 
 
     protected override void Death()

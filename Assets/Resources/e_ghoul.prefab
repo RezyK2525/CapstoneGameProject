@@ -536,6 +536,8 @@ GameObject:
   - component: {fileID: 5784029389140121360}
   - component: {fileID: 3588582774907525324}
   - component: {fileID: 4832354114932537745}
+  - component: {fileID: -8365070738592629103}
+  - component: {fileID: 1135213091279103697}
   m_Layer: 10
   m_Name: e_ghoul
   m_TagString: Enemy
@@ -620,6 +622,7 @@ MonoBehaviour:
   sightRange: 23
   attackRange: 19
   money: 100
+  anim: {fileID: 1135213091279103697}
   moving: 0
   enemyType:
     isRanged: 1
@@ -630,6 +633,8 @@ MonoBehaviour:
     projectileUpwardDirection: 0.5
     attackPoint: {fileID: 5784029388987243841}
     projectile: {fileID: 4133317143634052803, guid: 65960b53a14d49546b650a8e89e9b27f, type: 3}
+  meeleeEnemySettings:
+    canAttack: 0
   followerEnemySettings:
     alertRange: 0
 --- !u!195 &5784029388829316451
@@ -662,7 +667,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5784466440454337940}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5293617
   m_Height: 1.85
@@ -724,6 +729,41 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!54 &-8365070738592629103
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5784466440454337940}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 32
+  m_CollisionDetection: 0
+--- !u!95 &1135213091279103697
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5784466440454337940}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: b69174d668ba02d44b14a084b217670a, type: 3}
+  m_Controller: {fileID: 9100000, guid: f8887f9530442604bba470fd0c632d87, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9218399847779288739
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,7 +941,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9581944, guid: 616cc160fcb3b124b8e0fc587258594b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f8887f9530442604bba470fd0c632d87, type: 2}
+    m_RemovedComponents:
+    - {fileID: 9581944, guid: 616cc160fcb3b124b8e0fc587258594b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 616cc160fcb3b124b8e0fc587258594b, type: 3}
 --- !u!4 &6289384634759534843 stripped
 Transform:

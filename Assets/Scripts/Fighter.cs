@@ -69,8 +69,6 @@ public class Fighter : MonoBehaviour
     }
    
     
-    
-    
     public void ReceiveMagicDamage(float dmg){
         //if(Time.time - lastImmune > immuneTime){
         
@@ -109,12 +107,8 @@ public class Fighter : MonoBehaviour
     {
         //double dmgReduction = 0.2 * GameManager.instance.player.defense;
         
-        
         if(Time.time - lastImmune > immuneTime){
             lastImmune = Time.time;
-
-            Debug.Log("gameObject:");
-            Debug.Log(gameObject);
             
             gameObject.GetComponent<BetterPlayerMovement>().stats.hp -= dmg;
 
@@ -136,31 +130,34 @@ public class Fighter : MonoBehaviour
         }
     }
     
-/*
-    protected virtual void PlayerReceiveDamage(Damage dmg)
+
+    public void PlayerReceiveDamage(float dmg)
     {
         //double dmgReduction = 0.2 * GameManager.instance.player.defense;
         
         
         if(Time.time - lastImmune > immuneTime){
             lastImmune = Time.time;
-            
+
+
+            gameObject.GetComponent<BetterPlayerMovement>().stats.hp -= dmg;
             //Debug.Log((0.2 * GameManager.instance.player.defense));
             //GameManager.instance.player.hp -= (dmg.damageAmount - dmgReduction);
-            pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
+            //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
+
+            gameObject.GetComponent<BetterPlayerMovement>().hudSettings.healthBar.SetValue(GameManager.instance.player.stats.hp);
 
             //GameManager.instance.ShowText((dmg.damageAmount - dmgReduction).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
 
 
-            if(hitPoint <= 0){
+          /*  if (hitPoint <= 0){
                 hitPoint = 0;
                 Death();
 
-            }
+            }*/
         }
     }
-    
-*/
+
 
     protected virtual void Death(){
         

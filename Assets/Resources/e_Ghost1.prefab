@@ -1202,7 +1202,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7665915008224536297}
-  - component: {fileID: 7665915008216965247}
   - component: {fileID: 7665915008217315729}
   m_Layer: 0
   m_Name: Character_Skeleton_Knight
@@ -1242,25 +1241,6 @@ Transform:
   m_Father: {fileID: 7881751234564513050}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &7665915008216965247
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7665915008224092163}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b69174d668ba02d44b14a084b217670a, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!111 &7665915008217315729
 Animation:
   m_ObjectHideFlags: 0
@@ -4820,6 +4800,8 @@ GameObject:
   - component: {fileID: 7885713889956374786}
   - component: {fileID: 929881243537483486}
   - component: {fileID: 9089767509058914179}
+  - component: {fileID: -5420994582709149498}
+  - component: {fileID: 275123884545623906}
   m_Layer: 10
   m_Name: e_Ghost1
   m_TagString: Enemy
@@ -4904,6 +4886,7 @@ MonoBehaviour:
   sightRange: 44.27
   attackRange: 35.5
   money: 100
+  anim: {fileID: -5420994582709149498}
   moving: 0
   enemyType:
     isRanged: 1
@@ -4914,6 +4897,8 @@ MonoBehaviour:
     projectileUpwardDirection: 0.75
     attackPoint: {fileID: 7885713890039456595}
     projectile: {fileID: 179432, guid: c0e117866f5839a4988e7725f9986546, type: 3}
+  meeleeEnemySettings:
+    canAttack: 0
   followerEnemySettings:
     alertRange: 0
 --- !u!195 &7885713890283891569
@@ -4946,7 +4931,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7884714988208229254}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5293617
   m_Height: 1.85
@@ -5008,6 +4993,41 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!95 &-5420994582709149498
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7884714988208229254}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: b69174d668ba02d44b14a084b217670a, type: 3}
+  m_Controller: {fileID: 9100000, guid: f8887f9530442604bba470fd0c632d87, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &275123884545623906
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7884714988208229254}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 32
+  m_CollisionDetection: 0
 --- !u!1 &7885713889963362080
 GameObject:
   m_ObjectHideFlags: 0

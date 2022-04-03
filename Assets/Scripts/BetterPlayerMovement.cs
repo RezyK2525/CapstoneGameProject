@@ -161,44 +161,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void Update()
         {
-            // Debug.Log(vel);
-            //MouseLook();
-            //GetMovementInput();
-            //Debug.Log("GettingCalled");
+
             if (!GameManager.instance.isMultiplayer || view.IsMine)
             {
-                // Debug.Log("GettingCalled");
                 MouseLook();
                 GetMovementInput();
-
-                //FIXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX THIS
-                //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                //anim.SetFloat("vertical", Input.GetAxis("Vertical"));
-                //anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
-
-                /*  COMBO ANIMATION -- 
-                if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
-                {
-                    anim.SetBool("Attack1", false);
-                }
-                if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
-                {
-                    anim.SetBool("Attack2", false);
-                }
-                if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
-                {
-                    anim.SetBool("Attack3", false);
-                    noOfClicks = 0;
-                }
-
-                if(Time.time - lastSwing > maxComboDelay)
-                {
-                    noOfClicks = 0;
-                }
-
-                if(Time.time > nextAttackTime)
-                {
-                */
 
                 if (Input.GetMouseButton(0))
                 {
@@ -206,6 +173,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     {
                         if (Time.time - lastSwing > cooldown)
                         {
+                           
                             Attack();
                         }
                     }
@@ -232,9 +200,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if (EquipmentManager.instance.currentEquipment[0] != null)
             {
-                EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled =
-                    true;
+                //EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = true;
                 anim.SetTrigger("attack");
+
+
                 //EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
             }
             // Else add punch here
@@ -257,18 +226,28 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
         // Not implemented - need to fix this spaguett
-        public void EndAnimationFunc(string message)
+        /* public void EndAnimationFunc(string message)
+         {
+             if (message.Equals("AttackAnimationEnded"))
+             {
+                 EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled =
+                     false;
+                 //pc_attacking = false;
+                 //pc_anim.SetBool("attack", false);
+                 // Do other things based on an attack ending.
+             }
+         }
+         */
+        bool AnimatorIsPlaying()
         {
-            if (message.Equals("AttackAnimationEnded"))
-            {
-                EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled =
-                    false;
-                //pc_attacking = false;
-                //pc_anim.SetBool("attack", false);
-                // Do other things based on an attack ending.
-            }
+            return anim.GetCurrentAnimatorStateInfo(0).length >
+                   anim.GetCurrentAnimatorStateInfo(0).normalizedTime;
         }
-        
+        bool AnimatorIsPlaying(string stateName)
+        {
+            return AnimatorIsPlaying() && anim.GetCurrentAnimatorStateInfo(0).IsName(stateName);
+        }
+
         public void setAllowedToAttack(bool maybe)
         {
             allowAttack = maybe;
@@ -436,6 +415,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         yield return new WaitForSeconds(0.1f);
         ableToJump = true;
     }
+
+
+
+
 }
     
 }

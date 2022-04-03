@@ -65,7 +65,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Golem Attack 1
+  m_Name: Attack1
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -79,7 +79,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 397f2690199642844941b8bb1bacb735, type: 3}
+  m_Motion: {fileID: 7400000, guid: 395671fb35fbae24ca3a3a8f4f4e7242, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -106,7 +106,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mini Golems controller
+  m_Name: Melee Enemies
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: JumpAttack
@@ -258,7 +258,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Quick Attack 2
+  m_Name: Attack2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -272,7 +272,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 44652e0646b39094f8e9e98dc5a79be0, type: 3}
+  m_Motion: {fileID: 7400000, guid: e6304e1df5d20c14d996e0f3bf17ebb5, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

@@ -2,6 +2,7 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EquipmentManager : MonoBehaviour
 {
@@ -94,7 +95,15 @@ public class EquipmentManager : MonoBehaviour
             Vector3 pos = weaponHolder.position;
 
             // Create new Item and place it in the weapon holder
-            GameObject Sword = Instantiate(newItem.prefab, pos, Quaternion.identity, weaponHolder);
+            GameObject Sword;
+
+            // This might work in syncing multiplayer weapons
+            if (GameManager.instance.isMultiplayer)
+               Sword = PhotonNetwork.Instantiate(newItem.prefab.name, pos, Quaternion.identity);
+            else
+               Sword = Instantiate(newItem.prefab, pos, Quaternion.identity);
+
+            Sword.transform.parent = weaponHolder.transform;
             Sword.gameObject.GetComponent<BoxCollider>().enabled = false;
             Sword.gameObject.GetComponent<ItemPickup>().enabled = false;
             Sword.gameObject.name = "weapon";
