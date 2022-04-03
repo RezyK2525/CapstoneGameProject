@@ -156,10 +156,12 @@ public class Fireball : MonoBehaviour {
         {
             // NetworkManager.instance.Destroy(gameObject);
             PhotonNetwork.Destroy(gameObject);
+            PhotonNetwork.Destroy(explosion);
         }
         else
         {
             Destroy(gameObject);
+            Destroy(explosion);
         }
         
     }

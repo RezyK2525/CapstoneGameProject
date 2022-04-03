@@ -19292,7 +19292,7 @@ GameObject:
   - component: {fileID: 19830420}
   - component: {fileID: 19975514}
   m_Layer: 0
-  m_Name: FireballExplode
+  m_Name: s_FireballExplode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97b38def-8585-4862-8180-afece488f109" name="Changes" comment="" />
+    <list default="true" id="97b38def-8585-4862-8180-afece488f109" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Effects/Prefab/FireballExplode.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Effects/Prefab/FireballExplode.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/s_NewestGates.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/s_NewestGates.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TheTimeTemple.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TheTimeTemple.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
