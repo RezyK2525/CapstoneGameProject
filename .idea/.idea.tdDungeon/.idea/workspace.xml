@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97b38def-8585-4862-8180-afece488f109" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.tdDungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tdDungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/s_Fireball.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/s_Fireball.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/s_GoldenGate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/s_GoldenGate.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/s_NewestGates.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/s_NewestGates.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GatesOfBabylon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GatesOfBabylon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpellUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpellUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/gomarice_no_continue SDF 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/gomarice_no_continue SDF 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NavMeshComponents.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NavMeshComponents.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NavMeshComponentsEditor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NavMeshComponentsEditor.csproj" afterDir="false" />
-    </list>
+    <list default="true" id="97b38def-8585-4862-8180-afece488f109" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
