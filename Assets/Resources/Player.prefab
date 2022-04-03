@@ -1403,6 +1403,7 @@ MonoBehaviour:
   - {fileID: 3252483538034296009, guid: 96611e8f44b2da24fa30d90b35be3a1c, type: 3}
   - {fileID: 7957763276450273661, guid: 0cc84947da77afe4a858102f47c42cda, type: 3}
   - {fileID: 4133317143634052803, guid: 65960b53a14d49546b650a8e89e9b27f, type: 3}
+  - {fileID: 4374799696228331090, guid: 937214a5f1cc2924d80008fd47bf84e9, type: 3}
   fireBallSettings:
     fireForce: 45
     upwardForce: 1

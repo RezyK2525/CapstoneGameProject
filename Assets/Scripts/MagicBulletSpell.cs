@@ -116,7 +116,14 @@ public class MagicBulletSpell : MonoBehaviour
 
     private void Delay()
     {
-        Destroy(gameObject);
+        if (GameManager.instance.isMultiplayer)
+        {
+            NetworkManager.instance.Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using Photon.Pun;
 
 public class SpellUser : MonoBehaviour
 {
@@ -257,6 +258,8 @@ Quaternion newRotation = Quaternion.Euler(xyz);
         //calculate direction
         Vector3 direction = targetPoint - fireBallSettings.attackPointFireball.position;
         
+
+
         Rigidbody rb = Instantiate(spellPrefab[0], fireBallSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
         rb.transform.forward = direction.normalized;
         
@@ -292,8 +295,10 @@ Quaternion newRotation = Quaternion.Euler(xyz);
         
         //calculate direction
         Vector3 direction = targetPoint - magicBulletSettings.attackPointFireball.position;
-        
-        Rigidbody rb = Instantiate(spellPrefab[3], magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
+        Rigidbody rb = GameManager.instance.isMultiplayer
+            ? PhotonNetwork.Instantiate(spellPrefab[3].name, magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>()
+            : Instantiate(spellPrefab[3], magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
+
         rb.transform.forward = direction.normalized;
         
         rb.AddForce(direction.normalized * magicBulletSettings.fireForce, ForceMode.Impulse);

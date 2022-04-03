@@ -132,7 +132,10 @@ public class GatesOfBabylon : MonoBehaviour
     private void Explode()
     {
 
-        if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
+        if (explosion != null)
+        {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+        }
         
         Invoke("Delay", 0.05f);
     }
@@ -142,7 +145,14 @@ public class GatesOfBabylon : MonoBehaviour
 
     private void Delay()
     {
-        Destroy(gameObject);
+        if (GameManager.instance.isMultiplayer)
+        {
+            NetworkManager.instance.Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
 /*

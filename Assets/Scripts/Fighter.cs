@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Fighter : MonoBehaviour
 {
@@ -111,17 +112,21 @@ public class Fighter : MonoBehaviour
         
         if(Time.time - lastImmune > immuneTime){
             lastImmune = Time.time;
-            
 
-            GameManager.instance.player.stats.hp -= dmg;
+            Debug.Log("gameObject:");
+            Debug.Log(gameObject);
+            
+            gameObject.GetComponent<BetterPlayerMovement>().stats.hp -= dmg;
+
+            //GameManager.instance.player.stats.hp -= dmg;
             //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
             //GameManager.instance.ShowText((dmg.damageAmount - dmgReduction).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
 
-            GameManager.instance.player.hudSettings.healthBar.SetValue(GameManager.instance.player.stats.hp);
+            gameObject.GetComponent<BetterPlayerMovement>().hudSettings.healthBar.SetValue(GameManager.instance.player.stats.hp);
+            //GameManager.instance.player.hudSettings.healthBar.SetValue(GameManager.instance.player.stats.hp);
 
-            ////////GameManager.instance.player.healthBar.SetHealth(GameManager.instance.player.hp);
-
+            
 
             //if(hitPoint <= 0){
                 //hitPoint = 0;

@@ -20,7 +20,7 @@ public class Hotbar : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
 
         inventory = Inventory.instance;
         // inventory.OnItemChangedCallback += UpdateUI;

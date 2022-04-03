@@ -216,9 +216,20 @@ public class EnemyAI : Fighter
 
         if (!alreadyAttacked)
         {
-            
+
             //Attack Code HERE
-            Rigidbody rb = Instantiate(rangedEnemySettings.projectile, rangedEnemySettings.attackPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
+            Rigidbody rb;
+            if(GameManager.instance.isMultiplayer)
+            {
+                if (PhotonNetwork.IsMasterClient)
+                    rb = PhotonNetwork.Instantiate(rangedEnemySettings.projectile.name, rangedEnemySettings.attackPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
+                else
+                    return;
+            }
+            else
+            {
+                rb = Instantiate(rangedEnemySettings.projectile, rangedEnemySettings.attackPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
+            }
             //rb.transform.forward;
             rb.AddForce(transform.forward * rangedEnemySettings.projectileSpeed, ForceMode.Impulse);
             rb.AddForce(transform.up * rangedEnemySettings.projectileUpwardDirection, ForceMode.Impulse);

@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using Photon.Pun;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Fireball : MonoBehaviour {
@@ -84,7 +85,19 @@ public class Fireball : MonoBehaviour {
     private void ExplodePlayer()
     {
         //Debug.Log("CALLED EXPLODE PLAYER");
-        if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
+        if (explosion != null)
+        {
+            if (GameManager.instance.isMultiplayer)
+            {
+                PhotonNetwork.Instantiate(explosion.name, transform.position, Quaternion.identity);
+
+            }
+            else
+            {
+                Instantiate(explosion, transform.position, Quaternion.identity);
+
+            }
+        }
 
         Collider[] players = Physics.OverlapSphere(transform.position, explosionRange, whatIsPlayer);
         for (int i = 0; i < players.Length; i++)
@@ -103,8 +116,12 @@ public class Fireball : MonoBehaviour {
     private void ExplodeEnemy()
     {
 
-        
-        if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
+
+        if (explosion != null)
+        {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+        }
+
         
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsEnemies);
         for (int p = 0; p < enemies.Length; p++)
