@@ -2,33 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97b38def-8585-4862-8180-afece488f109" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.tdDungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tdDungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_Ghost1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_Ghost1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_Ghost2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_Ghost2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_GoblinWarriorMale.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_GoblinWarriorMale.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_SkeletonKnight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_SkeletonKnight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_SkeletonOnGrate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_SkeletonOnGrate.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSlave.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSlave.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSoldierbL.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSoldierbL.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSoldierbR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSoldierbR.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_The Wizard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_The Wizard.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_ghoul.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_ghoul.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/i_Hydra Bow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/i_Hydra Bow.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/i_Overload.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/i_Overload.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/i_Sky Sabre.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/i_Sky Sabre.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/i_Sword2_Green.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/i_Sword2_Green.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/p_healthTable1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/p_healthTable1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/p_healthTable2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/p_healthTable2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/p_manatable1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/p_manatable1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/s_FairyMeteorSpell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/s_FairyMeteorSpell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Effects/Prefab/FireballExplode.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Artwork/Effects/Prefab/FireballExplode.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/s_NewestGates.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/s_NewestGates.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TheTimeTemple.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TheTimeTemple.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MagicBulletSpell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MagicBulletSpell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NavMeshComponents.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NavMeshComponents.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NavMeshComponentsEditor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NavMeshComponentsEditor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/NavMeshComponentsEditor.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NavMeshComponentsEditor.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

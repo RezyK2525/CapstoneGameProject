@@ -257,10 +257,22 @@ Quaternion newRotation = Quaternion.Euler(xyz);
         
         //calculate direction
         Vector3 direction = targetPoint - fireBallSettings.attackPointFireball.position;
+
+        Rigidbody rb;
+        
+        if (GameManager.instance.isMultiplayer)
+        {
+            rb = PhotonNetwork.Instantiate(spellPrefab[0].name, fireBallSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
+            // rb = NetworkManager.instance.Instantiate(spellPrefab[3].name, magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
+        }
+        else
+        {
+            rb = Instantiate(spellPrefab[0], magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
+        }
         
 
 
-        Rigidbody rb = Instantiate(spellPrefab[0], fireBallSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
+        //Rigidbody rb = Instantiate(spellPrefab[0], fireBallSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
         rb.transform.forward = direction.normalized;
         
         rb.AddForce(direction.normalized * fireBallSettings.fireForce, ForceMode.Impulse);
@@ -295,9 +307,16 @@ Quaternion newRotation = Quaternion.Euler(xyz);
         
         //calculate direction
         Vector3 direction = targetPoint - magicBulletSettings.attackPointFireball.position;
-        Rigidbody rb = GameManager.instance.isMultiplayer
-            ? PhotonNetwork.Instantiate(spellPrefab[3].name, magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>()
-            : Instantiate(spellPrefab[3], magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
+        Rigidbody rb;
+        if (GameManager.instance.isMultiplayer)
+        {
+            rb = PhotonNetwork.Instantiate(spellPrefab[3].name, magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
+            // rb = NetworkManager.instance.Instantiate(spellPrefab[3].name, magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
+        }
+        else
+        {
+            rb = Instantiate(spellPrefab[3], magicBulletSettings.attackPointFireball.position, Quaternion.identity).GetComponent<Rigidbody>();
+        }
 
         rb.transform.forward = direction.normalized;
         
@@ -333,18 +352,52 @@ Quaternion newRotation = Quaternion.Euler(xyz);
 
         //Vector3 targetLookAt = targetPoint - (90, 0, -90);
         //calculate directions
+        
+        
+        
+        
+        
 
         for (int i = 0; i < 9; i++)
         {
-            gatesSettings.gateDirections[i] = targetPoint - gatesSettings.WeaponGate[i].position;
-            gatesSettings.rb[i] = Instantiate(spellPrefab[1], gatesSettings.WeaponGate[i].position, Quaternion.identity).transform.GetComponentInChildren<Rigidbody>();
-            gatesSettings.go[i] = Instantiate(spellPrefab[2], gatesSettings.GoldenGate[i].position, Quaternion.identity);
             
             
-            gatesSettings.rb[i].GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(gatesSettings.gateDirections[i]);
-            gatesSettings.rb[i].GetComponentInChildren<Rigidbody>().transform.Rotate(90, 0, 0);
-            gatesSettings.rb[i].transform.GetComponentInChildren<Rigidbody>().AddForce(gatesSettings.gateDirections[i].normalized * gatesSettings.gatesForce, ForceMode.Impulse);
-            gatesSettings.rb[i].transform.GetComponentInChildren<Rigidbody>().AddForce(fpCam.transform.up * gatesSettings.upwardForce, ForceMode.Impulse);
+            if (GameManager.instance.isMultiplayer)
+            {
+                gatesSettings.gateDirections[i] = targetPoint - gatesSettings.WeaponGate[i].position;
+                gatesSettings.rb[i] = PhotonNetwork.Instantiate(spellPrefab[1].name, gatesSettings.WeaponGate[i].position, Quaternion.identity).transform.GetComponentInChildren<Rigidbody>();
+                gatesSettings.go[i] = PhotonNetwork.Instantiate(spellPrefab[2].name, gatesSettings.GoldenGate[i].position, Quaternion.identity);
+            
+            
+                gatesSettings.rb[i].GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(gatesSettings.gateDirections[i]);
+                gatesSettings.rb[i].GetComponentInChildren<Rigidbody>().transform.Rotate(90, 0, 0);
+                gatesSettings.rb[i].transform.GetComponentInChildren<Rigidbody>().AddForce(gatesSettings.gateDirections[i].normalized * gatesSettings.gatesForce, ForceMode.Impulse);
+                gatesSettings.rb[i].transform.GetComponentInChildren<Rigidbody>().AddForce(fpCam.transform.up * gatesSettings.upwardForce, ForceMode.Impulse);
+            }
+            else
+            {
+                gatesSettings.gateDirections[i] = targetPoint - gatesSettings.WeaponGate[i].position;
+                gatesSettings.rb[i] = Instantiate(spellPrefab[1], gatesSettings.WeaponGate[i].position, Quaternion.identity).transform.GetComponentInChildren<Rigidbody>();
+                gatesSettings.go[i] = Instantiate(spellPrefab[2], gatesSettings.GoldenGate[i].position, Quaternion.identity);
+            
+            
+                gatesSettings.rb[i].GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(gatesSettings.gateDirections[i]);
+                gatesSettings.rb[i].GetComponentInChildren<Rigidbody>().transform.Rotate(90, 0, 0);
+                gatesSettings.rb[i].transform.GetComponentInChildren<Rigidbody>().AddForce(gatesSettings.gateDirections[i].normalized * gatesSettings.gatesForce, ForceMode.Impulse);
+                gatesSettings.rb[i].transform.GetComponentInChildren<Rigidbody>().AddForce(fpCam.transform.up * gatesSettings.upwardForce, ForceMode.Impulse);
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
 
         }
 
