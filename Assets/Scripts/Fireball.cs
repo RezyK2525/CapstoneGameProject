@@ -143,6 +143,7 @@ public class Fireball : MonoBehaviour {
         if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
         
         Invoke("Delay", 0.05f);
+        
     }
     
     
@@ -150,7 +151,17 @@ public class Fireball : MonoBehaviour {
 
     private void Delay()
     {
-        Destroy(gameObject);
+        
+        if (GameManager.instance.isMultiplayer)
+        {
+            // NetworkManager.instance.Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
 

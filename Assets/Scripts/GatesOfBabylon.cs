@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 
@@ -147,7 +148,7 @@ public class GatesOfBabylon : MonoBehaviour
     {
         if (GameManager.instance.isMultiplayer)
         {
-            NetworkManager.instance.Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
         else
         {
