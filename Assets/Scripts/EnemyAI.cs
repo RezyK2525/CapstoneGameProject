@@ -305,9 +305,9 @@ public class EnemyAI : Fighter
         this.meeleeEnemySettings.canAttack = false;
     }
 
-    void OnTriggerEnter(Collider collide)
+    void OnCollisionEnter(Collision collide)
     {
-        if (collide.tag == "Player" && meeleeEnemySettings.canAttack)
+        if (collide.collider.tag == "Player" && meeleeEnemySettings.canAttack)
         {
             //Debug.Log("Attacking player");
 

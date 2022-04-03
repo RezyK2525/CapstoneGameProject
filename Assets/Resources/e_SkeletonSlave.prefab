@@ -4893,7 +4893,6 @@ GameObject:
   - component: {fileID: 8530554153864159240}
   - component: {fileID: 1723375481025294292}
   - component: {fileID: 7289187791561346697}
-  - component: {fileID: 568946271395152906}
   - component: {fileID: 3550031001172088012}
   m_Layer: 10
   m_Name: e_SkeletonSlave
@@ -5024,7 +5023,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8530117102015693452}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5293617
   m_Height: 1.85
@@ -5086,22 +5085,6 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!54 &568946271395152906
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8530117102015693452}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 32
-  m_CollisionDetection: 0
 --- !u!95 &3550031001172088012
 Animator:
   serializedVersion: 3
