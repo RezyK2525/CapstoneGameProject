@@ -108,7 +108,7 @@ public class MagicBulletSpell : MonoBehaviour
         //Debug.Log("EXPLODE");
         //if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
         
-        Invoke("Delay", 0.05f);
+        Invoke("Delay", 0.5f);
     }
     
     

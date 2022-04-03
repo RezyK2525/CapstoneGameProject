@@ -1446,7 +1446,7 @@ MonoBehaviour:
     - {x: 0, y: 0, z: 0}
     - {x: 0, y: 0, z: 0}
   magicBulletSettings:
-    fireForce: 35
+    fireForce: 20
     upwardForce: 0.5
     attackPointFireball: {fileID: 6518730463090922575}
     manaCostMagicBullet: 2
