@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
+using Photon.Pun;
 
 public class Fighter : MonoBehaviour
 {
@@ -37,40 +38,47 @@ public class Fighter : MonoBehaviour
 
     //all fighters can receivedamage/die
     public void ReceiveDamage(float dmg){
-
-        //Debug.Log(EquipmentManager.instance.currentEquipment[0].name);
-        Debug.Log("Damage: " + dmg);
-        Debug.Log("Enemy Health: " + GameManager.instance.enemyAI.stats.hp);
-        if(Time.time - lastImmune > immuneTime){
-            lastImmune = Time.time;
-            //Debug.Log("DMG BIG DAMAGE: " + dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength));
-            
-            
-            //display damage above the enemy head and in red
-            // dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength);  <- used for the damage amount
-            
-            
-            GameManager.instance.enemyAI.enemyDamage.SetValue(dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.stats.strength));
-            GameManager.instance.enemyAI.enemyDamage.showDamage();
+        /*
+                //Debug.Log(EquipmentManager.instance.currentEquipment[0].name);
+                Debug.Log("Damage: " + dmg);
+                Debug.Log("Enemy Health: " + GameManager.instance.enemyAI.stats.hp);
+                if(Time.time - lastImmune > immuneTime){
+                    lastImmune = Time.time;
+                    //Debug.Log("DMG BIG DAMAGE: " + dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength));
 
 
-            GameManager.instance.enemyAI.stats.hp -= dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.stats.strength);
-            //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
-
-            //GameManager.instance.ShowText((dmg.damageAmount + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength)).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
+                    //display damage above the enemy head and in red
+                    // dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.strength);  <- used for the damage amount
 
 
-            if(GameManager.instance.enemyAI.stats.hp <= 0){
-                GameManager.instance.enemyAI.stats.hp = 0;
-                Death();
+                    GameManager.instance.enemyAI.enemyDamage.SetValue(dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.stats.strength));
+                    GameManager.instance.enemyAI.enemyDamage.showDamage();
 
-            }
-        } 
+
+                    GameManager.instance.enemyAI.stats.hp -= dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.stats.strength);
+                    //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
+
+                    //GameManager.instance.ShowText((dmg.damageAmount + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength)).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
+
+
+                    if(GameManager.instance.enemyAI.stats.hp <= 0){
+                        GameManager.instance.enemyAI.stats.hp = 0;
+                        Death();
+
+                    }
+                }*/
+        if (GameManager.instance.isMultiplayer)
+        {
+            GetComponent<PhotonView>().RPC("_ReceiveDamage", RpcTarget.All, dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.stats.strength));
+        } else
+        {
+            _ReceiveDamage(dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.stats.strength));
+        }
     }
    
     
     public void ReceiveMagicDamage(float dmg){
-        //if(Time.time - lastImmune > immuneTime){
+        /*//if(Time.time - lastImmune > immuneTime){
         
 
             lastImmune = Time.time;
@@ -84,8 +92,6 @@ public class Fighter : MonoBehaviour
 
             //GameManager.instance.ShowText((dmg.damageAmount + (GameManager.instance.inventoryUI.weaponSlot.getCurrentWeapon().percentModifier * GameManager.instance.player.strength)).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
 
-
-
             GameManager.instance.enemyAI.healthBar.healthBarUI.SetActive(true);
             GameManager.instance.enemyAI.healthBar.SetValue(GameManager.instance.enemyAI.stats.hp);
             
@@ -95,14 +101,41 @@ public class Fighter : MonoBehaviour
             
             if(GameManager.instance.enemyAI.stats.hp <= 0){
                 GameManager.instance.enemyAI.stats.hp = 0;
-                GameManager.instance.enemyAI.Death();
-                //Death();
+                // GameManager.instance.enemyAI.Death();
+                Death();
 
+            }*/
+        if (GameManager.instance.isMultiplayer)
+        {
+            GetComponent<PhotonView>().RPC("_ReceiveDamage", RpcTarget.All, dmg);
+        }
+        else
+        {
+            _ReceiveDamage(dmg);
+        }
+    }
+    [PunRPC]
+    public void _ReceiveDamage(float dmg)
+    {
+        // Debug.Log("Fighter: " + this);
+        if (Time.time - lastImmune > immuneTime)
+        {
+            lastImmune = Time.time;
+
+            gameObject.GetComponent<EnemyAI>().enemyDamage.SetValue(dmg);
+            gameObject.GetComponent<EnemyAI>().enemyDamage.showDamage();
+            gameObject.GetComponent<EnemyAI>().stats.hp -= dmg;
+            gameObject.GetComponent<EnemyAI>().healthBar.healthBarUI.SetActive(true);
+            gameObject.GetComponent<EnemyAI>().healthBar.SetValue(GameManager.instance.enemyAI.stats.hp);
+
+            if (gameObject.GetComponent<EnemyAI>().stats.hp <= 0) {
+                gameObject.GetComponent<EnemyAI>().stats.hp = 0;
+                Death();
             }
-        
+        }
     }
 
-    
+
     public void PlayerReceiveMagicDamage(float dmg)
     {
         //double dmgReduction = 0.2 * GameManager.instance.player.defense;

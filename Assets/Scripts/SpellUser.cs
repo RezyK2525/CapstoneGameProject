@@ -95,21 +95,21 @@ Quaternion newRotation = Quaternion.Euler(xyz);
         if (GameManager.instance.spellController.spellSettings.isFireball)
         {
             GameManager.instance.spellController.spellSettings.isFireball = false;
-            Debug.Log("IS FIREBALL IS TRUE");
+            // Debug.Log("IS FIREBALL IS TRUE");
             MyInputFireball();
         }
         
         if (GameManager.instance.spellController.spellSettings.isMagicBullet)
         {
             GameManager.instance.spellController.spellSettings.isMagicBullet = false;
-            Debug.Log("IS FIREBALL IS TRUE");
+            // Debug.Log("IS FIREBALL IS TRUE");
             MyInputMagicBullet();
         }
         
         if (GameManager.instance.spellController.spellSettings.isGates)
         {
             GameManager.instance.spellController.spellSettings.isGates = false;
-            Debug.Log("IS Gates IS TRUE");
+            // Debug.Log("IS Gates IS TRUE");
             MyInputGates();
         }
         

@@ -24,5 +24,5 @@ MonoBehaviour:
   manaModifier: 10
   maxManaModifier: 10
   manaRegenRateModifier: 2
-  prefab: {fileID: 8487683125393258009, guid: e28802a291607ac42865146652c68883, type: 3}
+  prefab: {fileID: 3780667945589151871, guid: 41adf0c815451bd458ae7952645d07b9, type: 3}
   equipSlot: 0

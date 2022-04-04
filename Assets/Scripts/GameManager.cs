@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     // Instance
     public static GameManager instance;
     public NetworkManager networkManager;
+    #pragma warning disable 1
     private bool NetManInstantiated = false;
+    #pragma warning restore 1
     public GameObject networkManagerPrefab;
 
     // references

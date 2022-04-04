@@ -24,7 +24,7 @@ public class SpellController : Item
         GameManager.instance.spellController = this;
         if (name.Equals("Fireball"))
         {
-            Debug.Log("Called Use in side of SpellController for Fireball");
+            // Debug.Log("Called Use in side of SpellController for Fireball");
 
             spellSettings.isFireball = true;
 
@@ -32,7 +32,7 @@ public class SpellController : Item
         
         if (name.Equals("MagicBullet"))
         {
-            Debug.Log("Called Use in side of SpellController for MagicBullet");
+            // Debug.Log("Called Use in side of SpellController for MagicBullet");
 
             spellSettings.isMagicBullet = true;
 
