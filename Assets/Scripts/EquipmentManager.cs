@@ -76,6 +76,7 @@ public class EquipmentManager : MonoBehaviour
             /*if (GameManager.instance.isMultiplayer)
                 PhotonNetwork.Destroy(weaponHolder.GetChild(0).gameObject);
             else*/
+            Debug.Log(currentEquipment[slotIndex]);
             Destroy(weaponHolder.GetChild(0).gameObject);
         }
 
@@ -99,9 +100,15 @@ public class EquipmentManager : MonoBehaviour
 
             // This might work in syncing multiplayer weapons
             if (GameManager.instance.isMultiplayer)
+            {
+                Debug.Log(newItem.prefab.name);
                Sword = PhotonNetwork.Instantiate(newItem.prefab.name, pos, Quaternion.identity);
+
+            }
             else
+            {
                Sword = Instantiate(newItem.prefab, pos, Quaternion.identity);
+            }
 
             Sword.transform.parent = weaponHolder.transform;
             Sword.gameObject.GetComponent<BoxCollider>().enabled = false;
