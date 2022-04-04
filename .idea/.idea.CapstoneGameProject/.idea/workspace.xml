@@ -6,8 +6,33 @@
   <component name="ChangeListManager">
     <list default="true" id="6848554d-83c5-4df4-98c8-38c194683ca1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CapstoneGameProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CapstoneGameProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Other/EnemyHpBarsSoon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Other/EnemyHpBarsSoon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_Ghost1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_Ghost1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_Ghost2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_Ghost2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_GoblinWarriorMale.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_GoblinWarriorMale.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_SkeletonKnight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_SkeletonKnight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_SkeletonOnGrate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_SkeletonOnGrate.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSlave.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSlave.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSoldierbL.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSoldierbL.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSoldierbR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSoldierbR.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_ghoul.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_ghoul.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/i_Hydra Bow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/i_Hydra Bow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/p_healthTable1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/p_healthTable1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/p_healthTable2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/p_healthTable2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/p_manatable1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/p_manatable1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/s_FairyMeteorSpell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/s_FairyMeteorSpell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/s_Fireball.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/s_Fireball.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/s_FireballExplode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/s_FireballExplode.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TheTimeTemple.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TheTimeTemple.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BetterPlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BetterPlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChestScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChestScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyAI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyDamageUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyDamageUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/gomarice_no_continue SDF 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/gomarice_no_continue SDF 1.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NavMeshComponents.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NavMeshComponents.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NavMeshComponentsEditor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NavMeshComponentsEditor.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
@@ -76,6 +101,7 @@
       <workItem from="1647741494184" duration="230000" />
       <workItem from="1648520301617" duration="13008000" />
       <workItem from="1648925396996" duration="2022000" />
+      <workItem from="1649029811498" duration="11866000" />
     </task>
     <servers />
   </component>

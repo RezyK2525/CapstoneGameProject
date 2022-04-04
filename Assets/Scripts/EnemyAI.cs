@@ -332,19 +332,25 @@ public class EnemyAI : Fighter
         GameManager.instance.player.gainedMoney = money;
         
         GameManager.instance.hud.gainedMoney.gameObject.SetActive(true);
+        gameObject.SetActive(false);
+        Invoke("DisableGainedMoney", 1.5f);
         
         if (GameManager.instance.isMultiplayer)
         {
-            DisableGainedMoney();
-            NetworkManager.instance.Destroy(gameObject);
+            Invoke("DelayOnlineDestroy", 1.6f);
+            //NetworkManager.instance.Destroy(gameObject);
         }
         else
         {
-            gameObject.SetActive(false);
-            Invoke("DisableGainedMoney", 1.5f);
             Destroy(gameObject, 1.6f);
         }
     }
+
+    void DelayOnlineDestroy()
+    {
+        NetworkManager.instance.Destroy(gameObject);
+    }
+    
 
     void DisableGainedMoney()
     {

@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class EnemyDamageUI : MonoBehaviour
 {
     public GameObject enemyDamageUI;
+    public Text damageText;
     
     
     public void SetValue(float dmg)
     {
         Debug.Log("SET DAMAGE VALUE");
-        enemyDamageUI.GetComponentInChildren<Text>().text = dmg.ToString();
+        damageText.text = dmg.ToString();
     }
 
     public void showDamage()

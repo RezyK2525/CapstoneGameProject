@@ -31,14 +31,9 @@ public class Interactable : MonoBehaviour
             if (distance <= radius)
             {
 
-                //GameManager.instance.hud.interactField.gameObject.SetActive(true);
-                
-                
-                
-
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    DisableInteractField();
+                    GameManager.instance.hud.interactField.gameObject.SetActive(false);
                     Interact();
                 }
                 
@@ -48,15 +43,12 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    private void DisableInteractField()
-    {
-        GameManager.instance.hud.interactField.gameObject.SetActive(false);
-    }
-
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            // make it so only the player who is in distance has it turned on
+            // use collider? move hud into player instead of GM?
             GameManager.instance.hud.interactField.gameObject.SetActive(true);
         }
     }

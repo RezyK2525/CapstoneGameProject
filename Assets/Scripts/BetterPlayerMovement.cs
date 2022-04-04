@@ -59,7 +59,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [Serializable]
         public class HUDsettings
         {
-
+            //public HUDController hud;
             public StatusBar healthBar;
             public StatusBar manaBar;
         }

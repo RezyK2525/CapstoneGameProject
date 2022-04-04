@@ -16,6 +16,7 @@ public class ChestScript : Interactable
         GameManager.instance.player.gainedMoney = moneyAmount;
         GameManager.instance.player.money += moneyAmount;
         
+        //GameManager.instance.player.hudSettings.hud.gainedMoney.gameObject.SetActive(true);
         GameManager.instance.hud.gainedMoney.gameObject.SetActive(true);
         Invoke("DisableGainedMoney", 1.5f);
     }
