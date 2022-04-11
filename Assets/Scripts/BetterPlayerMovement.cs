@@ -225,6 +225,31 @@ namespace UnityStandardAssets.Characters.FirstPerson
             */
         }
 
+
+        public void ReceiveDamage(float dmg)
+        {
+            //double dmgReduction = 0.2 * GameManager.instance.player.defense;
+
+            if (Time.time - lastImmune > immuneTime)
+            {
+                lastImmune = Time.time;
+
+                gameObject.GetComponent<BetterPlayerMovement>().stats.hp -= dmg;
+                //Debug.Log((0.2 * GameManager.instance.player.defense));
+                //GameManager.instance.player.hp -= (dmg.damageAmount - dmgReduction);
+                //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
+
+                gameObject.GetComponent<BetterPlayerMovement>().hudSettings.healthBar.SetValue(GameManager.instance.player.stats.hp);
+
+                //GameManager.instance.ShowText((dmg.damageAmount - dmgReduction).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
+
+                if (gameObject.GetComponent<BetterPlayerMovement>().stats.hp <= 0)
+                {
+                    gameObject.GetComponent<BetterPlayerMovement>().stats.hp = 0;
+                    Death();
+                }
+            }
+        }
         // Not implemented - need to fix this spaguett
         /* public void EndAnimationFunc(string message)
          {

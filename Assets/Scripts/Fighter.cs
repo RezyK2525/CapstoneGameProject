@@ -13,7 +13,7 @@ public class Fighter : MonoBehaviour
     public class Stats
     {
         //public GameObject hitMarkerPrefab;
-    
+
         public float maxHP;
         public float hp;
         public float maxMana;
@@ -23,7 +23,7 @@ public class Fighter : MonoBehaviour
         public float defense;
         public float spellPower;
     }
-    
+
     public Stats stats = new Stats();
     //public EnemyAiMovement enemyAiMovement
     //public float pushRecoverySpeed = 0.2f;
@@ -75,14 +75,14 @@ public class Fighter : MonoBehaviour
             _ReceiveDamage(dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.stats.strength));
         }
     }
-   
-    
+
+
     public void ReceiveMagicDamage(float dmg){
         /*//if(Time.time - lastImmune > immuneTime){
-        
+
 
             lastImmune = Time.time;
-            
+
             GameManager.instance.enemyAI.enemyDamage.SetValue(dmg);
             GameManager.instance.enemyAI.enemyDamage.showDamage();
 
@@ -94,11 +94,11 @@ public class Fighter : MonoBehaviour
 
             GameManager.instance.enemyAI.healthBar.healthBarUI.SetActive(true);
             GameManager.instance.enemyAI.healthBar.SetValue(GameManager.instance.enemyAI.stats.hp);
-            
-            
+
+
             //enemyAiMovement.healthBar.healthBarUI.SetActive(true);
             //enemyAiMovement.healthBar.SetHealth(hitPoint);
-            
+
             if(GameManager.instance.enemyAI.stats.hp <= 0){
                 GameManager.instance.enemyAI.stats.hp = 0;
                 // GameManager.instance.enemyAI.Death();
@@ -139,10 +139,10 @@ public class Fighter : MonoBehaviour
     public void PlayerReceiveMagicDamage(float dmg)
     {
         //double dmgReduction = 0.2 * GameManager.instance.player.defense;
-        
+
         if(Time.time - lastImmune > immuneTime){
             lastImmune = Time.time;
-            
+
             gameObject.GetComponent<BetterPlayerMovement>().stats.hp -= dmg;
 
             //GameManager.instance.player.stats.hp -= dmg;
@@ -153,48 +153,22 @@ public class Fighter : MonoBehaviour
             gameObject.GetComponent<BetterPlayerMovement>().hudSettings.healthBar.SetValue(gameObject.GetComponent<BetterPlayerMovement>().stats.hp);
             //GameManager.instance.player.hudSettings.healthBar.SetValue(GameManager.instance.player.stats.hp);
 
-            
 
-            //if(hitPoint <= 0){
-                //hitPoint = 0;
-                //Death();
-
-            //}
+            if(gameObject.GetComponent<BetterPlayerMovement>().stats.hp <= 0){
+                gameObject.GetComponent<BetterPlayerMovement>().stats.hp = 0;
+                Death();
+            }
         }
     }
     
 
-    public void PlayerReceiveDamage(float dmg)
-    {
-        //double dmgReduction = 0.2 * GameManager.instance.player.defense;
-        
-        
-        if(Time.time - lastImmune > immuneTime){
-            lastImmune = Time.time;
-
-
-            gameObject.GetComponent<BetterPlayerMovement>().stats.hp -= dmg;
-            //Debug.Log((0.2 * GameManager.instance.player.defense));
-            //GameManager.instance.player.hp -= (dmg.damageAmount - dmgReduction);
-            //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
-
-            gameObject.GetComponent<BetterPlayerMovement>().hudSettings.healthBar.SetValue(gameObject.GetComponent<BetterPlayerMovement>().stats.hp);
-
-            //GameManager.instance.ShowText((dmg.damageAmount - dmgReduction).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
-
-
-          /*  if (hitPoint <= 0){
-                hitPoint = 0;
-                Death();
-
-            }*/
-        }
-    }
 
 
     protected virtual void Death(){
-        
 
+        // deathScreen.setActive(true);
+
+        Debug.Log("you died...");
 
     }
 

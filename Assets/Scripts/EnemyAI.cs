@@ -5,17 +5,18 @@ using UnityEngine;
 using UnityEngine.AI;
 using Photon.Pun;
 using Random = UnityEngine.Random;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class EnemyAI : Fighter
 {
-    
+
     //ALL ENEMY SETTINGS
     public Vector3 walkPoint;
     private bool walkPointSet;
     public float walkPointRange;
     public StatusBar healthBar;
     public EnemyDamageUI enemyDamage;
-    
+
     public NavMeshAgent agent;
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
@@ -28,7 +29,7 @@ public class EnemyAI : Fighter
     // animations
     public Animator anim;
     public bool moving;
-    
+
     [Serializable]
     public class EnemyType
     {
@@ -36,27 +37,27 @@ public class EnemyAI : Fighter
         public bool isMeelee;
         public bool isFollower;
     }
-    
+
     [Serializable]
     public class RangedEnemySettings
     {
-        
+
     public float projectileSpeed;
     public float projectileUpwardDirection;
     public Transform attackPoint;
-    
+
     //Attacking
     public GameObject projectile;
     }
 
-    
+
     [Serializable]
     public class MeeleeEnemySettings
     {
         public bool canAttack;
-       
+
     }
-    
+
     [Serializable]
     public class FollowerEnemySettings
     {
@@ -90,7 +91,7 @@ public class EnemyAI : Fighter
 
     private IEnumerator UpdateClosestPlayer()
     {
-        
+
         yield return new WaitForSeconds(1);
         // find closest player
         foreach (GameObject p in NetworkManager.instance.players)
@@ -183,7 +184,7 @@ public class EnemyAI : Fighter
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
-        
+
         //Walkpoint Reached
         if (distanceToWalkPoint.magnitude < 1f)
         {
@@ -205,13 +206,13 @@ public class EnemyAI : Fighter
             walkPointSet = true;
         }
     }
-    
+
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
         anim.SetBool("isMoving", true);
     }
-    
+
     private void AttackPlayerRanged()
     {
 
@@ -240,11 +241,11 @@ public class EnemyAI : Fighter
             //rb.transform.forward;
             rb.AddForce(transform.forward * rangedEnemySettings.projectileSpeed, ForceMode.Impulse);
             rb.AddForce(transform.up * rangedEnemySettings.projectileUpwardDirection, ForceMode.Impulse);
-            
-            
+
+
             //
-            
-            
+
+
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -319,11 +320,11 @@ public class EnemyAI : Fighter
     {
         GameManager.instance.player.money += money;
         GameManager.instance.player.gainedMoney = money;
-        
+
         GameManager.instance.hud.gainedMoney.gameObject.SetActive(true);
         gameObject.SetActive(false);
         Invoke("DisableGainedMoney", 1.5f);
-        
+
         if (GameManager.instance.isMultiplayer)
         {
             Invoke("DelayOnlineDestroy", 1.6f);
@@ -339,7 +340,7 @@ public class EnemyAI : Fighter
     {
         NetworkManager.instance.Destroy(gameObject);
     }
-    
+
 
     void DisableGainedMoney()
     {
@@ -359,8 +360,8 @@ public class EnemyAI : Fighter
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(transform.position, followerEnemySettings.alertRange);
         }
-        
-        
-    }  
-    
+
+
+    }
+
 }
