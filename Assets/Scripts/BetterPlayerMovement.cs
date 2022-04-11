@@ -297,6 +297,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         float z = Input.GetAxisRaw(movementSettings.yAxisInput);
         //Debug.Log(isRunning);
         
+        anim.SetFloat("vertical", z);
+        
         if (Input.GetKey(movementSettings.RunKey))
         {
             
