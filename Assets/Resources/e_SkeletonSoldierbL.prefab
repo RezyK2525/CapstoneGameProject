@@ -4687,6 +4687,7 @@ GameObject:
   - component: {fileID: 6853289262104200201}
   - component: {fileID: 3303684126912669012}
   - component: {fileID: 121272404769079906}
+  - component: {fileID: 785607175496891023}
   m_Layer: 10
   m_Name: e_SkeletonSoldierbL
   m_TagString: Enemy
@@ -4896,6 +4897,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &785607175496891023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4508242692198132049}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4903385, y: 1.0487059, z: 1.2444488}
+  m_Center: {x: -0.017138043, y: 0.48161775, z: 0.50567347}
 --- !u!1 &4509215206090178951
 GameObject:
   m_ObjectHideFlags: 0

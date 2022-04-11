@@ -4687,6 +4687,7 @@ GameObject:
   - component: {fileID: 9029652175274261579}
   - component: {fileID: 1120562586560994582}
   - component: {fileID: 7348016699935423173}
+  - component: {fileID: 2206155968651501515}
   m_Layer: 10
   m_Name: e_SkeletonKnight
   m_TagString: Enemy
@@ -4896,6 +4897,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &2206155968651501515
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072918472732315923}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4903385, y: 1.0487059, z: 1.2444488}
+  m_Center: {x: -0.017138043, y: 0.48161775, z: 0.50567347}
 --- !u!1 &2073892094396463557
 GameObject:
   m_ObjectHideFlags: 0
@@ -5031,6 +5045,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 193f2572e092c594b871cc2e927da8b5, type: 3}
+--- !u!224 &4999567677638759930 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8090455383165096908, guid: 193f2572e092c594b871cc2e927da8b5, type: 3}
+  m_PrefabInstance: {fileID: 3829495775115413046}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4999567677320099538 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8090455383919653092, guid: 193f2572e092c594b871cc2e927da8b5, type: 3}
@@ -5053,8 +5072,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c9032f8b76117743b7370d57b08d535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &4999567677638759930 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8090455383165096908, guid: 193f2572e092c594b871cc2e927da8b5, type: 3}
-  m_PrefabInstance: {fileID: 3829495775115413046}
-  m_PrefabAsset: {fileID: 0}

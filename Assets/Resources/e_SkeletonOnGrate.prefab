@@ -4687,6 +4687,7 @@ GameObject:
   - component: {fileID: 7837201616137096605}
   - component: {fileID: 2162176606615481536}
   - component: {fileID: 8778459658335295307}
+  - component: {fileID: 2129413110079725947}
   m_Layer: 10
   m_Name: e_SkeletonOnGrate
   m_TagString: Enemy
@@ -4896,6 +4897,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &2129413110079725947
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957276370339635397}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4903385, y: 1.0487059, z: 1.2444488}
+  m_Center: {x: -0.017138043, y: 0.48161775, z: 0.50567347}
 --- !u!1 &957965210223364115
 GameObject:
   m_ObjectHideFlags: 0

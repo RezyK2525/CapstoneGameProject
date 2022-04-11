@@ -4687,6 +4687,7 @@ GameObject:
   - component: {fileID: 1723375481025294292}
   - component: {fileID: 7289187791561346697}
   - component: {fileID: 3550031001172088012}
+  - component: {fileID: 7675357289764304390}
   m_Layer: 10
   m_Name: e_SkeletonSlave
   m_TagString: Enemy
@@ -4896,6 +4897,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &7675357289764304390
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8530117102015693452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4903385, y: 1.0487059, z: 1.2444488}
+  m_Center: {x: -0.017138043, y: 0.48161775, z: 0.50567347}
 --- !u!1 &8530554153445010010
 GameObject:
   m_ObjectHideFlags: 0
@@ -5031,17 +5045,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 193f2572e092c594b871cc2e927da8b5, type: 3}
---- !u!114 &1331434906932008899 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2082379981305142432, guid: 193f2572e092c594b871cc2e927da8b5, type: 3}
+--- !u!224 &9140969410316261551 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8090455383165096908, guid: 193f2572e092c594b871cc2e927da8b5, type: 3}
   m_PrefabInstance: {fileID: 1052766377262123875}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c9032f8b76117743b7370d57b08d535, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &9140969409593113479 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8090455383919653092, guid: 193f2572e092c594b871cc2e927da8b5, type: 3}
@@ -5053,8 +5061,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8615f979b07c6a94c902f2836ba62b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &9140969410316261551 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8090455383165096908, guid: 193f2572e092c594b871cc2e927da8b5, type: 3}
+--- !u!114 &1331434906932008899 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2082379981305142432, guid: 193f2572e092c594b871cc2e927da8b5, type: 3}
   m_PrefabInstance: {fileID: 1052766377262123875}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9032f8b76117743b7370d57b08d535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -270,7 +270,7 @@ public class EnemyAI : Fighter
             attacks[0] = "Attack1";
             attacks[1] = "Attack2";
 
-            if (gameObject.name == "Golem")
+            if (gameObject.name == "e_golem(Clone)")
             {
 
                 attacks[2] = "CrushAttack";
@@ -305,23 +305,12 @@ public class EnemyAI : Fighter
         this.meeleeEnemySettings.canAttack = false;
     }
 
-    void OnCollisionEnter(Collision collide)
+    void OnTriggerStay(Collider coll)
     {
-        if (collide.collider.tag == "Player" && meeleeEnemySettings.canAttack)
+
+        if (coll.tag == "Player" && meeleeEnemySettings.canAttack)
         {
-            //Debug.Log("Attacking player");
-
             player.GetComponent<UnityStandardAssets.Characters.FirstPerson.BetterPlayerMovement>().PlayerReceiveDamage(5f);
-        
-            // Check if enemy is doing attack
-            //if(anim.name = )
-            // Player Attacking Enemy
-        
-
-            //GameManager.instance.enemyAI = collide.GetComponent<EnemyAI>();
-            //collide.GetComponent<EnemyAI>().ReceiveDamage(100);
-            // collide.GetComponent<Fighter>().reciveDamage(100);
-
         }
     }
 
