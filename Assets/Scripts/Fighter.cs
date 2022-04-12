@@ -150,7 +150,7 @@ public class Fighter : MonoBehaviour
 
             //GameManager.instance.ShowText((dmg.damageAmount - dmgReduction).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
 
-            gameObject.GetComponent<BetterPlayerMovement>().hudSettings.healthBar.SetValue(GameManager.instance.player.stats.hp);
+            gameObject.GetComponent<BetterPlayerMovement>().hudSettings.healthBar.SetValue(gameObject.GetComponent<BetterPlayerMovement>().stats.hp);
             //GameManager.instance.player.hudSettings.healthBar.SetValue(GameManager.instance.player.stats.hp);
 
             
@@ -178,7 +178,7 @@ public class Fighter : MonoBehaviour
             //GameManager.instance.player.hp -= (dmg.damageAmount - dmgReduction);
             //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
-            gameObject.GetComponent<BetterPlayerMovement>().hudSettings.healthBar.SetValue(GameManager.instance.player.stats.hp);
+            gameObject.GetComponent<BetterPlayerMovement>().hudSettings.healthBar.SetValue(gameObject.GetComponent<BetterPlayerMovement>().stats.hp);
 
             //GameManager.instance.ShowText((dmg.damageAmount - dmgReduction).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
 
