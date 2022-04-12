@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6848554d-83c5-4df4-98c8-38c194683ca1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyDamageUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyDamageUI.cs" afterDir="false" />
-    </list>
+    <list default="true" id="6848554d-83c5-4df4-98c8-38c194683ca1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +77,7 @@
       <workItem from="1648520301617" duration="13008000" />
       <workItem from="1648925396996" duration="2022000" />
       <workItem from="1649029811498" duration="11972000" />
-      <workItem from="1649732505271" duration="4266000" />
+      <workItem from="1649732505271" duration="4809000" />
     </task>
     <servers />
   </component>
