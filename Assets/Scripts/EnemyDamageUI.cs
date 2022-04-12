@@ -23,6 +23,6 @@ public class EnemyDamageUI : MonoBehaviour
 
     void NoShowDamage()
     {
-        enemyDamageUI.SetActive(false);
+        damageText.text = "";
     }
 }
