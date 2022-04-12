@@ -62,7 +62,7 @@ public class InventorySlot : MonoBehaviour {
 
     public void Unquip(int i)
     {
-        EquipmentManager.instance.UnEquip(i);
+        GameManager.instance.player.GetComponent<EquipmentManager>().UnEquip(i);
     }
 
     public void UseItem ()

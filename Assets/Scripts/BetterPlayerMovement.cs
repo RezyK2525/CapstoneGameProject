@@ -84,6 +84,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public Animator anim;
 
         // Equipment Manager
+        //public EquipmentManager equipmentManager;
 
         //Players Attack Settings
         private bool allowAttack = true;
@@ -103,7 +104,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             //DONT NEED THIS MAYBE????
             //m_Capsule = GetComponent<CapsuleCollider>();
-            
+
+
+            // EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
             rb = GetComponent<Rigidbody>();
 
             // Lock cursor
@@ -198,7 +201,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             //if (noOfClicks == 1)
             //{
 
-            if (EquipmentManager.instance.currentEquipment[0] != null)
+            //if (EquipmentManager.instance.currentEquipment[0] != null)
+            if (gameObject.GetComponent<EquipmentManager>().currentEquipment[0] != null)
             {
                 //EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = true;
                 anim.SetTrigger("attack");

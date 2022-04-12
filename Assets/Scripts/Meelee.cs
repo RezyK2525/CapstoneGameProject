@@ -19,10 +19,12 @@ public class Meelee : MonoBehaviour
 
     public void enableSwordDmg()
     {
-        EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = true;
+        //EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = true;
+        GameManager.instance.player.GetComponent<EquipmentManager>().weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = true;
     }
     public void disableSwordDmg()
     {
-        EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
+        //EquipmentManager.instance.weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
+        GameManager.instance.player.GetComponent<EquipmentManager>().weaponHolder.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
     }
 }

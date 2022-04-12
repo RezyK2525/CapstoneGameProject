@@ -77,7 +77,14 @@ public class EquipmentManager : MonoBehaviour
                 PhotonNetwork.Destroy(weaponHolder.GetChild(0).gameObject);
             else*/
             Debug.Log(currentEquipment[slotIndex]);
-            Destroy(weaponHolder.GetChild(0).gameObject);
+            if (GameManager.instance.isMultiplayer)
+            {
+                PhotonNetwork.Destroy(weaponHolder.GetChild(0).gameObject);
+            }
+            else
+            {
+                Destroy(weaponHolder.GetChild(0).gameObject);
+            }
         }
 
         // An item has been equipped
@@ -94,7 +101,11 @@ public class EquipmentManager : MonoBehaviour
         {
             /// Put the Sword in the player's Hand
             Vector3 pos = weaponHolder.position;
-
+            Debug.Log("weaponHolder pos: " + pos+"\n------");
+            foreach (GameObject p in NetworkManager.instance.players)
+            {
+                Debug.Log(p.GetComponent<EquipmentManager>().weaponHolder.position);
+            }
             // Create new Item and place it in the weapon holder
             GameObject Sword;
 
@@ -102,7 +113,7 @@ public class EquipmentManager : MonoBehaviour
             if (GameManager.instance.isMultiplayer)
             {
                 Debug.Log(newItem.prefab.name);
-               Sword = PhotonNetwork.Instantiate(newItem.prefab.name, pos, Quaternion.identity);
+                Sword = PhotonNetwork.Instantiate(newItem.prefab.name, pos, Quaternion.identity);
 
             }
             else

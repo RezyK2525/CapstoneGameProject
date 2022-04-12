@@ -311,7 +311,7 @@ public class EnemyAI : Fighter
 
         if (coll.tag == "Player" && meeleeEnemySettings.canAttack)
         {
-            player.GetComponent<UnityStandardAssets.Characters.FirstPerson.BetterPlayerMovement>().PlayerReceiveDamage(5f);
+            player.GetComponent<BetterPlayerMovement>().ReceiveDamage(5f);
         }
     }
 
