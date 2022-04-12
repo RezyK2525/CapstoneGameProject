@@ -126,7 +126,7 @@ public class Fighter : MonoBehaviour
             gameObject.GetComponent<EnemyAI>().enemyDamage.showDamage();
             gameObject.GetComponent<EnemyAI>().stats.hp -= dmg;
             gameObject.GetComponent<EnemyAI>().healthBar.healthBarUI.SetActive(true);
-            gameObject.GetComponent<EnemyAI>().healthBar.SetValue(GameManager.instance.enemyAI.stats.hp);
+            gameObject.GetComponent<EnemyAI>().healthBar.SetValue(gameObject.GetComponent<EnemyAI>().stats.hp);
 
             if (gameObject.GetComponent<EnemyAI>().stats.hp <= 0) {
                 gameObject.GetComponent<EnemyAI>().stats.hp = 0;

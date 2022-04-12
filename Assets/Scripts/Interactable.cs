@@ -1,4 +1,5 @@
 using System;
+using Photon.Realtime;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
@@ -12,13 +13,14 @@ public class Interactable : MonoBehaviour
 
     void Start()   
     {
-        //player = 
+        
     }
 
     public virtual void Interact()
     {
         Debug.Log("Interacted");
         hasInteracted = true;
+        GameManager.instance.hud.interactField.gameObject.SetActive(false);
         // Do something here
     }
 
@@ -36,20 +38,21 @@ public class Interactable : MonoBehaviour
                     GameManager.instance.hud.interactField.gameObject.SetActive(false);
                     Interact();
                 }
-                
-                
             }
-
         }
+        
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            if (GameManager.instance.player.GetComponent<Collider>() == other)
+            {
+                GameManager.instance.hud.interactField.gameObject.SetActive(true);
+            }  
             // make it so only the player who is in distance has it turned on
             // use collider? move hud into player instead of GM?
-            GameManager.instance.hud.interactField.gameObject.SetActive(true);
         }
     }
 
