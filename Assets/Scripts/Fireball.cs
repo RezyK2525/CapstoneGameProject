@@ -79,7 +79,8 @@ public class Fireball : MonoBehaviour {
     private void Update()
     {
         maxLifetime -= Time.deltaTime;
-        if (maxLifetime <= 0) Explode();
+        if (maxLifetime <= 0)
+            Explode();
     }
 
     private void ExplodePlayer()
@@ -140,7 +141,16 @@ public class Fireball : MonoBehaviour {
     {
 
         //Debug.Log("CALLED EXPLODE ");
-        if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
+        if (explosion != null)
+        {
+            if (GameManager.instance.isMultiplayer)
+            {
+                PhotonNetwork.Instantiate(explosion.name, transform.position, Quaternion.identity);
+            } else
+            {
+                Instantiate(explosion, transform.position, Quaternion.identity);
+            }
+        }
         
         Invoke("Delay", 0.05f);
         

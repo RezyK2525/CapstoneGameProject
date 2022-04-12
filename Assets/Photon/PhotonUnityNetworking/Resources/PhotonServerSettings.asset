@@ -45,6 +45,7 @@ MonoBehaviour:
   - UpdatePlayerListClient
   - InstantiateMaster
   - _ReceiveDamage
+  - SetParentMaster
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

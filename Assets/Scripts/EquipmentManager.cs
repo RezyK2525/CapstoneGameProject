@@ -101,11 +101,11 @@ public class EquipmentManager : MonoBehaviour
         {
             /// Put the Sword in the player's Hand
             Vector3 pos = weaponHolder.position;
-            Debug.Log("weaponHolder pos: " + pos+"\n------");
+            /*Debug.Log("weaponHolder pos: " + pos+"\n------");
             foreach (GameObject p in NetworkManager.instance.players)
             {
                 Debug.Log(p.GetComponent<EquipmentManager>().weaponHolder.position);
-            }
+            }*/
             // Create new Item and place it in the weapon holder
             GameObject Sword;
 
@@ -114,14 +114,14 @@ public class EquipmentManager : MonoBehaviour
             {
                 Debug.Log(newItem.prefab.name);
                 Sword = PhotonNetwork.Instantiate(newItem.prefab.name, pos, Quaternion.identity);
-
+                NetworkManager.instance.SetParent(Sword);
             }
             else
             {
-               Sword = Instantiate(newItem.prefab, pos, Quaternion.identity);
+                Sword = Instantiate(newItem.prefab, pos, Quaternion.identity);
+                Sword.transform.parent = weaponHolder.transform;
             }
 
-            Sword.transform.parent = weaponHolder.transform;
             Sword.gameObject.GetComponent<BoxCollider>().enabled = false;
             Sword.gameObject.GetComponent<ItemPickup>().enabled = false;
             Sword.gameObject.name = "weapon";

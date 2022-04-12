@@ -87,6 +87,20 @@ public class NetworkManager : MonoBehaviourPunCallbacks
                 Instantiate(enemy);
         }
     }
+    public void SetParent(GameObject g)
+    {
+        Debug.Log("parenting " + g.GetPhotonView().ViewID);
+        int[] parameters = { g.GetPhotonView().ViewID, GameManager.instance.player.gameObject.GetPhotonView().ViewID };
+        GetComponent<PhotonView>().RPC("SetParentMaster", RpcTarget.All, parameters);
+    }
+    [PunRPC]
+    public void SetParentMaster(int[] parameters)
+    {
+        Debug.Log("parent master " + parameters[0]);
+        //PhotonNetwork.Destroy(PhotonView.Find(gID).gameObject);
+        PhotonView.Find(parameters[0]).gameObject.transform.parent = PhotonView.Find(parameters[1]).gameObject.GetComponent<EquipmentManager>().weaponHolder.transform;
+    }
+
     public void Destroy(GameObject g)
     {
         Debug.Log("destroy " + g.GetPhotonView().ViewID);

@@ -1514,7 +1514,6 @@ MonoBehaviour:
     manaBar: {fileID: 0}
   view: {fileID: 0}
   anim: {fileID: 5777888776464170778}
-  equipmentManager: {fileID: 584150434123782760}
 --- !u!114 &1264000268805500508
 MonoBehaviour:
   m_ObjectHideFlags: 0

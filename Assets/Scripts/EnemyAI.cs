@@ -118,7 +118,7 @@ public class EnemyAI : Fighter
             }
             if (player == null)
             {
-                Debug.Log("resetting player");
+                // Debug.Log("resetting player");
                 player = NetworkManager.instance.players[0].transform;
             }
             float distance = Vector3.Distance(player.position, transform.position);

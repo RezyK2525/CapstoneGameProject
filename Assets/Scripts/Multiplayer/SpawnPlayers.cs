@@ -34,7 +34,7 @@ public class SpawnPlayers : MonoBehaviour
         else
         {
             Instantiate(playerPrefab);
-            Debug.Log("spawning player");
+            //Debug.Log("spawning player");
         }
     }
     public void Update()
