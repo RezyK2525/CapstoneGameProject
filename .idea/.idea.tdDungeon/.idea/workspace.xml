@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97b38def-8585-4862-8180-afece488f109" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.tdDungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tdDungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_Ghost1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_Ghost1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_Ghost2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_Ghost2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_GoblinWarriorMale.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_GoblinWarriorMale.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_SkeletonKnight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_SkeletonKnight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_SkeletonOnGrate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_SkeletonOnGrate.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSlave.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSlave.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSoldierbL.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSoldierbL.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSoldierbR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_SkeletonSoldierbR.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_ghoul.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_ghoul.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_golem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_golem.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_mini_gol_test.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_mini_gol_test.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_mini_golems.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_mini_golems.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BetterPlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BetterPlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpawnEnemies.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpawnEnemies.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/teleport.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/teleport.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/NavMeshComponentsEditor.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NavMeshComponentsEditor.csproj.AssemblyReference.cache" afterDir="false" />
-    </list>
+    <list default="true" id="97b38def-8585-4862-8180-afece488f109" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +79,7 @@
       <workItem from="1648508270584" duration="1000" />
       <workItem from="1648509759817" duration="4564000" />
       <workItem from="1649011933547" duration="898000" />
-      <workItem from="1649641578850" duration="153000" />
+      <workItem from="1649641578850" duration="753000" />
     </task>
     <servers />
   </component>
