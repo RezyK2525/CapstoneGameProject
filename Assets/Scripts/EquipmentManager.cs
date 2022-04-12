@@ -56,12 +56,12 @@ public class EquipmentManager : MonoBehaviour
         // Equip a new Item
     public void Equip (Equipment newItem)
     {
-        foreach (GameObject player in NetworkManager.instance.players)
+        /*foreach (GameObject player in NetworkManager.instance.players)
         {
             Debug.Log(player.name);
             if (player.GetComponent<PhotonView>().IsMine)
                 Debug.Log("^ is mine");
-        }
+        }*/
         // Find what slot the item fits
         int slotIndex = (int)newItem.equipSlot;
 
