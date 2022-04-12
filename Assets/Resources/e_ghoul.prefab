@@ -285,7 +285,7 @@ MonoBehaviour:
     SynchronizeType: 0
     Name: CrushAttack
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: isMoving
   m_SynchronizeLayers:
   - SynchronizeType: 0
