@@ -69,7 +69,7 @@ public class Fighter : MonoBehaviour
                 }*/
         if (GameManager.instance.isMultiplayer)
         {
-            GetComponent<PhotonView>().RPC("_ReceiveDamage", RpcTarget.All, dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.stats.strength));
+            GetComponent<PhotonView>().RPC("_ReceiveDamage", RpcTarget.All, dmg + (GameManager.instance.player.GetComponent<EquipmentManager>().currentEquipment[0].strengthModifier * GameManager.instance.player.stats.strength));
         } else
         {
             _ReceiveDamage(dmg + (EquipmentManager.instance.currentEquipment[0].strengthModifier * GameManager.instance.player.stats.strength));
