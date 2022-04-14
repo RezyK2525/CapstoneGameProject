@@ -88,7 +88,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 2048
-  fireballDamage: 20
+  fireballDamage: 25
   explosionRange: 0.66
   maxLifetime: 5
   explodeOnTouch: 1

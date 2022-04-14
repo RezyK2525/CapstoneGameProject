@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97b38def-8585-4862-8180-afece488f109" name="Changes" comment="" />
+    <list default="true" id="97b38def-8585-4862-8180-afece488f109" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.tdDungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tdDungeon/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_golem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_golem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/e_mini_golems.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/e_mini_golems.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/s_FairyMeteorSpell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/s_FairyMeteorSpell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/s_Fireball.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/s_Fireball.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/s_NewestGates.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/s_NewestGates.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Meelee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Meelee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NavMeshComponents.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NavMeshComponents.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NavMeshComponentsEditor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NavMeshComponentsEditor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/NavMeshComponentsEditor.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/NavMeshComponentsEditor.csproj.AssemblyReference.cache" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,6 +92,8 @@
       <workItem from="1648509759817" duration="4564000" />
       <workItem from="1649011933547" duration="898000" />
       <workItem from="1649641578850" duration="753000" />
+      <workItem from="1649782938237" duration="4055000" />
+      <workItem from="1649965709367" duration="73000" />
     </task>
     <servers />
   </component>

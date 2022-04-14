@@ -2331,13 +2331,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    maxHP: 50000
-    hp: 50000
+    maxHP: 1000
+    hp: 1000
     maxMana: 0
     mana: 0
     manaRegenRate: 0
     strength: 50
-    defense: 500
+    defense: 50
     spellPower: 500
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 10

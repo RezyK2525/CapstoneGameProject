@@ -144,7 +144,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 2048
-  gateDamage: 15
+  gateDamage: 25
   explosionRange: 2
   maxLifetime: 3
   explodeOnTouch: 1

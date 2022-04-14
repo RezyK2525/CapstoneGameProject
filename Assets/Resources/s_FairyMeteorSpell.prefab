@@ -4899,7 +4899,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 2048
-  MagicBulletDamage: 5
+  MagicBulletDamage: 10
   explosionRange: 0.75
   maxLifetime: 5
   explodeOnTouch: 1
