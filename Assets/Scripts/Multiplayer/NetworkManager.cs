@@ -87,6 +87,15 @@ public class NetworkManager : MonoBehaviourPunCallbacks
                 Instantiate(enemy);
         }
     }
+    public void CloseRoom()
+    {
+        GetComponent<PhotonView>().RPC("ForceQuit", RpcTarget.Others);
+    }
+    [PunRPC]
+    public void ForceQuit()
+    {
+        GameManager.instance.ExitGame();
+    }
     public void SetParent(GameObject g)
     {
         Debug.Log("parenting " + g.GetPhotonView().ViewID);

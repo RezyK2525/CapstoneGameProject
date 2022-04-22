@@ -136,7 +136,7 @@ public class Fighter : MonoBehaviour
     }
 
 
-    public void PlayerReceiveMagicDamage(float dmg)
+    /*public void PlayerReceiveMagicDamage(float dmg)
     {
         //double dmgReduction = 0.2 * GameManager.instance.player.defense;
 
@@ -159,7 +159,7 @@ public class Fighter : MonoBehaviour
                 Death();
             }
         }
-    }
+    }*/
     
 
 
@@ -169,7 +169,7 @@ public class Fighter : MonoBehaviour
         // deathScreen.setActive(true);
 
         Debug.Log("you died...");
-
+        GameManager.instance.Death();
     }
 
 

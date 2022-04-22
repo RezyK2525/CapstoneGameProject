@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class MagicBulletSpell : MonoBehaviour
 {
@@ -75,9 +76,19 @@ public class MagicBulletSpell : MonoBehaviour
         for (int i = 0; i < players.Length; i++)
         {
             //get component of enemy and call take damage
-            
+
             //example
-            players[i].GetComponent<Fighter>().PlayerReceiveMagicDamage(MagicBulletDamage);
+            if (GameManager.instance.isMultiplayer)
+            {
+                players[i].GetComponent<PhotonView>().RPC("ReceiveMagicDamage", RpcTarget.All, MagicBulletDamage);
+                // players[i].GetComponent<BetterPlayerMovement>().ReceiveMagicDamage(fireballDamage);
+            }
+            else
+            {
+                players[i].GetComponent<BetterPlayerMovement>().ReceiveMagicDamage(MagicBulletDamage);
+            }
+            //players[i].GetComponent<BetterPlayerMovement>().ReceiveMagicDamage(MagicBulletDamage);
+            //players[i].GetComponent<Fighter>().PlayerReceiveMagicDamage(MagicBulletDamage);
 
 
         }

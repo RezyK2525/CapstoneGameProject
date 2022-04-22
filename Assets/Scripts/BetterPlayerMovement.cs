@@ -229,27 +229,70 @@ namespace UnityStandardAssets.Characters.FirstPerson
             */
         }
 
-
-        public void ReceiveDamage(float dmg)
+        [PunRPC]
+        new public void ReceiveDamage(float dmg)
         {
             //double dmgReduction = 0.2 * GameManager.instance.player.defense;
-
+            if (GameManager.instance.isMultiplayer)
+            {
+                if (gameObject.GetComponent<PhotonView>().ViewID != GameManager.instance.player.GetComponent<PhotonView>().ViewID)
+                    return;
+            }
             if (Time.time - lastImmune > immuneTime)
             {
                 lastImmune = Time.time;
 
-                gameObject.GetComponent<BetterPlayerMovement>().stats.hp -= dmg;
+                stats.hp -= dmg;
                 //Debug.Log((0.2 * GameManager.instance.player.defense));
                 //GameManager.instance.player.hp -= (dmg.damageAmount - dmgReduction);
                 //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
-                gameObject.GetComponent<BetterPlayerMovement>().hudSettings.healthBar.SetValue(GameManager.instance.player.stats.hp);
+                if (!GameManager.instance.isMultiplayer || PhotonNetwork.IsMasterClient)
+                {
+                    hudSettings.healthBar.SetValue(GameManager.instance.player.stats.hp);
+                }
 
                 //GameManager.instance.ShowText((dmg.damageAmount - dmgReduction).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
 
-                if (gameObject.GetComponent<BetterPlayerMovement>().stats.hp <= 0)
+                if (stats.hp <= 0)
                 {
-                    gameObject.GetComponent<BetterPlayerMovement>().stats.hp = 0;
+                    stats.hp = 0;
+                    Death();
+                }
+            }
+        }
+        [PunRPC]
+        new public void ReceiveMagicDamage(float dmg)
+        {
+            if (GameManager.instance.isMultiplayer)
+            {
+                if (gameObject.GetComponent<PhotonView>().ViewID != GameManager.instance.player.GetComponent<PhotonView>().ViewID)
+                    return;
+            }
+            //double dmgReduction = 0.2 * GameManager.instance.player.defense;
+            //Debug.Log("take some damage");
+            if (Time.time - lastImmune > immuneTime)
+            {
+                lastImmune = Time.time;
+
+                stats.hp -= dmg;
+                //gameObject.GetComponent<BetterPlayerMovement>().stats.hp -= dmg;
+
+                //GameManager.instance.player.stats.hp -= dmg;
+                //pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
+
+                //GameManager.instance.ShowText((dmg.damageAmount - dmgReduction).ToString(), 25, Color.red, transform.position, Vector3.zero,0.5f);
+                if (!GameManager.instance.isMultiplayer || PhotonNetwork.IsMasterClient)
+                {
+                    hudSettings.healthBar.SetValue(stats.hp);
+                }
+                //gameObject.GetComponent<BetterPlayerMovement>().hudSettings.healthBar.SetValue(gameObject.GetComponent<BetterPlayerMovement>().stats.hp);
+                //GameManager.instance.player.hudSettings.healthBar.SetValue(GameManager.instance.player.stats.hp);
+
+
+                if (stats.hp <= 0)
+                {
+                    stats.hp = 0;
                     Death();
                 }
             }

@@ -131,6 +131,13 @@ public class GameManager : MonoBehaviour
         isPaused = true;
         GameManager.instance.player.cursorState();
     }
+    public void Death()
+    {
+        Time.timeScale = 0;
+        isPaused = true;
+        GameManager.instance.player.cursorState();
+        hud.deathScreen.SetActive(true);
+    }
     public void ResumeGame()
     {
         Time.timeScale = 1;
@@ -142,7 +149,14 @@ public class GameManager : MonoBehaviour
         //Destroy(GameObject.Find("DontDestroyOnLoad"));
         if (isMultiplayer)
         {
-            PhotonNetwork.Disconnect();
+            if (PhotonNetwork.IsMasterClient)
+            {
+                NetworkManager.instance.CloseRoom();
+            }
+            else
+            {
+                PhotonNetwork.Disconnect();
+            }
         }
         SceneManager.LoadScene("MainMenu");
     }

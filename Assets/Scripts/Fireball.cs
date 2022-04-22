@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using Photon.Pun;
+using UnityStandardAssets.Characters.FirstPerson;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Fireball : MonoBehaviour {
@@ -106,7 +107,8 @@ public class Fireball : MonoBehaviour {
             //get component of enemy and call take damage
             
             //example
-            players[i].GetComponent<Fighter>().PlayerReceiveMagicDamage(fireballDamage);
+            players[i].GetComponent<BetterPlayerMovement>().ReceiveMagicDamage(fireballDamage);
+            //players[i].GetComponent<Fighter>().PlayerReceiveMagicDamage(fireballDamage);
 
 
         }

@@ -14,7 +14,7 @@ public class teleport : Interactable
         // Do something here
     }
 
-    private void OnTriggerEnter(Collider col)
+    new private void OnTriggerEnter(Collider col)
     {
         if(col.tag == "Player")
         {

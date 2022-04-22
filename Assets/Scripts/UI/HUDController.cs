@@ -13,6 +13,7 @@ public class HUDController : MonoBehaviour
 
 	public KeyCode pauseKey;
 	public GameObject pauseHUD;
+	public GameObject deathScreen;
 	public GameObject[] secondaryPauseMenus;
 	
 

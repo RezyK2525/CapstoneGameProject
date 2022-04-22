@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 
 
@@ -101,7 +102,8 @@ public class GatesOfBabylon : MonoBehaviour
             
             //example
             Debug.Log("Enemy hit" + i);
-            players[i].GetComponent<Fighter>().PlayerReceiveMagicDamage(gateDamage);
+            players[i].GetComponent<BetterPlayerMovement>().ReceiveMagicDamage(gateDamage);
+            //players[i].GetComponent<Fighter>().PlayerReceiveMagicDamage(gateDamage);
 
 
         }

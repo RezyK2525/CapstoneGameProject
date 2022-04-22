@@ -65,7 +65,6 @@ MonoBehaviour:
   - {fileID: 957276370339635397, guid: 1e037b1e82da8f04c83d0457dc06a698, type: 3}
   - {fileID: 7884714988208229254, guid: 7ff1d25ff8c7321458a4b7d4fe6bcc7d, type: 3}
   - {fileID: 5597344473697523998, guid: 8f61c662eb746f44f9d1e85a928154b0, type: 3}
-  - {fileID: 4689643106887334296, guid: 2a15fdc135fa14c4f83dcb8aadeee94b, type: 3}
   - {fileID: 4900528001529788320, guid: bcccfc50983e3064a94c19c3785b437c, type: 3}
   - {fileID: 6706668540453029452, guid: 6e5aaccf1b6b0d640bf3d1e01637bfa9, type: 3}
   players: []

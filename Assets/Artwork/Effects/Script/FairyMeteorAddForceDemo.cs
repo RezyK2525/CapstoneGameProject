@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.Characters.FirstPerson;
+using Photon.Pun;
 
 public class FairyMeteorAddForceDemo : MonoBehaviour {
 
@@ -98,7 +100,15 @@ public class FairyMeteorAddForceDemo : MonoBehaviour {
             //get component of enemy and call take damage
             
             //example
-            players[i].GetComponent<Fighter>().PlayerReceiveMagicDamage(fireballDamage);
+            if (GameManager.instance.isMultiplayer)
+            {
+                players[i].GetComponent<PhotonView>().RPC("ReceiveMagicDamage", RpcTarget.All, fireballDamage);
+                // players[i].GetComponent<BetterPlayerMovement>().ReceiveMagicDamage(fireballDamage);
+            }
+            else
+            {
+                players[i].GetComponent<BetterPlayerMovement>().ReceiveMagicDamage(fireballDamage);
+            }
 
 
         }

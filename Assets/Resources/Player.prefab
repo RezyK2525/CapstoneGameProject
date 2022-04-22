@@ -1484,7 +1484,7 @@ MonoBehaviour:
     maxMana: 100
     mana: 100
     manaRegenRate: 2
-    strength: 25
+    strength: 1
     defense: 25
     spellPower: 25
   movementSettings:
